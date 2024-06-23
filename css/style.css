@@ -407,16 +407,17 @@ main {
   }
 }
 
+.area[data-area="1"] .text-box {
+  padding-left: 17.7%;
+}
 .area[data-area="1"] .text-box[data-text="1"] {
   margin-top: -22.5rem;
   position: relative;
   z-index: 5;
-  padding-left: 17.7%;
 }
 @media (max-width: 720px) {
   .area[data-area="1"] .text-box[data-text="1"] {
     margin-top: 0;
-    padding-left: 7rem;
   }
 }
 @media (max-width: 720px) {
@@ -424,11 +425,48 @@ main {
     padding-right: 16rem;
   }
 }
-.area[data-area="1"] .text-box[data-text="1"] .text-ko {
+.area[data-area="1"] .text-box[data-text="2"] {
+  position: relative;
+  top: -10rem;
+}
+.area[data-area="1"] .text-box[data-text="3"] {
+  margin-top: 48rem;
+  padding-left: 49.27%;
+}
+.area[data-area="1"] .text-box[data-text="3"] .text-ko {
+  padding-left: 0;
+}
+@media (max-width: 720px) {
+  .area[data-area="1"] .text-box {
+    padding-left: 7rem;
+  }
+}
+.area[data-area="1"] .text-ko {
   padding-left: 30%;
 }
 @media (max-width: 720px) {
-  .area[data-area="1"] .text-box[data-text="1"] .text-ko {
+  .area[data-area="1"] .text-ko {
     padding-left: 0;
   }
+}
+
+.card img {
+  border-radius: 3rem;
+  width: 56rem;
+}
+@media (max-width: 720px) {
+  .card img {
+    width: 35.1rem;
+  }
+}
+.card-slider {
+  overflow-x: scroll;
+  margin-top: 51rem;
+}
+.card-slider__inner {
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  gap: 30rem;
+  flex-direction: row;
 }/*# sourceMappingURL=style.css.map */

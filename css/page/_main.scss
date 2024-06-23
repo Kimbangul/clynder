@@ -161,15 +161,15 @@ main {
 .area {
   &[data-area='1'] {
     .text-box {
+      padding-left: 17.7%;
+
       &[data-text='1'] {
         margin-top: -22.5rem;
         position: relative;
         z-index: 5;
-        padding-left: 17.7%;
 
         @include mb-lg {
           margin-top: 0;
-          padding-left: 7rem;
         }
 
         .text-eng {
@@ -177,15 +177,50 @@ main {
             padding-right: 16rem;
           }
         }
+      }
 
+      &[data-text='2'] {
+        position: relative;
+        top: -10rem;
+      }
+
+      &[data-text='3'] {
+        margin-top: 48rem;
+        padding-left: 49.27%;
         .text-ko {
-          padding-left: 30%;
-
-          @include mb-lg {
-            padding-left: 0;
-          }
+          padding-left: 0;
         }
       }
+
+      @include mb-lg {
+        padding-left: 7rem;
+      }
+    }
+    .text-ko {
+      padding-left: 30%;
+
+      @include mb-lg {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+.card {
+  img {
+    border-radius: 3rem;
+    width: 56rem;
+
+    @include mb-lg {
+      width: 35.1rem;
+    }
+  }
+
+  &-slider {
+    overflow-x: scroll;
+    margin-top: 51rem;
+    &__inner {
+      @include util__flex(stretch, center, 30rem);
     }
   }
 }
