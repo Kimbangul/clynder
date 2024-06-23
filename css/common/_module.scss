@@ -1,0 +1,40 @@
+/* 폰트 관련 */
+.noto {
+  font-family: $font__Noto;
+}
+.rhyme {
+  font-family: $font__Rhymes;
+}
+.selecta {
+  font-family: $font-Selecta;
+}
+
+/**모바일/pc 관련*/
+// .pc-only {
+//   @include mb {
+//     display: none !important;
+//   }
+// }
+// .tb-only {
+//   @media (min-width: 1000px) {
+//     display: none !important;
+//   }
+// }
+// .mb-only {
+//   @media (min-width: 700px) {
+//     display: none !important;
+//   }
+// }
+
+/** 접근성 관련 **/
+.blind {
+  font-size: 0;
+  position: absolute;
+  display: block;
+  z-index: -9999;
+  text-indent: 9999;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+}
