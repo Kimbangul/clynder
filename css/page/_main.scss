@@ -1,7 +1,7 @@
 /* header */
 .header {
   position: relative;
-  // padding-bottom: 22.5rem;
+
   &__nav {
     @include util__flex(space-between, center);
     @include util__get-padding();
@@ -9,12 +9,16 @@
     width: 100%;
     z-index: 999;
     bottom: 0;
+    padding-bottom: 22.5rem;
+
     @include mb-lg {
       position: fixed;
       top: 0;
+      bottom: unset;
       left: 0;
       width: 100%;
       height: 11rem;
+      padding-bottom: 0;
     }
   }
   &__bg {
@@ -144,4 +148,44 @@
   }
 }
 
+main {
+  padding-top: 22.5rem;
+
+  @include mb-lg {
+    padding-top: 0;
+  }
+}
+
 // // header
+
+.area {
+  &[data-area='1'] {
+    .text-box {
+      &[data-text='1'] {
+        margin-top: -22.5rem;
+        position: relative;
+        z-index: 5;
+        padding-left: 17.7%;
+
+        @include mb-lg {
+          margin-top: 0;
+          padding-left: 7rem;
+        }
+
+        .text-eng {
+          @include mb-lg {
+            padding-right: 16rem;
+          }
+        }
+
+        .text-ko {
+          padding-left: 30%;
+
+          @include mb-lg {
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  }
+}

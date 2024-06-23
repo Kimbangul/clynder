@@ -20,6 +20,10 @@
 
 @mixin util__get-padding($top: 0, $bottom: 0) {
   padding: $top $size__padding $bottom $size__padding;
+
+  @include mb-lg {
+    padding: $top 3rem $bottom 3rem;
+  }
 }
 
 @mixin util__absolute-center {

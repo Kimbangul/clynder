@@ -79,6 +79,57 @@
   text-transform: uppercase;
 }
 
+/* 텍스트 */
+.point {
+  color: #0f0;
+}
+
+.text-eng {
+  font-family: "Selecta", sans-serif;
+  font-weight: 500;
+  font-size: 5.6rem;
+  line-height: 1.1;
+}
+.text-eng .line-wrap:first-child {
+  position: relative;
+  margin-left: 14rem;
+}
+.text-eng .line-wrap:first-child::before {
+  content: "";
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: 0.4em;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-block;
+  border-radius: 100%;
+  background: #0f0;
+}
+@media (max-width: 720px) {
+  .text-eng .line-wrap:first-child {
+    margin-left: 6rem;
+  }
+}
+.text-eng + .text-ko {
+  margin-top: 7rem;
+}
+@media (max-width: 720px) {
+  .text-eng {
+    font-size: 3rem;
+  }
+}
+.text-ko {
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+}
+@media (max-width: 720px) {
+  .text-ko {
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    letter-spacing: -0.025em;
+  }
+}
+
 :root {
   font-size: 10px;
 }
@@ -167,14 +218,22 @@ button {
   width: 100%;
   z-index: 999;
   bottom: 0;
+  padding-bottom: 22.5rem;
+}
+@media (max-width: 720px) {
+  .header__nav {
+    padding: 0 3rem 0 3rem;
+  }
 }
 @media (max-width: 720px) {
   .header__nav {
     position: fixed;
     top: 0;
+    bottom: unset;
     left: 0;
     width: 100%;
     height: 11rem;
+    padding-bottom: 0;
   }
 }
 .header__bg {
@@ -210,6 +269,11 @@ button {
   text-transform: uppercase;
   position: absolute;
   width: 100%;
+}
+@media (max-width: 720px) {
+  .intro {
+    padding: 0 3rem 0 3rem;
+  }
 }
 @media (max-width: 720px) {
   .intro {
@@ -264,6 +328,11 @@ button {
 }
 @media (max-width: 720px) {
   .intro__deco {
+    padding: 0 3rem 0 3rem;
+  }
+}
+@media (max-width: 720px) {
+  .intro__deco {
     top: 11rem;
     font-size: 1.8rem;
     line-height: 2rem;
@@ -290,6 +359,11 @@ button {
   left: 0;
   bottom: 3rem;
   position: absolute;
+}
+@media (max-width: 720px) {
+  .intro__time {
+    padding: 0 3rem 0 3rem;
+  }
 }
 @media (max-width: 720px) {
   .intro__time {
@@ -322,4 +396,39 @@ button {
   width: 6rem;
   height: 6rem;
   background: url("../assets/icon/menu-btn.svg#menu-btn--black");
+}
+
+main {
+  padding-top: 22.5rem;
+}
+@media (max-width: 720px) {
+  main {
+    padding-top: 0;
+  }
+}
+
+.area[data-area="1"] .text-box[data-text="1"] {
+  margin-top: -22.5rem;
+  position: relative;
+  z-index: 5;
+  padding-left: 17.7%;
+}
+@media (max-width: 720px) {
+  .area[data-area="1"] .text-box[data-text="1"] {
+    margin-top: 0;
+    padding-left: 7rem;
+  }
+}
+@media (max-width: 720px) {
+  .area[data-area="1"] .text-box[data-text="1"] .text-eng {
+    padding-right: 16rem;
+  }
+}
+.area[data-area="1"] .text-box[data-text="1"] .text-ko {
+  padding-left: 30%;
+}
+@media (max-width: 720px) {
+  .area[data-area="1"] .text-box[data-text="1"] .text-ko {
+    padding-left: 0;
+  }
 }/*# sourceMappingURL=style.css.map */

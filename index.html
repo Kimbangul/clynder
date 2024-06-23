@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cylnder</title>
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/lib/gsap.min.js"></script>
+    <script src="js/lib/scrolltrigger.min.js"></script>
+    <script src="js/lib/splittype.js"></script>
+    <script src="js/lib/renis.min.js"></script>
+    <script src="js/lib/debounce.min.js"></script>
+    <script src="js/script.js" defer></script>
   </head>
   <body>
     <header class="header">
@@ -56,7 +62,7 @@
       </nav>
       <div class="header__bg">
         <video
-          class="header__video"
+          class="header__video pc-only"
           preload="metadata"
           loop="true"
           muted="true"
@@ -65,6 +71,17 @@
           poster="assets/images/poster/header-pc.jpg"
         >
           <source src="assets/video/intro-pc.mp4" type="video/mp4" />
+        </video>
+        <video
+          class="header__video mb-only"
+          preload="metadata"
+          loop="true"
+          muted="true"
+          playsinline="true"
+          autoplay="true"
+          poster="assets/images/poster/header-pc.jpg"
+        >
+          <source src="assets/video/intro-mb.mp4" type="video/mp4" />
         </video>
       </div>
     </header>
@@ -79,20 +96,24 @@
       <section class="sc introduce">
         <h2 class="blind">Introduce</h2>
         <div class="area" data-area="1">
-          <div class="text-box">
+          <div class="text-box" data-text="1">
             <p class="text-eng">
-              CYLNDR SEOUL is a content production brand of
+              CYLNDR SEOUL is a content production brand of<br />
               <span class="point">Beattie McGuiness Bungay</span> (BMB), an
-              overseas subsidiary of Cheil Worldwide and an advertising agency
-              in the UK. We '<span class="point">CONNECT+</span>' brands and
-              customers through data-driven strategies and the latest digital
-              media content.
+              overseas subsidiary <br />
+              of Cheil Worldwide and an advertising agency in the UK.<br />
+              We '<span class="point">CONNECT+</span>' brands and customers
+              through<br />
+              data-driven strategies and the latest digital media content.
             </p>
             <p class="text-ko">
               실린더 서울은 제일기획의 해외 자회사이자 영국 광고대행사인 Beattie
-              Mcguiness Bungay(BMB)의 콘텐츠 프로덕션 브랜드입니다. 우리는 고객
-              데이터로부터 도출한 전략과 최신 디지털 매체에 특화된 콘텐츠를 통해
-              브랜드와 고객을 서로 ‘CONNECT+’ 합니다.
+              Mcguiness Bungay(BMB)의 <br class="pc-only" />
+              콘텐츠 프로덕션 <br class="mb-only" />
+              브랜드입니다. 우리는 고객 데이터로부터 도출한 전략과 최신 디지털
+              매체에 특화된<br class="pc-only" />
+              콘텐츠를 통해 브랜드와 고객을 서로<br class="mb-only" />
+              ‘CONNECT+’ 합니다.
             </p>
           </div>
           <div class="card-slider">
