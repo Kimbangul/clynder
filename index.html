@@ -98,12 +98,18 @@
         <div class="area" data-area="1">
           <div class="text-box" data-text="1">
             <p class="text-eng">
-              CYLNDR SEOUL is a content production brand of<br />
-              <span class="point">Beattie McGuiness Bungay</span> (BMB), an
-              overseas subsidiary <br />
-              of Cheil Worldwide and an advertising agency in the UK.<br />
+              CYLNDR SEOUL is a content production brand of<br
+                class="pc-only"
+              />
+              <span class="point">Beattie McGuiness Bungay</span> (BMB),<br
+                class="mb-only"
+              />
+              an overseas subsidiary <br class="pc-only" />
+              of Cheil Worldwide and an advertising agency in the UK.<br
+                class="pc-only"
+              />
               We '<span class="point">CONNECT+</span>' brands and customers
-              through<br />
+              through<br class="pc-only" />
               data-driven strategies and the latest digital media content.
             </p>
             <p class="text-ko">
@@ -201,11 +207,13 @@
               <span class="point">global</span><br />
               <span class="point">campaigns</span> for various power brands such
               as <br />
-              Samsung, Linkedin, NIVEA, Innocent, and Clam, <br />
+              Samsung, Linkedin, NIVEA, Innocent, and Clam,
+              <br class="pc-only" />
               and seeks to introduce more
-              <span class="point">innovative and</span><br class="mb-only" />
+              <span class="point">innovative</span><br class="mb-only" />
+              <span class="point">and</span>
               <span class="point">creative</span>
-              <br />
+              <br class="pc-only" />
               services in the Korean market.
             </p>
             <p class="text-ko">
@@ -224,73 +232,108 @@
               <span class="point">arrived in Seoul</span>.
             </p>
             <p class="text-ko">
-              2020년 9월, 런던을 시작으로 북미, 칠레에 이어 <br />
+              2020년 9월, 런던을 시작으로 북미, 칠레에 이어
+              <br class="pc-only" />
               ‘실린더 서울’이라는 이름으로 한국에서 항해를 시작했습니다.
             </p>
           </div>
         </div>
         <div class="area" data-area="2">
-          <div class="time__text-box horizontal-mover">
-            <p class="horizontal-mover__line time__text">London</p>
-            <p class="horizontal-mover__line time__text">Los Angeles</p>
-            <p class="horizontal-mover__line time__text">Santiago</p>
-            <p class="horizontal-mover__line time__text">New york</p>
-            <p class="horizontal-mover__line time__text">Dallas</p>
-            <p class="horizontal-mover__line time__text">Bucharest</p>
-            <p class="horizontal-mover__line time__text">Durham</p>
-          </div>
-          <div class="time__deco">
-            <p class="time__deco-item">(CYLDNR) WE ARE <br />WORLDWIDE</p>
-            <p class="time__deco-item">37° 34’ 00” N <br />126° 58’ 41” E</p>
-          </div>
-          <div class="clock">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="254"
-              height="254"
-              viewBox="0 0 254 254"
-            >
-              <circle clip-rule="evenodd" cx="127" cy="127" r="126"></circle>
-              <path
-                fill-rule="evenodd"
-                fill="#FFF"
-                d="M127 0c70.093 0 127 56.907 127 127s-56.907 127-127 127S0 197.093 0 127 56.907 0 127 0Zm0 5c67.334 0 122 54.666 122 122s-54.666 122-122 122S5 194.334 5 127 59.666 5 127 5Z"
-              ></path>
-              <g class="svg-group-minute">
+          <div class="time">
+            <div class="time__text-box horizontal-mover">
+              <p class="horizontal-mover__line time__text">London</p>
+              <p class="horizontal-mover__line time__text">Los Angeles</p>
+              <p class="horizontal-mover__line time__text">Santiago</p>
+              <p class="horizontal-mover__line time__text">New york</p>
+              <p class="horizontal-mover__line time__text">Dallas</p>
+              <p class="horizontal-mover__line time__text">Bucharest</p>
+              <p class="horizontal-mover__line time__text">Durham</p>
+            </div>
+            <div class="time__deco">
+              <p class="time__deco-item">(CYLDNR) WE ARE <br />WORLDWIDE</p>
+              <p class="time__deco-item">37° 34’ 00” N <br />126° 58’ 41” E</p>
+            </div>
+            <div class="clock">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="100%"
+                viewBox="0 0 254 254"
+              >
+                <style>
+                  .svg-clock-minute,
+                  .svg-clock-hour,
+                  .svg-clock-second {
+                    transform-origin: 50%;
+                    transform: rotate(0);
+                  }
+                  <!-- .svg-group-minute,
+                  .svg-group-hour,
+                  .svg-group-second {
+                    transform-origin: 50%;
+                    animation-name: rotate;
+                    animation-iteration-count: infinite;
+                    transform: rotate(0);
+                  } -->
+                  <!-- .svg-group-minute {
+                    animation-duration: 3600s;
+                    animation-timing-function: linear;
+                  }
+                  .svg-group-hour {
+                    animation-duration: 43200s;
+                    animation-timing-function: linear;
+                  }
+                  .svg-group-second {
+                    animation-duration: 60s;
+                    animation-timing-function: steps(60, end);
+                  }
+                  @keyframes rotate {
+                    0% {
+                      transfrom: rotate(0deg);
+                    }
+                    to {
+                      transform: rotate(360deg);
+                    }
+                  } -->
+                </style>
+                <circle clip-rule="evenodd" cx="127" cy="127" r="126"></circle>
                 <path
-                  class="svg-clock-minute"
                   fill-rule="evenodd"
-                  fill="none"
-                  stroke="#FFF"
-                  stroke-width="4"
-                  d="M127 139V31"
-                  style="transform: rotate(108.41666666666667deg)"
+                  fill="#FFF"
+                  d="M127 0c70.093 0 127 56.907 127 127s-56.907 127-127 127S0 197.093 0 127 56.907 0 127 0Zm0 5c67.334 0 122 54.666 122 122s-54.666 122-122 122S5 194.334 5 127 59.666 5 127 5Z"
                 ></path>
-              </g>
-              <g class="svg-group-hour">
-                <path
-                  class="svg-clock-hour"
-                  fill-rule="evenodd"
-                  fill="none"
-                  stroke="#FFF"
-                  stroke-width="7"
-                  d="m127 137-.034-80"
-                  style="transform: rotate(39deg)"
-                ></path>
-              </g>
-              <g class="svg-group-second">
-                <path
-                  class="svg-clock-second"
-                  fill-rule="evenodd"
-                  fill="none"
-                  stroke="#0F0"
-                  stroke-width="2"
-                  d="m127 141 .034-120"
-                  style="transform: rotate(150deg)"
-                ></path>
-              </g>
-            </svg>
-            <p class="clock__text">London <br />51°30'50.6"N 0°07'34.8"W</p>
+                <g class="clock-group-min">
+                  <path
+                    class="clock__min"
+                    fill-rule="evenodd"
+                    fill="none"
+                    stroke="#FFF"
+                    stroke-width="4"
+                    d="M127 139V31"
+                  ></path>
+                </g>
+                <g class="clock-group-hour">
+                  <path
+                    class="clock__hour"
+                    fill-rule="evenodd"
+                    fill="none"
+                    stroke="#FFF"
+                    stroke-width="7"
+                    d="m127 137-.034-80"
+                  ></path>
+                </g>
+                <g class="clock-group-sec">
+                  <path
+                    class="clock__sec"
+                    fill-rule="evenodd"
+                    fill="none"
+                    stroke="#0F0"
+                    stroke-width="2"
+                    d="m127 141 .034-120"
+                  ></path>
+                </g>
+              </svg>
+              <p class="clock__text">London <br />51°30'50.6"N 0°07'34.8"W</p>
+            </div>
           </div>
         </div>
         <div class="area" data-area="3">

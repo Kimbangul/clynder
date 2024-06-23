@@ -35,6 +35,14 @@
   font-weight: 400;
   src: url("../assets/fonts/NotoSansKR-Regular.woff2") format("woff2");
 }
+@keyframes ani__clock {
+  0% {
+    transfrom: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 /* 폰트 관련 */
 .noto {
   font-family: "Noto Sans KR", sans-serif;
@@ -84,6 +92,11 @@
   color: #0f0;
 }
 
+@media (max-width: 720px) {
+  .text-box {
+    padding-right: 3rem;
+  }
+}
 .text-eng {
   font-family: "Selecta", sans-serif;
   font-weight: 500;
@@ -116,6 +129,7 @@
 @media (max-width: 720px) {
   .text-eng {
     font-size: 3rem;
+    letter-spacing: -0.025em;
   }
 }
 .text-ko {
@@ -128,6 +142,13 @@
     line-height: 3.6rem;
     letter-spacing: -0.025em;
   }
+}
+.text-small, .clock__text {
+  font-family: "Selecta", sans-serif;
+  letter-spacing: -0.01em;
+  line-height: 1.6rem;
+  font-size: 1.4rem;
+  text-transform: uppercase;
 }
 
 :root {
@@ -249,6 +270,7 @@ button {
 }
 .header__video {
   width: 100%;
+  min-height: 100vh;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 3rem;
@@ -424,11 +446,6 @@ main {
     margin-top: 0;
   }
 }
-@media (max-width: 720px) {
-  .area[data-area="1"] .text-box[data-text="1"] .text-eng {
-    padding-right: 16rem;
-  }
-}
 .area[data-area="1"] .text-box[data-text="2"] {
   position: relative;
   top: -10rem;
@@ -436,6 +453,11 @@ main {
 .area[data-area="1"] .text-box[data-text="3"] {
   margin-top: 48rem;
   padding-left: 49.27%;
+}
+@media (max-width: 720px) {
+  .area[data-area="1"] .text-box[data-text="3"] {
+    padding-left: 26rem;
+  }
 }
 .area[data-area="1"] .text-box[data-text="3"] .text-ko {
   padding-left: 0;
@@ -479,12 +501,67 @@ main {
   flex-direction: row;
 }
 
+.time {
+  position: relative;
+}
 .time__text {
+  position: relative;
+  z-index: 1;
   font-family: "Rhymes", sans-serif;
   font-size: 23rem;
   font-weight: 100;
   text-transform: uppercase;
 }
+@media (max-width: 720px) {
+  .time__text {
+    font-size: 16rem;
+    line-height: 15rem;
+  }
+}
 .time__text:nth-child(1) {
   margin-left: 70rem;
+}
+.time__deco {
+  font-weight: 300;
+  font-family: "Selecta", sans-serif;
+  color: rgb(85, 85, 85);
+  position: absolute;
+  top: 40rem;
+  left: 4rem;
+}
+@media (max-width: 720px) {
+  .time__deco {
+    font-size: 1.8rem;
+    line-height: 2rem;
+  }
+}
+.time__deco-item:nth-child(2) {
+  margin-top: 3ch;
+}
+
+.clock {
+  width: 25.4rem;
+  height: 25.4rem;
+  position: relative;
+}
+@media (max-width: 720px) {
+  .clock {
+    width: 15.2rem;
+    height: 15.2rem;
+  }
+}
+.clock__min, .clock__sec, .clock__hour {
+  transform-origin: 50%;
+  transform: rotate(0);
+}
+.clock__text {
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 1.2rem);
+  transform: translateY(-50%);
+  white-space: nowrap;
+}
+.clock-group-hour, .clock-group-sec, .clock-group-min {
+  transform-origin: 50%;
+  transform: rotate(0);
 }/*# sourceMappingURL=style.css.map */

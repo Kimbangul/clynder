@@ -34,6 +34,7 @@
   }
   &__video {
     width: 100%;
+    min-height: 100vh;
     object-fit: cover;
     border-radius: 3rem;
     overflow: hidden;
@@ -169,9 +170,9 @@ main {
         }
 
         .text-eng {
-          @include mb-lg {
-            padding-right: 16rem;
-          }
+          // @include mb-lg {
+          //   padding-right: 16rem;
+          // }
         }
       }
 
@@ -183,6 +184,9 @@ main {
       &[data-text='3'] {
         margin-top: 48rem;
         padding-left: 49.27%;
+        @include mb-lg {
+          padding-left: 26rem;
+        }
         .text-ko {
           padding-left: 0;
         }
@@ -226,14 +230,68 @@ main {
   }
 }
 .time {
+  position: relative;
   &__text {
+    position: relative;
+    z-index: 1;
     font-family: $font__Rhymes;
     font-size: 23rem;
     font-weight: 100;
     text-transform: uppercase;
 
+    @include mb-lg {
+      font-size: 16rem;
+      line-height: 15rem;
+    }
+
     &:nth-child(1) {
       margin-left: 70rem;
+    }
+  }
+  &__deco {
+    @include util__deco;
+    position: absolute;
+    top: 40rem;
+    left: $size__padding;
+
+    &-item {
+      &:nth-child(2) {
+        margin-top: 3ch;
+      }
+    }
+  }
+}
+
+.clock {
+  width: 25.4rem;
+  height: 25.4rem;
+  position: relative;
+
+  @include mb-lg {
+    width: 15.2rem;
+    height: 15.2rem;
+  }
+
+  &__min,
+  &__sec,
+  &__hour {
+    transform-origin: 50%;
+    transform: rotate(0);
+  }
+  &__text {
+    @extend .text-small;
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 1.2rem);
+    transform: translateY(-50%);
+    white-space: nowrap;
+  }
+  &-group {
+    &-hour,
+    &-sec,
+    &-min {
+      transform-origin: 50%;
+      transform: rotate(0);
     }
   }
 }
