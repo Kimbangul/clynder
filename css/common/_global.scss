@@ -46,6 +46,8 @@ body {
   line-height: 1;
   background: $color__black;
   color: $color__white;
+  width: 100%;
+  overflow-x: hidden;
 }
 input,
 textarea {
