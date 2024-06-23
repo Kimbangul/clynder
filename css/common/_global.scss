@@ -1,7 +1,10 @@
 :root {
   font-size: 10px;
-  @media (max-width: 1920px) {
+  @include pc-xl {
     font-size: 0.520833vw;
+  }
+  @include mb-lg {
+    font-size: 1.38889vw;
   }
 }
 html {
@@ -23,7 +26,6 @@ body {
   margin-block-end: 0;
   margin-inline-start: 0;
   margin-inline-end: 0;
-  cursor: none;
 }
 
 a,

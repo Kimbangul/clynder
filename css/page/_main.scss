@@ -1,0 +1,120 @@
+/* header */
+.header {
+  &__nav {
+    @include util__flex(space-between, center);
+    @include util__get-padding();
+
+    @include mb-lg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 11rem;
+    }
+  }
+}
+.intro {
+  @include util__flex(stretch, stretch, 0, column);
+  @include util__get-padding();
+  $deco-height: 9.4rem;
+  height: 100vh;
+  padding-top: $deco-height;
+  padding-bottom: 3rem;
+  position: relative;
+  text-transform: uppercase;
+  margin-bottom: 100vh;
+
+  @include mb-lg {
+    padding-top: 17rem;
+    margin-bottom: 0;
+  }
+
+  &__title {
+    width: 117.9rem;
+    margin: 0 auto;
+
+    @include mb-lg {
+      max-width: 55rem;
+    }
+  }
+  &__geo {
+    font-family: $font-Selecta;
+    font-size: 3.6rem;
+    margin-top: 3rem;
+    text-align: center;
+    flex-grow: 1;
+
+    @include mb-lg {
+      font-size: 2.6rem;
+    }
+
+    &-text {
+      &:first-child {
+        word-spacing: 0.25em;
+        margin-right: 6.5rem;
+        @include mb-lg {
+          margin-right: 3.6rem;
+        }
+      }
+    }
+  }
+  &__deco {
+    @include util__flex(center, stretch, 0, column);
+    @include util__get-padding();
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $deco-height;
+    font-weight: 300;
+    font-family: $font-Selecta;
+    color: $color__dim;
+
+    @include mb-lg {
+      top: 11rem;
+      font-size: 1.8rem;
+      line-height: 2rem;
+      height: auto;
+    }
+
+    &-item {
+      @include util__flex(space-between);
+    }
+  }
+  &__time {
+    @include util__flex(space-between, center);
+    font-family: $font-Selecta;
+    font-size: 3.6rem;
+
+    @include mb-lg {
+      font-size: 2.6rem;
+    }
+  }
+}
+.home {
+  &__icon {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 100%;
+    background: $color__point;
+    @include mb-lg {
+      width: 5rem;
+      height: 5rem;
+    }
+  }
+}
+.menu {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 2.4rem;
+  &-item {
+    color: opacity 0.3s, transition 0.3s;
+  }
+  &-btn {
+    width: 6rem;
+    height: 6rem;
+    background: url('../assets/icon/menu-btn.svg#menu-btn--black');
+  }
+}
+
+// // header

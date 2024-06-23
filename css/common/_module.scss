@@ -10,21 +10,22 @@
 }
 
 /**모바일/pc 관련*/
-// .pc-only {
-//   @include mb {
-//     display: none !important;
-//   }
-// }
+
+.pc-only {
+  @include mb-lg {
+    display: none !important;
+  }
+}
 // .tb-only {
 //   @media (min-width: 1000px) {
 //     display: none !important;
 //   }
 // }
-// .mb-only {
-//   @media (min-width: 700px) {
-//     display: none !important;
-//   }
-// }
+.mb-only {
+  @media (min-width: calc($size__mb-lg + 1px)) {
+    display: none !important;
+  }
+}
 
 /** 접근성 관련 **/
 .blind {
@@ -37,4 +38,9 @@
   height: 1px;
   margin: -1px;
   clip: rect(0, 0, 0, 0);
+}
+
+/* uppercase */
+.upper {
+  text-transform: uppercase;
 }

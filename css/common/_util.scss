@@ -1,44 +1,14 @@
-// @mixin pc-max {
-//   @media (min-width: 2400px) {
-//     @content;
-//   }
-// }
+@mixin pc-xl {
+  @media (max-width: $size__pc-xl) {
+    @content;
+  }
+}
 
-// @mixin pc-ul {
-//   @media (min-width: 2000px) and (max-width: $size__pc-ul) {
-//     @content;
-//   }
-// }
-
-// @mixin pc-lg {
-//   @media (min-width: 1600px) and (max-width: $size__pc-lg) {
-//     @content;
-//   }
-// }
-
-// @mixin pc-md {
-//   @media (min-width: 1200px) and (max-width: $size__pc-md) {
-//     @content;
-//   }
-// }
-
-// @mixin pc-sm {
-//   @media (min-width: 1000px) and (max-width: $size__pc-sm) {
-//     @content;
-//   }
-// }
-
-// @mixin tb {
-//   @media (min-width: 700px) and (max-width: $size__tb) {
-//     @content;
-//   }
-// }
-
-// @mixin mb {
-//   @media (max-width: $size__mb) {
-//     @content;
-//   }
-// }
+@mixin mb-lg {
+  @media (max-width: $size__mb-lg) {
+    @content;
+  }
+}
 
 @mixin util__flex($jc: flex-start, $ai: stretch, $gap: 0, $dir: row) {
   display: flex;
@@ -46,6 +16,10 @@
   align-items: $ai;
   gap: $gap;
   flex-direction: $dir;
+}
+
+@mixin util__get-padding($top: 0, $bottom: 0) {
+  padding: $top $size__padding $bottom $size__padding;
 }
 
 @mixin util__absolute-center {
