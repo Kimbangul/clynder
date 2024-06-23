@@ -317,14 +317,14 @@ button {
   gap: 0;
   flex-direction: column;
   padding: 0 4rem 0 4rem;
+  font-weight: 300;
+  font-family: "Selecta", sans-serif;
+  color: rgb(85, 85, 85);
   width: 100%;
   position: absolute;
   top: 0;
   left: 0;
   height: 9.4rem;
-  font-weight: 300;
-  font-family: "Selecta", sans-serif;
-  color: rgb(85, 85, 85);
 }
 @media (max-width: 720px) {
   .intro__deco {
@@ -333,9 +333,13 @@ button {
 }
 @media (max-width: 720px) {
   .intro__deco {
-    top: 11rem;
     font-size: 1.8rem;
     line-height: 2rem;
+  }
+}
+@media (max-width: 720px) {
+  .intro__deco {
+    top: 11rem;
     height: auto;
   }
 }
@@ -449,6 +453,10 @@ main {
     padding-left: 0;
   }
 }
+.area[data-area="2"] {
+  padding: 25rem 0 30rem 0;
+  margin-top: 12rem;
+}
 
 .card img {
   border-radius: 3rem;
@@ -469,4 +477,14 @@ main {
   align-items: center;
   gap: 30rem;
   flex-direction: row;
+}
+
+.time__text {
+  font-family: "Rhymes", sans-serif;
+  font-size: 23rem;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+.time__text:nth-child(1) {
+  margin-left: 70rem;
 }/*# sourceMappingURL=style.css.map */
