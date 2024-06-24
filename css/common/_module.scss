@@ -112,6 +112,12 @@
     line-height: 4rem;
     letter-spacing: -0.02em;
   }
+  &-eng-lg {
+    font-family: $font-Selecta;
+    font-size: 4.6rem;
+    font-weight: 300;
+    line-height: 5rem;
+  }
   &-ko {
     font-size: 1.8rem;
     line-height: 2.8rem;
@@ -122,6 +128,13 @@
       line-height: 3.6rem;
       letter-spacing: -0.025em;
     }
+  }
+  &-rg {
+    letter-spacing: -0.02em;
+    font-family: $font-Selecta;
+    font-size: 1.6rem;
+    font-weight: 100;
+    line-height: 2rem;
   }
   &-small {
     font-family: $font-Selecta;
@@ -135,6 +148,12 @@
       font-size: 1.8rem;
     }
   }
+  &-xs {
+    font-family: $font-Selecta;
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.5rem;
+  }
   &-head {
     font-size: 18rem;
     line-height: 16rem;
@@ -145,6 +164,13 @@
       font-size: 14rem;
       line-height: 13rem;
     }
+  }
+  &-head-md {
+    font-family: $font__Rhymes;
+    letter-spacing: -0.01em;
+    font-size: 20rem;
+    font-weight: 100;
+    line-height: 18rem;
   }
 }
 .img-box {
