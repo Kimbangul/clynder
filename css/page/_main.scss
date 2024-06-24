@@ -462,19 +462,25 @@ main {
   &[data-area='9'] {
     overflow-x: scroll;
     // height: 500vh;
-    height: 100vh;
+    // height: 100vh;
 
     .horizontal-section {
       display: flex;
-      gap: 0 40rem;
-      background: $color__point;
-      color: $color__black;
-      border-radius: 0 3rem 3rem 0;
     }
 
     .page {
       $gap: 10rem;
-      padding: 4% 0;
+      padding: 4rem 0;
+
+      &-container {
+        display: flex;
+
+        gap: 0 40rem;
+        background: $color__point;
+        color: $color__black;
+        border-radius: 0 3rem 3rem 0;
+      }
+
       &[data-page='1'] {
         display: flex;
         padding-left: 160rem;
@@ -531,6 +537,7 @@ main {
         .img-box {
           position: absolute;
           width: 67rem;
+          top: 10%;
           right: -40%;
 
           img {
@@ -546,16 +553,33 @@ main {
 
         [data-text='1'] {
           margin-top: $gap;
-
+          .text-head-md {
+            position: relative;
+            z-index: 2;
+          }
           .text-eng-rg {
             margin-top: $gap;
+            padding-left: 10rem;
+          }
+          .text-ko {
+            padding-left: 10rem;
+          }
+          .line {
+            display: inline-block;
+
+            &:nth-child(2) {
+              transform: translateX(20rem);
+            }
+            &:nth-child(3) {
+              transform: translateX(-9rem);
+            }
           }
         }
         [data-img='1'] {
           width: 37rem;
           position: absolute;
           bottom: 4%;
-          left: -45rem;
+          left: -37rem;
           img {
             border-radius: 3rem;
           }
@@ -565,6 +589,7 @@ main {
           position: absolute;
           top: 22%;
           left: 90rem;
+          z-index: 3;
           img {
             border-radius: 3rem;
           }
@@ -576,6 +601,11 @@ main {
       margin-top: 1.4rem;
       text-align: right;
     }
+  }
+
+  &[data-area='10'] {
+    width: 100%;
+    height: 100vh;
   }
 }
 
