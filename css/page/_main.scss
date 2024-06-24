@@ -322,9 +322,35 @@ main {
     .text-box {
       &[data-text='1'] {
         max-width: 132rem;
+        padding-left: 66rem;
         margin: 0 auto;
-        padding: 10rem 0 11rem 0;
+        padding: 10rem 2rem 11rem 2rem;
       }
+    }
+  }
+
+  &[data-area='6'] {
+    margin-top: 40rem;
+    height: 300vh;
+    background: $color__blue;
+
+    .text-box {
+      &[data-text='1'] {
+        position: absolute;
+        color: $color__black;
+        text-align: center;
+        bottom: 15%;
+      }
+    }
+
+    .horizontal-section {
+      @include util__flex(center, center);
+      top: 0;
+      left: 0;
+    }
+    .img-box {
+      width: 174.4rem;
+      margin: 0 auto;
     }
   }
 }
@@ -516,4 +542,63 @@ main {
 .team-list {
   max-width: 132rem;
   margin: 0 auto;
+
+  &__item {
+    // @include util__flex(stretch, stretch);
+    // flex: 1 0 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 6.4rem 2rem 11rem 2rem;
+    position: relative;
+  }
+  &__title {
+    @extend .text-eng;
+  }
+  &__main-desc {
+    @extend .text-eng-md;
+  }
+  &__sub-desc {
+    &:nth-child(2) {
+      @extend .text-eng-rg;
+      margin-top: 4rem;
+    }
+  }
+  &__line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: none;
+    border-top: 1px solid $color__white;
+
+    &:last-child {
+      top: unset;
+      bottom: 0;
+    }
+  }
+}
+.value {
+  &__fromto {
+    @include util__flex(center, center);
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  &__from {
+  }
+  &__to {
+  }
+  &__cate {
+    @extend .text-eng-rg;
+  }
+  &__item {
+    letter-spacing: 0.01em;
+    font-family: $font__Rhymes;
+    font-size: 6rem;
+    font-weight: 300;
+    line-height: 7.2rem;
+  }
 }
