@@ -264,13 +264,17 @@ main {
     margin-top: 5rem;
     position: relative;
 
+    @include mb-lg {
+      margin-top: 6rem;
+    }
+
     .img-box {
       width: 82.6rem;
       margin: 0 auto;
-    }
 
-    @include mb-lg {
-      margin-top: 6rem;
+      @include mb-lg {
+        width: 100%;
+      }
     }
 
     .text-box {
@@ -279,6 +283,47 @@ main {
         top: 6rem;
         left: 50%;
         transform: translateX(-50%);
+      }
+      &[data-text='2'] {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+
+        @include mb-lg {
+          left: 0;
+          transform: translateY(-50%);
+          padding-left: 7rem;
+        }
+
+        .text-eng {
+          white-space: nowrap;
+        }
+        .text-ko {
+          padding-left: 49.27%;
+          white-space: nowrap;
+
+          @include mb-lg {
+            padding-left: 0;
+          }
+        }
+      }
+      &[data-text='3'] {
+        position: absolute;
+        bottom: 6rem;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  &[data-area='5'] {
+    margin-top: 26rem;
+    .text-box {
+      &[data-text='1'] {
+        max-width: 132rem;
+        margin: 0 auto;
+        padding: 10rem 0 11rem 0;
       }
     }
   }
@@ -339,7 +384,6 @@ main {
     display: inline-block;
   }
 }
-
 .clock {
   width: 25.4rem;
   height: 25.4rem;
@@ -468,4 +512,8 @@ main {
       width: 150rem;
     }
   }
+}
+.team-list {
+  max-width: 132rem;
+  margin: 0 auto;
 }
