@@ -809,12 +809,105 @@ main {
 }
 .area[data-area="9"] {
   overflow-x: scroll;
-  height: 500vh;
-  background: #0f0;
-  color: #000;
+  height: 100vh;
 }
 .area[data-area="9"] .horizontal-section {
   display: flex;
+  gap: 0 40rem;
+  background: #0f0;
+  color: #000;
+  border-radius: 0 3rem 3rem 0;
+}
+.area[data-area="9"] .page {
+  padding: 4% 0;
+}
+.area[data-area="9"] .page[data-page="1"] {
+  display: flex;
+  padding-left: 160rem;
+}
+.area[data-area="9"] .page[data-page="1"] [data-text="1"] {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.area[data-area="9"] .page[data-page="1"] [data-text="1"] .text-rg {
+  margin-top: 10rem;
+}
+.area[data-area="9"] .page[data-page="1"] [data-text="2"] .text-head-md {
+  text-align: right;
+}
+.area[data-area="9"] .page[data-page="1"] [data-text="2"] .img-box {
+  width: 49rem;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-top: 10rem;
+}
+.area[data-area="9"] .page[data-page="1"] [data-text="2"] .img-box img {
+  border-radius: 3rem;
+}
+.area[data-area="9"] .page[data-page="2"] {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.area[data-area="9"] .page[data-page="2"] .text-box[data-text="1"] {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.area[data-area="9"] .page[data-page="2"] .text-box[data-text="1"] .line {
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  gap: 0;
+  flex-direction: row;
+}
+.area[data-area="9"] .page[data-page="2"] .text-box[data-text="1"] .line:nth-child(2) {
+  margin-left: 1.3ch;
+}
+.area[data-area="9"] .page[data-page="2"] .text-box[data-text="1"] .text-ko {
+  flex-grow: 1;
+}
+.area[data-area="9"] .page[data-page="2"] .img-box {
+  position: absolute;
+  width: 67rem;
+  right: -40%;
+}
+.area[data-area="9"] .page[data-page="2"] .img-box img {
+  border-radius: 3rem;
+}
+.area[data-area="9"] .page[data-page="3"] {
+  margin-left: 120rem;
+  padding-right: 200vw;
+  position: relative;
+}
+.area[data-area="9"] .page[data-page="3"] [data-text="1"] {
+  margin-top: 10rem;
+}
+.area[data-area="9"] .page[data-page="3"] [data-text="1"] .text-eng-rg, .area[data-area="9"] .page[data-page="3"] [data-text="1"] .value__cate, .area[data-area="9"] .page[data-page="3"] [data-text="1"] .team-list__sub-desc:nth-child(2) {
+  margin-top: 10rem;
+}
+.area[data-area="9"] .page[data-page="3"] [data-img="1"] {
+  width: 37rem;
+  position: absolute;
+  bottom: 4%;
+  left: -45rem;
+}
+.area[data-area="9"] .page[data-page="3"] [data-img="1"] img {
+  border-radius: 3rem;
+}
+.area[data-area="9"] .page[data-page="3"] [data-img="2"] {
+  width: 67.4rem;
+  position: absolute;
+  top: 22%;
+  left: 90rem;
+}
+.area[data-area="9"] .page[data-page="3"] [data-img="2"] img {
+  border-radius: 3rem;
+}
+.area[data-area="9"] .img-box .text-xs {
+  margin-top: 1.4rem;
+  text-align: right;
 }
 
 .card img {

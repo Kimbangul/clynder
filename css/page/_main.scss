@@ -461,12 +461,120 @@ main {
 
   &[data-area='9'] {
     overflow-x: scroll;
-    height: 500vh;
-    background: $color__point;
-    color: $color__black;
+    // height: 500vh;
+    height: 100vh;
 
     .horizontal-section {
       display: flex;
+      gap: 0 40rem;
+      background: $color__point;
+      color: $color__black;
+      border-radius: 0 3rem 3rem 0;
+    }
+
+    .page {
+      $gap: 10rem;
+      padding: 4% 0;
+      &[data-page='1'] {
+        display: flex;
+        padding-left: 160rem;
+
+        [data-text='1'] {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+
+          .text-rg {
+            margin-top: $gap;
+          }
+        }
+
+        [data-text='2'] {
+          .text-head-md {
+            text-align: right;
+          }
+          .img-box {
+            width: 49rem;
+            margin: 0 auto;
+            overflow: hidden;
+            margin-top: $gap;
+
+            img {
+              border-radius: 3rem;
+            }
+          }
+        }
+      }
+      &[data-page='2'] {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        .text-box {
+          &[data-text='1'] {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+
+            .line {
+              @include util__flex(stretch, center);
+              &:nth-child(2) {
+                margin-left: 1.3ch;
+              }
+            }
+
+            .text-ko {
+              flex-grow: 1;
+            }
+          }
+        }
+        .img-box {
+          position: absolute;
+          width: 67rem;
+          right: -40%;
+
+          img {
+            border-radius: 3rem;
+          }
+        }
+      }
+
+      &[data-page='3'] {
+        margin-left: 120rem;
+        padding-right: 200vw;
+        position: relative;
+
+        [data-text='1'] {
+          margin-top: $gap;
+
+          .text-eng-rg {
+            margin-top: $gap;
+          }
+        }
+        [data-img='1'] {
+          width: 37rem;
+          position: absolute;
+          bottom: 4%;
+          left: -45rem;
+          img {
+            border-radius: 3rem;
+          }
+        }
+        [data-img='2'] {
+          width: 67.4rem;
+          position: absolute;
+          top: 22%;
+          left: 90rem;
+          img {
+            border-radius: 3rem;
+          }
+        }
+      }
+    }
+
+    .img-box .text-xs {
+      margin-top: 1.4rem;
+      text-align: right;
     }
   }
 }
