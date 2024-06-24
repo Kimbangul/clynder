@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 30 30">
+<style>g{display:none}g:target{display:inline}</style>
+<g id="icon-plus">
+<path d="M29.55 16.6H16.6v12.95h-2.31V16.6H.45v-2.31H14.3V.45h2.31v13.84h12.95v2.31Z" fill="#fff" fill-rule="evenodd"/>
+</g>
+<g id="icon-minus">
+<path d="M.45 14h29.1v2H.45v-2Z" fill="#fff" fill-rule="evenodd"/>
+</g>
+</svg>

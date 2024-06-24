@@ -319,12 +319,23 @@ main {
 
   &[data-area='5'] {
     margin-top: 26rem;
+
+    @include mb-lg {
+      margin-top: 39rem;
+    }
+
     .text-box {
       &[data-text='1'] {
         max-width: 132rem;
-        padding-left: 66rem;
         margin: 0 auto;
         padding: 10rem 2rem 11rem 2rem;
+        padding-left: 66rem;
+
+        @include mb-lg {
+          max-width: unset;
+          width: 100%;
+          padding: 8rem 3rem 15rem 22rem;
+        }
       }
     }
   }
@@ -352,6 +363,10 @@ main {
       width: 174.4rem;
       margin: 0 auto;
     }
+  }
+
+  &[data-area='7'] {
+    padding-top: 56rem;
   }
 }
 
@@ -543,24 +558,54 @@ main {
   max-width: 132rem;
   margin: 0 auto;
 
+  @include mb-lg {
+    @include util__get-padding();
+  }
+
   &__item {
-    // @include util__flex(stretch, stretch);
-    // flex: 1 0 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 6.4rem 2rem 11rem 2rem;
     position: relative;
+
+    @include mb-lg {
+      display: block;
+      padding-top: 0;
+    }
   }
   &__title {
-    @extend .text-eng;
+    position: relative;
+    h4 {
+      @extend .text-eng;
+    }
+
+    @include mb-lg {
+      padding: 4rem 6rem 4rem 1.5rem;
+
+      h4 {
+        font-size: 5.5rem;
+        pointer-events: none;
+      }
+    }
   }
   &__main-desc {
     @extend .text-eng-md;
+
+    @include mb-lg {
+      font-size: 3.4rem;
+    }
   }
   &__sub-desc {
     &:nth-child(2) {
       @extend .text-eng-rg;
       margin-top: 4rem;
+
+      @include mb-lg {
+        font-size: 2.8rem;
+        line-height: 3.4rem;
+        letter-spacing: -0.025em;
+        margin-top: 5rem;
+      }
     }
   }
   &__line {
@@ -576,29 +621,61 @@ main {
       bottom: 0;
     }
   }
+  &__text-box {
+    @include mb-lg {
+      padding-left: 17rem;
+      margin-top: 5.5rem;
+      padding-bottom: 14.5rem;
+    }
+  }
+  &__btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background-image: url('../assets/icon/plus-btn.svg#icon-minus');
+    background-size: 3rem 3rem;
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+
+    &[data-open='true'] {
+      background-image: url('../assets/icon/plus-btn.svg#icon-plus');
+    }
+  }
 }
 .value {
   &__fromto {
     @include util__flex(center, center);
-    width: 100%;
+    width: 100rem;
     position: absolute;
     top: 50%;
     left: 50%;
     text-align: center;
     transform: translateX(-50%) translateY(-50%);
   }
-  &__from {
-  }
-  &__to {
+  &__roller {
+    flex: 1 0 0;
+    position: relative;
   }
   &__cate {
     @extend .text-eng-rg;
   }
   &__item {
+    position: relative;
     letter-spacing: 0.01em;
     font-family: $font__Rhymes;
     font-size: 6rem;
     font-weight: 300;
     line-height: 7.2rem;
+
+    p {
+      &:not(:first-child) {
+        transform: perspective(500px) translate3d(0px, 0px, 0px) rotateX(-90deg);
+        transform-origin: 50% 100%;
+        position: absolute;
+      }
+    }
   }
 }
