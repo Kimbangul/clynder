@@ -253,86 +253,369 @@
               <p class="time__deco-item">(CYLDNR) WE ARE <br />WORLDWIDE</p>
               <p class="time__deco-item">37° 34’ 00” N <br />126° 58’ 41” E</p>
             </div>
-            <div class="clock">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="100%"
-                viewBox="0 0 254 254"
-              >
-                <style>
-                  .svg-clock-minute,
-                  .svg-clock-hour,
-                  .svg-clock-second {
-                    transform-origin: 50%;
-                    transform: rotate(0);
-                  }
-                  <!-- .svg-group-minute,
-                  .svg-group-hour,
-                  .svg-group-second {
-                    transform-origin: 50%;
-                    animation-name: rotate;
-                    animation-iteration-count: infinite;
-                    transform: rotate(0);
-                  } -->
-                  <!-- .svg-group-minute {
-                    animation-duration: 3600s;
-                    animation-timing-function: linear;
-                  }
-                  .svg-group-hour {
-                    animation-duration: 43200s;
-                    animation-timing-function: linear;
-                  }
-                  .svg-group-second {
-                    animation-duration: 60s;
-                    animation-timing-function: steps(60, end);
-                  }
-                  @keyframes rotate {
-                    0% {
-                      transfrom: rotate(0deg);
-                    }
-                    to {
-                      transform: rotate(360deg);
-                    }
-                  } -->
-                </style>
-                <circle clip-rule="evenodd" cx="127" cy="127" r="126"></circle>
-                <path
-                  fill-rule="evenodd"
-                  fill="#FFF"
-                  d="M127 0c70.093 0 127 56.907 127 127s-56.907 127-127 127S0 197.093 0 127 56.907 0 127 0Zm0 5c67.334 0 122 54.666 122 122s-54.666 122-122 122S5 194.334 5 127 59.666 5 127 5Z"
-                ></path>
-                <g class="clock-group-min">
+            <div class="clock-container">
+              <div class="clock" data-clock="london">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100%"
+                  viewBox="0 0 254 254"
+                >
+                  <circle
+                    clip-rule="evenodd"
+                    cx="127"
+                    cy="127"
+                    r="126"
+                  ></circle>
                   <path
-                    class="clock__min"
                     fill-rule="evenodd"
-                    fill="none"
-                    stroke="#FFF"
-                    stroke-width="4"
-                    d="M127 139V31"
+                    fill="#FFF"
+                    d="M127 0c70.093 0 127 56.907 127 127s-56.907 127-127 127S0 197.093 0 127 56.907 0 127 0Zm0 5c67.334 0 122 54.666 122 122s-54.666 122-122 122S5 194.334 5 127 59.666 5 127 5Z"
                   ></path>
-                </g>
-                <g class="clock-group-hour">
+                  <g class="clock-group-min">
+                    <path
+                      class="clock__min"
+                      fill-rule="evenodd"
+                      fill="none"
+                      stroke="#FFF"
+                      stroke-width="4"
+                      d="M127 139V31"
+                    ></path>
+                  </g>
+                  <g class="clock-group-hour">
+                    <path
+                      class="clock__hour"
+                      fill-rule="evenodd"
+                      fill="none"
+                      stroke="#FFF"
+                      stroke-width="7"
+                      d="m127 137-.034-80"
+                    ></path>
+                  </g>
+                  <g class="clock-group-sec">
+                    <path
+                      class="clock__sec"
+                      fill-rule="evenodd"
+                      fill="none"
+                      stroke="#0F0"
+                      stroke-width="2"
+                      d="m127 141 .034-120"
+                    ></path>
+                  </g>
+                </svg>
+                <p class="clock__text">London <br />51°30'50.6"N 0°07'34.8"W</p>
+              </div>
+              <div class="clock" data-clock="los angeles">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100%"
+                  viewBox="0 0 254 254"
+                >
+                  <circle
+                    clip-rule="evenodd"
+                    cx="127"
+                    cy="127"
+                    r="126"
+                  ></circle>
                   <path
-                    class="clock__hour"
                     fill-rule="evenodd"
-                    fill="none"
-                    stroke="#FFF"
-                    stroke-width="7"
-                    d="m127 137-.034-80"
+                    fill="#FFF"
+                    d="M127 0c70.093 0 127 56.907 127 127s-56.907 127-127 127S0 197.093 0 127 56.907 0 127 0Zm0 5c67.334 0 122 54.666 122 122s-54.666 122-122 122S5 194.334 5 127 59.666 5 127 5Z"
                   ></path>
-                </g>
-                <g class="clock-group-sec">
+                  <g class="clock-group-min">
+                    <path
+                      class="clock__min"
+                      fill-rule="evenodd"
+                      fill="none"
+                      stroke="#FFF"
+                      stroke-width="4"
+                      d="M127 139V31"
+                    ></path>
+                  </g>
+                  <g class="clock-group-hour">
+                    <path
+                      class="clock__hour"
+                      fill-rule="evenodd"
+                      fill="none"
+                      stroke="#FFF"
+                      stroke-width="7"
+                      d="m127 137-.034-80"
+                    ></path>
+                  </g>
+                  <g class="clock-group-sec">
+                    <path
+                      class="clock__sec"
+                      fill-rule="evenodd"
+                      fill="none"
+                      stroke="#0F0"
+                      stroke-width="2"
+                      d="m127 141 .034-120"
+                    ></path>
+                  </g>
+                </svg>
+                <p class="clock__text">
+                  Los angeles <br />34°04'00.5"N 118°13'30.0"W
+                </p>
+              </div>
+              <div class="clock" data-clock="santiago">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100%"
+                  viewBox="0 0 254 254"
+                >
+                  <circle
+                    clip-rule="evenodd"
+                    cx="127"
+                    cy="127"
+                    r="126"
+                  ></circle>
                   <path
-                    class="clock__sec"
                     fill-rule="evenodd"
-                    fill="none"
-                    stroke="#0F0"
-                    stroke-width="2"
-                    d="m127 141 .034-120"
+                    fill="#FFF"
+                    d="M127 0c70.093 0 127 56.907 127 127s-56.907 127-127 127S0 197.093 0 127 56.907 0 127 0Zm0 5c67.334 0 122 54.666 122 122s-54.666 122-122 122S5 194.334 5 127 59.666 5 127 5Z"
                   ></path>
-                </g>
-              </svg>
-              <p class="clock__text">London <br />51°30'50.6"N 0°07'34.8"W</p>
+                  <g class="clock-group-min">
+                    <path
+                      class="clock__min"
+                      fill-rule="evenodd"
+                      fill="none"
+                      stroke="#FFF"
+                      stroke-width="4"
+                      d="M127 139V31"
+                    ></path>
+                  </g>
+                  <g class="clock-group-hour">
+                    <path
+                      class="clock__hour"
+                      fill-rule="evenodd"
+                      fill="none"
+                      stroke="#FFF"
+                      stroke-width="7"
+                      d="m127 137-.034-80"
+                    ></path>
+                  </g>
+                  <g class="clock-group-sec">
+                    <path
+                      class="clock__sec"
+                      fill-rule="evenodd"
+                      fill="none"
+                      stroke="#0F0"
+                      stroke-width="2"
+                      d="m127 141 .034-120"
+                    ></path>
+                  </g>
+                </svg>
+                <p class="clock__text">
+                  Santiago <br />33°25'48.2"S 70°40'13.5"W
+                </p>
+              </div>
+              <div class="clock" data-clock="new york">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100%"
+                  viewBox="0 0 254 254"
+                >
+                  <circle
+                    clip-rule="evenodd"
+                    cx="127"
+                    cy="127"
+                    r="126"
+                  ></circle>
+                  <path
+                    fill-rule="evenodd"
+                    fill="#FFF"
+                    d="M127 0c70.093 0 127 56.907 127 127s-56.907 127-127 127S0 197.093 0 127 56.907 0 127 0Zm0 5c67.334 0 122 54.666 122 122s-54.666 122-122 122S5 194.334 5 127 59.666 5 127 5Z"
+                  ></path>
+                  <g class="clock-group-min">
+                    <path
+                      class="clock__min"
+                      fill-rule="evenodd"
+                      fill="none"
+                      stroke="#FFF"
+                      stroke-width="4"
+                      d="M127 139V31"
+                    ></path>
+                  </g>
+                  <g class="clock-group-hour">
+                    <path
+                      class="clock__hour"
+                      fill-rule="evenodd"
+                      fill="none"
+                      stroke="#FFF"
+                      stroke-width="7"
+                      d="m127 137-.034-80"
+                    ></path>
+                  </g>
+                  <g class="clock-group-sec">
+                    <path
+                      class="clock__sec"
+                      fill-rule="evenodd"
+                      fill="none"
+                      stroke="#0F0"
+                      stroke-width="2"
+                      d="m127 141 .034-120"
+                    ></path>
+                  </g>
+                </svg>
+                <p class="clock__text">
+                  New york <br />40°42'47.8"N 74°00'11.1"W
+                </p>
+              </div>
+              <div class="clock" data-clock="bucharest">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100%"
+                  viewBox="0 0 254 254"
+                >
+                  <circle
+                    clip-rule="evenodd"
+                    cx="127"
+                    cy="127"
+                    r="126"
+                  ></circle>
+                  <path
+                    fill-rule="evenodd"
+                    fill="#FFF"
+                    d="M127 0c70.093 0 127 56.907 127 127s-56.907 127-127 127S0 197.093 0 127 56.907 0 127 0Zm0 5c67.334 0 122 54.666 122 122s-54.666 122-122 122S5 194.334 5 127 59.666 5 127 5Z"
+                  ></path>
+                  <g class="clock-group-min">
+                    <path
+                      class="clock__min"
+                      fill-rule="evenodd"
+                      fill="none"
+                      stroke="#FFF"
+                      stroke-width="4"
+                      d="M127 139V31"
+                    ></path>
+                  </g>
+                  <g class="clock-group-hour">
+                    <path
+                      class="clock__hour"
+                      fill-rule="evenodd"
+                      fill="none"
+                      stroke="#FFF"
+                      stroke-width="7"
+                      d="m127 137-.034-80"
+                    ></path>
+                  </g>
+                  <g class="clock-group-sec">
+                    <path
+                      class="clock__sec"
+                      fill-rule="evenodd"
+                      fill="none"
+                      stroke="#0F0"
+                      stroke-width="2"
+                      d="m127 141 .034-120"
+                    ></path>
+                  </g>
+                </svg>
+                <p class="clock__text">
+                  Bucharest <br />44°25'46.1"N 26°06'14.1"E
+                </p>
+              </div>
+              <div class="clock" data-clock="dallas">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100%"
+                  viewBox="0 0 254 254"
+                >
+                  <circle
+                    clip-rule="evenodd"
+                    cx="127"
+                    cy="127"
+                    r="126"
+                  ></circle>
+                  <path
+                    fill-rule="evenodd"
+                    fill="#FFF"
+                    d="M127 0c70.093 0 127 56.907 127 127s-56.907 127-127 127S0 197.093 0 127 56.907 0 127 0Zm0 5c67.334 0 122 54.666 122 122s-54.666 122-122 122S5 194.334 5 127 59.666 5 127 5Z"
+                  ></path>
+                  <g class="clock-group-min">
+                    <path
+                      class="clock__min"
+                      fill-rule="evenodd"
+                      fill="none"
+                      stroke="#FFF"
+                      stroke-width="4"
+                      d="M127 139V31"
+                    ></path>
+                  </g>
+                  <g class="clock-group-hour">
+                    <path
+                      class="clock__hour"
+                      fill-rule="evenodd"
+                      fill="none"
+                      stroke="#FFF"
+                      stroke-width="7"
+                      d="m127 137-.034-80"
+                    ></path>
+                  </g>
+                  <g class="clock-group-sec">
+                    <path
+                      class="clock__sec"
+                      fill-rule="evenodd"
+                      fill="none"
+                      stroke="#0F0"
+                      stroke-width="2"
+                      d="m127 141 .034-120"
+                    ></path>
+                  </g>
+                </svg>
+                <p class="clock__text">
+                  Dallas <br />32°47'09.5"N 96°48'03.3"W
+                </p>
+              </div>
+              <div class="clock" data-clock="durham">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100%"
+                  viewBox="0 0 254 254"
+                >
+                  <circle
+                    clip-rule="evenodd"
+                    cx="127"
+                    cy="127"
+                    r="126"
+                  ></circle>
+                  <path
+                    fill-rule="evenodd"
+                    fill="#FFF"
+                    d="M127 0c70.093 0 127 56.907 127 127s-56.907 127-127 127S0 197.093 0 127 56.907 0 127 0Zm0 5c67.334 0 122 54.666 122 122s-54.666 122-122 122S5 194.334 5 127 59.666 5 127 5Z"
+                  ></path>
+                  <g class="clock-group-min">
+                    <path
+                      class="clock__min"
+                      fill-rule="evenodd"
+                      fill="none"
+                      stroke="#FFF"
+                      stroke-width="4"
+                      d="M127 139V31"
+                    ></path>
+                  </g>
+                  <g class="clock-group-hour">
+                    <path
+                      class="clock__hour"
+                      fill-rule="evenodd"
+                      fill="none"
+                      stroke="#FFF"
+                      stroke-width="7"
+                      d="m127 137-.034-80"
+                    ></path>
+                  </g>
+                  <g class="clock-group-sec">
+                    <path
+                      class="clock__sec"
+                      fill-rule="evenodd"
+                      fill="none"
+                      stroke="#0F0"
+                      stroke-width="2"
+                      d="m127 141 .034-120"
+                    ></path>
+                  </g>
+                </svg>
+                <p class="clock__text">
+                  Durham <br />35°59'49.4"N 78°54'07.7"W
+                </p>
+              </div>
             </div>
           </div>
         </div>

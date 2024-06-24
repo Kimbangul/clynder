@@ -543,6 +543,7 @@ main {
   width: 25.4rem;
   height: 25.4rem;
   position: relative;
+  margin: 0 auto;
 }
 @media (max-width: 720px) {
   .clock {
@@ -561,7 +562,59 @@ main {
   transform: translateY(-50%);
   white-space: nowrap;
 }
+@media (max-width: 720px) {
+  .clock__text {
+    display: none;
+  }
+}
 .clock-group-hour, .clock-group-sec, .clock-group-min {
   transform-origin: 50%;
   transform: rotate(0);
+  animation-name: ani__clock;
+}
+.clock-group-hour {
+  animation-duration: 43200s;
+  animation-timing-function: linear;
+}
+.clock-group-sec {
+  animation-duration: 60s;
+  animation-timing-function: steps(60);
+}
+.clock-group-min {
+  animation-duration: 3600s;
+  animation-timing-function: linear;
+}
+.clock-container {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.clock:nth-child(1) {
+  top: -26rem;
+  left: -45.5rem;
+}
+.clock:nth-child(2) {
+  top: -15rem;
+  right: -46.4rem;
+}
+.clock:nth-child(3) {
+  top: -14rem;
+  left: -67.5rem;
+}
+.clock:nth-child(4) {
+  top: -11rem;
+  right: -57rem;
+}
+.clock:nth-child(5) {
+  top: -16rem;
+  left: -52rem;
+}
+.clock:nth-child(6) {
+  top: 16rem;
+  right: -37.6rem;
+}
+.clock:nth-child(7) {
+  top: 8rem;
+  left: -10.6rem;
 }/*# sourceMappingURL=style.css.map */

@@ -266,6 +266,7 @@ main {
   width: 25.4rem;
   height: 25.4rem;
   position: relative;
+  margin: 0 auto;
 
   @include mb-lg {
     width: 15.2rem;
@@ -285,6 +286,10 @@ main {
     left: calc(100% + 1.2rem);
     transform: translateY(-50%);
     white-space: nowrap;
+
+    @include mb-lg {
+      display: none;
+    }
   }
   &-group {
     &-hour,
@@ -292,6 +297,57 @@ main {
     &-min {
       transform-origin: 50%;
       transform: rotate(0);
+      animation-name: ani__clock;
     }
+
+    &-hour {
+      animation-duration: 43200s;
+      animation-timing-function: linear;
+    }
+    &-sec {
+      animation-duration: 60s;
+      animation-timing-function: steps(60);
+    }
+    &-min {
+      animation-duration: 3600s;
+      animation-timing-function: linear;
+    }
+  }
+
+  &-container {
+    width: 100%;
+    position: absolute;
+    // top: -20rem;
+    top: 0;
+    left: 0;
+  }
+
+  &:nth-child(1) {
+    top: -26rem;
+    left: -45.5rem;
+  }
+  &:nth-child(2) {
+    top: -15rem;
+    right: -46.4rem;
+  }
+  &:nth-child(3) {
+    top: -14rem;
+    left: -67.5rem;
+  }
+  &:nth-child(4) {
+    top: -11rem;
+    right: -57rem;
+  }
+  &:nth-child(5) {
+    top: -16rem;
+    left: -52rem;
+  }
+  &:nth-child(6) {
+    top: 16rem;
+    right: -37.6rem;
+  }
+  &:nth-child(7) {
+    top: 8rem;
+    left: -10.6rem;
   }
 }
