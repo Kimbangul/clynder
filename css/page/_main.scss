@@ -342,7 +342,7 @@ main {
 
   &[data-area='6'] {
     margin-top: 40rem;
-    height: 300vh;
+    height: 350vh;
     background: $color__blue;
 
     .text-box {
@@ -351,6 +351,17 @@ main {
         color: $color__black;
         text-align: center;
         bottom: 15%;
+
+        .text-eng-rg {
+          @include mb-lg {
+            font-size: 3rem;
+            line-height: 3.6rem;
+          }
+        }
+
+        @include mb-lg {
+          bottom: 5%;
+        }
       }
     }
 
@@ -362,6 +373,12 @@ main {
     .img-box {
       width: 174.4rem;
       margin: 0 auto;
+
+      @include mb-lg {
+        width: 80vh;
+        transform: rotate(90deg);
+        margin-top: -10vh;
+      }
     }
   }
 
@@ -620,6 +637,9 @@ main {
       top: unset;
       bottom: 0;
     }
+    @include mb-lg {
+      border-top: 1px solid $color__dim;
+    }
   }
   &__text-box {
     @include mb-lg {
@@ -654,20 +674,35 @@ main {
     left: 50%;
     text-align: center;
     transform: translateX(-50%) translateY(-50%);
+
+    @include mb-lg {
+      flex-direction: column;
+      width: 100%;
+      height: 36vh;
+      justify-content: space-between;
+      margin-top: -4vh;
+    }
   }
   &__roller {
     flex: 1 0 0;
     position: relative;
+    @include mb-lg {
+      flex: none;
+    }
   }
   &__cate {
     @extend .text-eng-rg;
+
+    @include mb-lg {
+      font-size: 3rem;
+    }
   }
   &__item {
     position: relative;
     letter-spacing: 0.01em;
     font-family: $font__Rhymes;
     font-size: 6rem;
-    font-weight: 300;
+    font-weight: 100;
     line-height: 7.2rem;
 
     p {
@@ -676,6 +711,11 @@ main {
         transform-origin: 50% 100%;
         position: absolute;
       }
+    }
+
+    @include mb-lg {
+      font-size: 8rem;
+      margin-top: 0.4rem;
     }
   }
 }

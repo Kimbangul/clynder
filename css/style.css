@@ -138,6 +138,7 @@
   font-family: "Selecta", sans-serif;
   line-height: 2.8rem;
   font-weight: 300;
+  letter-spacing: -0.03em;
 }
 .text-eng-rg + .text-ko, .value__cate + .text-ko, .team-list__sub-desc:nth-child(2) + .text-ko {
   margin-top: 3rem;
@@ -650,7 +651,7 @@ main {
 }
 .area[data-area="6"] {
   margin-top: 40rem;
-  height: 300vh;
+  height: 350vh;
   background: rgb(32, 32, 201);
 }
 .area[data-area="6"] .text-box[data-text="1"] {
@@ -658,6 +659,17 @@ main {
   color: #000;
   text-align: center;
   bottom: 15%;
+}
+@media (max-width: 720px) {
+  .area[data-area="6"] .text-box[data-text="1"] .text-eng-rg, .area[data-area="6"] .text-box[data-text="1"] .value__cate, .area[data-area="6"] .text-box[data-text="1"] .team-list__sub-desc:nth-child(2) {
+    font-size: 3rem;
+    line-height: 3.6rem;
+  }
+}
+@media (max-width: 720px) {
+  .area[data-area="6"] .text-box[data-text="1"] {
+    bottom: 5%;
+  }
 }
 .area[data-area="6"] .horizontal-section {
   display: flex;
@@ -671,6 +683,13 @@ main {
 .area[data-area="6"] .img-box {
   width: 174.4rem;
   margin: 0 auto;
+}
+@media (max-width: 720px) {
+  .area[data-area="6"] .img-box {
+    width: 80vh;
+    transform: rotate(90deg);
+    margin-top: -10vh;
+  }
 }
 .area[data-area="7"] {
   padding-top: 56rem;
@@ -941,6 +960,11 @@ main {
   bottom: 0;
 }
 @media (max-width: 720px) {
+  .team-list__line {
+    border-top: 1px solid rgb(85, 85, 85);
+  }
+}
+@media (max-width: 720px) {
   .team-list__text-box {
     padding-left: 17rem;
     margin-top: 5.5rem;
@@ -976,20 +1000,45 @@ main {
   text-align: center;
   transform: translateX(-50%) translateY(-50%);
 }
+@media (max-width: 720px) {
+  .value__fromto {
+    flex-direction: column;
+    width: 100%;
+    height: 36vh;
+    justify-content: space-between;
+    margin-top: -4vh;
+  }
+}
 .value__roller {
   flex: 1 0 0;
   position: relative;
+}
+@media (max-width: 720px) {
+  .value__roller {
+    flex: none;
+  }
+}
+@media (max-width: 720px) {
+  .value__cate {
+    font-size: 3rem;
+  }
 }
 .value__item {
   position: relative;
   letter-spacing: 0.01em;
   font-family: "Rhymes", sans-serif;
   font-size: 6rem;
-  font-weight: 300;
+  font-weight: 100;
   line-height: 7.2rem;
 }
 .value__item p:not(:first-child) {
   transform: perspective(500px) translate3d(0px, 0px, 0px) rotateX(-90deg);
   transform-origin: 50% 100%;
   position: absolute;
+}
+@media (max-width: 720px) {
+  .value__item {
+    font-size: 8rem;
+    margin-top: 0.4rem;
+  }
 }/*# sourceMappingURL=style.css.map */
