@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cylnder</title>
+    <title>CYLNDR</title>
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/lib/gsap.min.js"></script>
     <script src="js/lib/scrolltrigger.min.js"></script>
@@ -620,24 +620,36 @@
           </div>
         </div>
         <div class="area" data-area="3">
-          <div class="text-box"><p class="sub-text">Cylndr</p></div>
-          <div class="img-box">
-            <img src="assets/images/area3/bg01.jpg" alt="" />
+          <div class="text-box" data-text="1">
+            <p class="text-small">Cylndr</p>
           </div>
-          <div class="text-box">
-            <p class="big-text">
-              <span>Finally, we're </span><span class="point">in seoul</span>
+          <div class="img-box">
+            <picture>
+              <source
+                media="(min-width: 721px)"
+                srcset="assets/images/area3/bg01.jpg"
+              />
+              <source
+                media="(max-width: 720px)"
+                srcset="assets/images/area3/bg01-mo.jpg"
+              />
+              <img src="assets/images/area3/bg01.jpg" alt="" />
+            </picture>
+          </div>
+          <div class="text-box upper" data-text="2">
+            <p class="text-head">
+              <span class="rhyme">Finally, <br class="mb-only" />we're </span
+              ><br /><span class="point selecta">in seoul</span>
             </p>
-            <p class="sub-text">
+            <p class="text-small">
               Cylndr sets sail on september 21, 2020 <br />Our Journey continuse
               in seoul
             </p>
           </div>
-          <div class="clock">
+          <div class="clock--big">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="1900"
-              height="1900"
+              width="100%"
               viewBox="0 0 1900 1900"
             >
               <defs>
@@ -657,9 +669,9 @@
                   ></feDropShadow>
                 </filter>
               </defs>
-              <g class="svg-group-minute">
+              <g class="clock-group-min">
                 <rect
-                  class="svg-clock-minute"
+                  class="clock__min"
                   x="944"
                   y="178"
                   width="12"
@@ -667,20 +679,18 @@
                   rx="5"
                   ry="5"
                   fill="#fff"
-                  style="transform: rotate(108.41666666666667deg)"
                 ></rect>
               </g>
-              <g class="svg-group-hour">
+              <g class="clock-group-hour">
                 <path
-                  class="svg-clock-hour"
+                  class="clock__hour"
                   d="M960 956h-20V266c0-5.52 4.48-10 10-10s10 4.48 10 10v690Z"
                   fill="#fff"
-                  style="transform: rotate(279deg)"
                 ></path>
               </g>
-              <g class="svg-group-second">
+              <g class="clock-group-sec">
                 <rect
-                  class="svg-clock-second"
+                  class="clock__sec"
                   x="947.5"
                   y="33"
                   width="5"
@@ -688,7 +698,6 @@
                   rx="2"
                   ry="2"
                   fill="#0ef60e"
-                  style="transform: rotate(150deg)"
                 ></rect>
               </g>
               <circle
@@ -700,25 +709,43 @@
               ></circle>
             </svg>
           </div>
-          <div class="text-box">
-            <p class="big-text">
-              <span>Jun 22nd. 2024</span><span class="point">23:06:36</span>
+          <div class="text-box upper" data-text="3">
+            <p class="text-head">
+              <span class="rhyme">Jun 22nd. <br class="mb-only" />2024</span
+              ><br />
+              <span class="selecta time">
+                <span class="time__hour">23</span>
+                <span class="time__colon">:</span>
+                <span class="time__min">23</span>
+                <span class="time__colon">:</span>
+                <span class="time__sec">36</span>
+              </span>
             </p>
-            <p class="sub-text">
+            <p class="text-small">
               Cylndr is content production company<br />specialized in digital
               strategies
             </p>
           </div>
-          <div class="text-box">
-            <p class="sub-text">Breathtaking</p>
-          </div>
         </div>
         <div class="area" data-area="4">
-          <div class="img-box">
-            <img src="assets/images/area4/bg01.jpg" alt="" />
+          <div class="text-box" data-text="1">
+            <p class="text-small">Breathtaking</p>
           </div>
-          <div class="text-box">
-            <p class="text-box__eng">
+          <div class="img-box">
+            <picture>
+              <source
+                media="(min-width: 721px)"
+                srcset="assets/images/area4/bg01.jpg"
+              />
+              <source
+                media="(max-width: 720px)"
+                srcset="assets/images/area4/bg01-mo.jpg"
+              />
+              <img src="assets/images/area4/bg01.jpg" alt="" />
+            </picture>
+          </div>
+          <div class="text-box" data-text="2">
+            <p class="text-eng">
               We are a <span class="point">steadfast</span> and fast-growing
               digital content production company. Through
               <span class="point">brand narrative</span> combined with digital
@@ -726,7 +753,7 @@
               <span class="point">global power</span> brands such as Samsung
               Electronics.
             </p>
-            <p class="text-box-ko">
+            <p class="text-ko">
               우리는 단단하게 고속 성장해 나가는 디지털 콘텐츠 프로덕션 입니다.
               디지털 기술과 결합된 브랜드 내러티브를 통해 삼성전자 등 글로벌
               브랜드의 콘텐츠 제작을 대행해 나가고 있습니다.
