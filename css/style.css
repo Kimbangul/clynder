@@ -1088,6 +1088,7 @@ main {
 }
 .area[data-area="12"] {
   margin-top: 30rem;
+  margin-bottom: 27rem;
 }
 @media (max-width: 720px) {
   .area[data-area="12"] {
@@ -1110,17 +1111,127 @@ main {
     padding-left: 0;
   }
 }
-.area[data-area="12"] .text-head {
-  justify-content: center;
+.area[data-area="12"] .text-box[data-text="2"] {
+  padding-left: 39.58%;
+  margin-top: 92rem;
+}
+@media (max-width: 720px) {
+  .area[data-area="12"] .text-box[data-text="2"] {
+    margin-top: 108rem;
+  }
 }
 .area[data-area="12"] .img-box[data-img="1"] {
   width: 79rem;
+  right: 50%;
+  margin-right: -10rem;
+  position: absolute;
+}
+@media (max-width: 720px) {
+  .area[data-area="12"] .img-box[data-img="1"] {
+    width: 50.1rem;
+    margin-right: -21rem;
+    top: 40rem;
+  }
 }
 .area[data-area="12"] .img-box[data-img="2"] {
   width: 38.4rem;
+  position: absolute;
+  margin-left: 39.6rem;
+  left: 50%;
+  top: 116rem;
+}
+@media (max-width: 720px) {
+  .area[data-area="12"] .img-box[data-img="2"] {
+    width: 37.2rem;
+    margin-left: -4.3rem;
+    top: 140rem;
+  }
+}
+.area[data-area="12"] .img-box[data-img="3"] {
+  width: 89.2rem;
+  margin-left: -19.2rem;
+  position: absolute;
+  top: 40rem;
+  left: 50%;
+}
+@media (max-width: 720px) {
+  .area[data-area="12"] .img-box[data-img="3"] {
+    width: 55rem;
+    margin-left: -25rem;
+  }
+}
+.area[data-area="12"] .img-box[data-img="4"] {
+  width: 34.5rem;
+  margin-right: 42.1rem;
+  position: absolute;
+  top: 90rem;
+  right: 50%;
+}
+@media (max-width: 720px) {
+  .area[data-area="12"] .img-box[data-img="4"] {
+    width: 32.3rem;
+    margin-right: 0rem;
+    top: 100rem;
+  }
 }
 .area[data-area="12"] .page {
+  position: relative;
+}
+.area[data-area="12"] .page[data-page="1"] {
   margin-top: 54rem;
+  padding-bottom: 130rem;
+}
+@media (max-width: 720px) {
+  .area[data-area="12"] .page[data-page="1"] {
+    padding-bottom: 168rem;
+  }
+}
+@media (max-width: 720px) {
+  .area[data-area="12"] .page[data-page="1"] {
+    margin-top: 41rem;
+  }
+}
+.area[data-area="12"] .page[data-page="1"] .text-head {
+  margin-left: -78rem;
+  position: relative;
+  left: 50%;
+}
+@media (max-width: 720px) {
+  .area[data-area="12"] .page[data-page="1"] .text-head {
+    margin-left: -33rem;
+  }
+}
+.area[data-area="12"] .page[data-page="2"] {
+  padding-bottom: 92rem;
+}
+.area[data-area="12"] .page[data-page="2"] .text-head {
+  position: relative;
+  right: 50%;
+  margin-right: -78rem;
+  text-align: right;
+}
+@media (max-width: 720px) {
+  .area[data-area="12"] .page[data-page="2"] .text-head {
+    margin-right: -33rem;
+  }
+}
+.area[data-area="12"] .text-head {
+  font-size: 13rem;
+  line-height: 12rem;
+}
+.area[data-area="12"] .text-eng-rg, .area[data-area="12"] .value__cate, .area[data-area="12"] .team-list__sub-desc:nth-child(2) {
+  margin-left: -69rem;
+  position: absolute;
+  top: 134rem;
+  left: 50%;
+}
+@media (max-width: 720px) {
+  .area[data-area="12"] .text-eng-rg, .area[data-area="12"] .value__cate, .area[data-area="12"] .team-list__sub-desc:nth-child(2) {
+    margin-left: -29rem;
+    top: 153rem;
+    font-size: 2.8rem;
+    line-height: 3.4rem;
+  }
 }
 
 .card img {

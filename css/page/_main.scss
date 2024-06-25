@@ -727,6 +727,7 @@ main {
   }
   &[data-area='12'] {
     margin-top: 30rem;
+    margin-bottom: 27rem;
 
     @include mb-lg {
       margin-top: 25rem;
@@ -747,23 +748,126 @@ main {
           }
         }
       }
-    }
+      &[data-text='2'] {
+        padding-left: 39.58%;
+        margin-top: 92rem;
 
-    .text-head {
-      justify-content: center;
+        @include mb-lg {
+          margin-top: 108rem;
+        }
+      }
     }
 
     .img-box {
       &[data-img='1'] {
         width: 79rem;
+        right: 50%;
+        margin-right: -10rem;
+        position: absolute;
+
+        @include mb-lg {
+          width: 50.1rem;
+          margin-right: -21rem;
+          top: 40rem;
+        }
       }
       &[data-img='2'] {
         width: 38.4rem;
+        position: absolute;
+        margin-left: 39.6rem;
+        left: 50%;
+        top: 116rem;
+
+        @include mb-lg {
+          width: 37.2rem;
+          margin-left: -4.3rem;
+          top: 140rem;
+        }
+      }
+      &[data-img='3'] {
+        width: 89.2rem;
+        margin-left: -19.2rem;
+        position: absolute;
+        top: 40rem;
+        left: 50%;
+
+        @include mb-lg {
+          width: 55rem;
+          margin-left: -25rem;
+        }
+      }
+      &[data-img='4'] {
+        width: 34.5rem;
+        margin-right: 42.1rem;
+        position: absolute;
+        top: 90rem;
+        right: 50%;
+
+        @include mb-lg {
+          width: 32.3rem;
+          margin-right: 0rem;
+          top: 100rem;
+        }
       }
     }
 
     .page {
-      margin-top: 54rem;
+      position: relative;
+
+      &[data-page='1'] {
+        margin-top: 54rem;
+        padding-bottom: 130rem;
+
+        @include mb-lg {
+          padding-bottom: 168rem;
+        }
+
+        @include mb-lg {
+          margin-top: 41rem;
+        }
+
+        .text-head {
+          margin-left: -78rem;
+          position: relative;
+          left: 50%;
+
+          @include mb-lg {
+            margin-left: -33rem;
+          }
+        }
+      }
+      &[data-page='2'] {
+        padding-bottom: 92rem;
+        .text-head {
+          position: relative;
+          right: 50%;
+          margin-right: -78rem;
+          text-align: right;
+
+          @include mb-lg {
+            margin-right: -33rem;
+          }
+        }
+      }
+    }
+
+    .text-head {
+      font-size: 13rem;
+      line-height: 12rem;
+    }
+
+    .text-eng-rg {
+      margin-left: -69rem;
+      position: absolute;
+      top: 134rem;
+      left: 50%;
+
+      @include mb-lg {
+        margin-left: -29rem;
+        top: 153rem;
+        font-size: 2.8rem;
+        line-height: 3.4rem;
+      }
     }
   }
 }
