@@ -188,6 +188,14 @@
   img {
     width: 100%;
   }
+
+  .text-xs {
+    margin-top: 1.4rem;
+    text-align: right;
+    @include mb-lg {
+      margin-top: 1.8rem;
+    }
+  }
 }
 
 /* 스크롤러 */

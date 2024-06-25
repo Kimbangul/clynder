@@ -231,6 +231,15 @@
 .img-box img {
   width: 100%;
 }
+.img-box .text-xs {
+  margin-top: 1.4rem;
+  text-align: right;
+}
+@media (max-width: 720px) {
+  .img-box .text-xs {
+    margin-top: 1.8rem;
+  }
+}
 
 /* 스크롤러 */
 .horizontal-section {
@@ -1057,15 +1066,6 @@ main {
 .area[data-area="9"] .page[data-page="3"] [data-img="2"] img {
   border-radius: 3rem;
 }
-.area[data-area="9"] .img-box .text-xs {
-  margin-top: 1.4rem;
-  text-align: right;
-}
-@media (max-width: 720px) {
-  .area[data-area="9"] .img-box .text-xs {
-    margin-top: 1.8rem;
-  }
-}
 @media (max-width: 720px) {
   .area[data-area="9"] .text-eng-rg, .area[data-area="9"] .value__cate, .area[data-area="9"] .team-list__sub-desc:nth-child(2) {
     letter-spacing: -0.03em;
@@ -1093,6 +1093,34 @@ main {
   .area[data-area="12"] {
     margin-top: 25rem;
   }
+}
+.area[data-area="12"] .text-box[data-text="1"] {
+  padding-left: 39.58%;
+}
+@media (max-width: 720px) {
+  .area[data-area="12"] .text-box[data-text="1"] {
+    padding-left: 27rem;
+  }
+}
+.area[data-area="12"] .text-box[data-text="1"] .text-ko {
+  padding-left: 15%;
+}
+@media (max-width: 720px) {
+  .area[data-area="12"] .text-box[data-text="1"] .text-ko {
+    padding-left: 0;
+  }
+}
+.area[data-area="12"] .text-head {
+  justify-content: center;
+}
+.area[data-area="12"] .img-box[data-img="1"] {
+  width: 79rem;
+}
+.area[data-area="12"] .img-box[data-img="2"] {
+  width: 38.4rem;
+}
+.area[data-area="12"] .page {
+  margin-top: 54rem;
 }
 
 .card img {

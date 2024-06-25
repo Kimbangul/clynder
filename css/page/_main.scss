@@ -702,13 +702,6 @@ main {
       }
     }
 
-    .img-box .text-xs {
-      margin-top: 1.4rem;
-      text-align: right;
-      @include mb-lg {
-        margin-top: 1.8rem;
-      }
-    }
     .text-eng-rg {
       @include mb-lg {
         letter-spacing: -0.03em;
@@ -737,6 +730,40 @@ main {
 
     @include mb-lg {
       margin-top: 25rem;
+    }
+
+    .text-box {
+      &[data-text='1'] {
+        padding-left: 39.58%;
+
+        @include mb-lg {
+          padding-left: 27rem;
+        }
+
+        .text-ko {
+          padding-left: 15%;
+          @include mb-lg {
+            padding-left: 0;
+          }
+        }
+      }
+    }
+
+    .text-head {
+      justify-content: center;
+    }
+
+    .img-box {
+      &[data-img='1'] {
+        width: 79rem;
+      }
+      &[data-img='2'] {
+        width: 38.4rem;
+      }
+    }
+
+    .page {
+      margin-top: 54rem;
     }
   }
 }
