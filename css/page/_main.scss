@@ -468,9 +468,23 @@ main {
       display: flex;
     }
 
+    .text-rg {
+      @include mb-lg {
+        font-size: 1.8rem;
+        line-height: 2rem;
+        letter-spacing: -0.02em;
+      }
+    }
+
     .page {
       $gap: 10rem;
       padding: 4rem 0;
+      padding-top: 15rem;
+
+      @include mb-lg {
+        padding: 6rem 0;
+        padding-top: 12rem;
+      }
 
       &-container {
         display: flex;
@@ -485,17 +499,34 @@ main {
         display: flex;
         padding-left: 160rem;
 
+        @include mb-lg {
+          padding-left: 90rem;
+        }
+
         [data-text='1'] {
           display: flex;
           flex-direction: column;
           justify-content: flex-end;
+          position: relative;
+          z-index: 2;
 
           .text-rg {
             margin-top: $gap;
+
+            @include mb-lg {
+              margin-top: 2rem;
+            }
           }
         }
 
         [data-text='2'] {
+          position: relative;
+          z-index: 1;
+
+          @include mb-lg {
+            transform: translateX(-20%);
+          }
+
           .text-head-md {
             text-align: right;
           }
@@ -504,6 +535,11 @@ main {
             margin: 0 auto;
             overflow: hidden;
             margin-top: $gap;
+
+            @include mb-lg {
+              width: 49.7rem;
+              margin-top: 2rem;
+            }
 
             img {
               border-radius: 3rem;
@@ -515,12 +551,26 @@ main {
         display: flex;
         flex-direction: column;
         position: relative;
+        justify-content: center;
+        //justify-content: flex-end;
+
+        @include mb-lg {
+          justify-content: flex-end;
+        }
 
         .text-box {
           &[data-text='1'] {
             display: flex;
             flex-direction: column;
             height: 100%;
+            position: relative;
+            z-index: 1;
+            height: 114rem;
+            @include mb-lg {
+              justify-content: flex-end;
+              height: 86rem;
+              max-height: 94%;
+            }
 
             .line {
               @include util__flex(stretch, center);
@@ -529,8 +579,25 @@ main {
               }
             }
 
+            .text-head-md {
+              @include mb-lg {
+                flex-grow: 1;
+              }
+            }
+
+            .text-eng-rg {
+              @include mb-lg {
+                order: 2;
+              }
+            }
+
             .text-ko {
               flex-grow: 1;
+
+              @include mb-lg {
+                order: 3;
+                flex-grow: 0;
+              }
             }
           }
         }
@@ -539,6 +606,11 @@ main {
           width: 67rem;
           top: 10%;
           right: -40%;
+
+          @include mb-lg {
+            width: 76.4rem;
+            top: 12rem;
+          }
 
           img {
             border-radius: 3rem;
@@ -550,16 +622,38 @@ main {
         margin-left: 120rem;
         padding-right: 200vw;
         position: relative;
+        display: flex;
+        align-items: center;
+
+        @include mb-lg {
+          align-items: stretch;
+        }
 
         [data-text='1'] {
           margin-top: $gap;
+          position: relative;
+          z-index: 2;
+          transform: translateY(-10%);
+
+          @include mb-lg {
+            display: flex;
+            flex-direction: column;
+            margin-top: 0;
+            height: 78rem;
+            transform: translateY(10%);
+          }
+
           .text-head-md {
-            position: relative;
-            z-index: 2;
+            @include mb-lg {
+              flex-grow: 1;
+            }
           }
           .text-eng-rg {
             margin-top: $gap;
             padding-left: 10rem;
+            @include mb-lg {
+              margin-top: 0;
+            }
           }
           .text-ko {
             padding-left: 10rem;
@@ -567,10 +661,10 @@ main {
           .line {
             display: inline-block;
 
-            &:nth-child(2) {
+            &:nth-of-type(2) {
               transform: translateX(20rem);
             }
-            &:nth-child(3) {
+            &:nth-of-type(3) {
               transform: translateX(-9rem);
             }
           }
@@ -583,6 +677,9 @@ main {
           img {
             border-radius: 3rem;
           }
+          @include mb-lg {
+            width: 55.2rem;
+          }
         }
         [data-img='2'] {
           width: 67.4rem;
@@ -590,6 +687,14 @@ main {
           top: 22%;
           left: 90rem;
           z-index: 3;
+
+          @include mb-lg {
+            width: 65.2rem;
+            top: unset;
+            bottom: 15%;
+            left: 76rem;
+          }
+
           img {
             border-radius: 3rem;
           }
@@ -600,6 +705,22 @@ main {
     .img-box .text-xs {
       margin-top: 1.4rem;
       text-align: right;
+      @include mb-lg {
+        margin-top: 1.8rem;
+      }
+    }
+    .text-eng-rg {
+      @include mb-lg {
+        letter-spacing: -0.03em;
+        font-size: 2.8rem;
+        line-height: 3.4rem;
+      }
+    }
+
+    .text-eng-rg + .text-ko {
+      @include mb-lg {
+        margin-top: 4.5rem;
+      }
     }
   }
 

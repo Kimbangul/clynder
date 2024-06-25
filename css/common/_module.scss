@@ -153,6 +153,12 @@
     font-size: 1.2rem;
     font-weight: 300;
     line-height: 1.5rem;
+
+    @include mb-lg {
+      letter-spacing: -0.025em;
+      font-size: 1.8rem;
+      line-height: 1.8rem;
+    }
   }
   &-head {
     font-size: 18rem;
@@ -171,6 +177,11 @@
     font-size: 20rem;
     font-weight: 100;
     line-height: 18rem;
+    @include mb-lg {
+      letter-spacing: -0.025em;
+      font-size: 16rem;
+      line-height: 15rem;
+    }
   }
 }
 .img-box {
