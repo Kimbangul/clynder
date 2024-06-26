@@ -145,8 +145,10 @@
   }
 }
 
-main {
+.contents {
   padding-top: 22.5rem;
+  position: relative;
+  z-index: 2;
 
   @include mb-lg {
     padding-top: 0;
@@ -1427,10 +1429,11 @@ main {
     &-sub {
       @extend .text-head-md;
       color: $color__black;
-      -webkit-text-stroke: 1px $color__white;
+      -webkit-text-stroke: 2px $color__white;
       @include mb-lg {
         font-size: 12rem;
         line-height: 10rem;
+        -webkit-text-stroke: 1px $color__white;
       }
     }
   }
@@ -1495,10 +1498,22 @@ main {
 // recruit
 
 .recruit {
-  padding: 30rem 0 35rem 0;
+  position: relative;
+  background: $color__black;
 
   @include mb-lg {
     padding: 36rem 0;
+  }
+
+  &__inner {
+    position: sticky;
+    padding: 30rem 0 35rem 0;
+    margin-top: 36rem;
+
+    @include mb-lg {
+      padding: 0;
+      margin-top: 0;
+    }
   }
 
   &__title {
@@ -1663,28 +1678,46 @@ main {
 // footer
 .footer {
   font-family: $font-Selecta;
+  height: 200vh;
+  margin-top: -100vh;
+  position: relative;
+  z-index: 1;
   &__inner {
     position: relative;
     height: 100vh;
+    position: sticky;
+    top: 0;
   }
   &__bg {
     @extend .header__bg;
     position: absolute;
     top: 0;
     z-index: -1;
+    max-width: unset;
+    border-radius: 0;
   }
   &__video {
     @extend .header__video;
+    border-radius: 0;
   }
   &__desc {
     font-weight: 300;
     font-size: 2.4rem;
     line-height: 2.8rem;
     text-align: center;
+    top: 37%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    margin-top: 5rem;
+    white-space: nowrap;
 
     @include mb-lg {
       font-size: 2.8rem;
       line-height: 3.2rem;
+      top: unset;
+      bottom: 64rem;
+      margin-top: 0;
     }
   }
 
@@ -1693,10 +1726,16 @@ main {
     text-align: center;
     text-transform: uppercase;
     font-weight: 500;
+    bottom: 11rem;
+    white-space: nowrap;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
 
     @include mb-lg {
       font-size: 9rem;
       line-height: 8.5rem;
+      bottom: 12.5rem;
     }
   }
 
@@ -1706,6 +1745,10 @@ main {
     font-weight: 300;
     line-height: 2rem;
     padding: 0 4rem;
+    position: absolute;
+    bottom: 3rem;
+    left: 0;
+    width: 100%;
 
     @include mb-lg {
       padding: 0 3rem;

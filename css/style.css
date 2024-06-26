@@ -520,11 +520,13 @@ button {
   background: url("../assets/icon/menu-btn.svg#menu-btn--black");
 }
 
-main {
+.contents {
   padding-top: 22.5rem;
+  position: relative;
+  z-index: 2;
 }
 @media (max-width: 720px) {
-  main {
+  .contents {
     padding-top: 0;
   }
 }
@@ -1815,12 +1817,13 @@ main {
 }
 .work__title-sub {
   color: #000;
-  -webkit-text-stroke: 1px #fff;
+  -webkit-text-stroke: 2px #fff;
 }
 @media (max-width: 720px) {
   .work__title-sub {
     font-size: 12rem;
     line-height: 10rem;
+    -webkit-text-stroke: 1px #fff;
   }
 }
 .work__item {
@@ -1895,11 +1898,23 @@ main {
 }
 
 .recruit {
-  padding: 30rem 0 35rem 0;
+  position: relative;
+  background: #000;
 }
 @media (max-width: 720px) {
   .recruit {
     padding: 36rem 0;
+  }
+}
+.recruit__inner {
+  position: sticky;
+  padding: 30rem 0 35rem 0;
+  margin-top: 36rem;
+}
+@media (max-width: 720px) {
+  .recruit__inner {
+    padding: 0;
+    margin-top: 0;
   }
 }
 .recruit__title {
@@ -2063,37 +2078,63 @@ main {
 
 .footer {
   font-family: "Selecta", sans-serif;
+  height: 200vh;
+  margin-top: -100vh;
+  position: relative;
+  z-index: 1;
 }
 .footer__inner {
   position: relative;
   height: 100vh;
+  position: sticky;
+  top: 0;
 }
 .footer__bg {
   position: absolute;
   top: 0;
   z-index: -1;
+  max-width: unset;
+  border-radius: 0;
+}
+.footer__video {
+  border-radius: 0;
 }
 .footer__desc {
   font-weight: 300;
   font-size: 2.4rem;
   line-height: 2.8rem;
   text-align: center;
+  top: 37%;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  margin-top: 5rem;
+  white-space: nowrap;
 }
 @media (max-width: 720px) {
   .footer__desc {
     font-size: 2.8rem;
     line-height: 3.2rem;
+    top: unset;
+    bottom: 64rem;
+    margin-top: 0;
   }
 }
 .footer__head {
   text-align: center;
   text-transform: uppercase;
   font-weight: 500;
+  bottom: 11rem;
+  white-space: nowrap;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
 }
 @media (max-width: 720px) {
   .footer__head {
     font-size: 9rem;
     line-height: 8.5rem;
+    bottom: 12.5rem;
   }
 }
 .footer__copy {
@@ -2106,6 +2147,10 @@ main {
   font-weight: 300;
   line-height: 2rem;
   padding: 0 4rem;
+  position: absolute;
+  bottom: 3rem;
+  left: 0;
+  width: 100%;
 }
 @media (max-width: 720px) {
   .footer__copy {
