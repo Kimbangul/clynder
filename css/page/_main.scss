@@ -1493,6 +1493,7 @@ main {
 }
 // // work
 // recruit
+
 .recruit {
   padding: 30rem 0 35rem 0;
 
@@ -1508,9 +1509,26 @@ main {
     letter-spacing: -0.03em;
     font-weight: 100;
 
+    &-container {
+      width: 121rem;
+      margin: 0 auto;
+      position: relative;
+
+      @include mb-lg {
+        width: 64rem;
+        padding-bottom: 24rem;
+      }
+    }
+
+    @include mb-lg {
+      font-size: 14rem;
+      line-height: 15rem;
+    }
+
     .line {
       display: inline-block;
       width: 100%;
+      position: relative;
       z-index: 1;
       &:nth-of-type(2) {
         text-align: right;
@@ -1524,18 +1542,117 @@ main {
       text-transform: uppercase;
       padding: 0;
       top: 50%;
+      left: 2rem;
       transform: translateY(-50%);
-    }
-
-    &-container {
-      width: 121rem;
-      margin: 0 auto;
-      position: relative;
     }
   }
 
   &__card {
     position: absolute;
+    width: 38.8rem;
+    z-index: 2;
+    top: -5rem;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translateX(-50%);
+
+    @include mb-lg {
+      width: 25.9rem;
+      margin-left: 4.5rem;
+    }
+
+    img {
+      width: 100%;
+      transform: rotate(15deg);
+    }
+  }
+
+  &__mail {
+    font-family: $font-Selecta;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    letter-spacing: -0.02em;
+    font-weight: 300;
+
+    @include mb-lg {
+      font-size: 2.8rem;
+      line-height: 2.8rem;
+      letter-spacing: -0.02em;
+    }
+  }
+}
+.job-list {
+  width: 132rem;
+  margin: 0 auto;
+  margin-top: 19rem;
+
+  @include mb-lg {
+    width: 66rem;
+    margin-top: 2.4rem;
+  }
+
+  &__item {
+    position: relative;
+    a {
+      @extend .text-eng;
+      padding: 7rem 0;
+      position: relative;
+
+      @include mb-lg {
+        letter-spacing: -0.03em;
+        font-size: 4.5rem;
+        line-height: 6rem;
+        padding: 4rem 0;
+        padding-left: 1rem;
+      }
+
+      &::after {
+        background: url('../../assets/icon/recruit-arrow.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: '';
+        display: inline-block;
+        width: 3.6rem;
+        height: 3.6rem;
+        position: absolute;
+        top: 50%;
+        right: 2rem;
+        transform: translateY(-50%);
+        pointer-events: none;
+      }
+    }
+    border-top: 1px solid $color__dim;
+
+    &::after {
+      @include util__pseudo(100%, 1px);
+      top: unset;
+      bottom: 0;
+      left: 0;
+      background: $color__white;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+    }
+
+    &:last-child {
+      border-bottom: 1px solid $color__dim;
+    }
   }
 }
 // // recruit
+// cta
+.cta {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+// // cta
