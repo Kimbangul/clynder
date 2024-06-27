@@ -6,3 +6,27 @@
     transform: rotate(360deg);
   }
 }
+
+@mixin ani__fade-up($y, $name: $y) {
+  @keyframes ani__fade-up-#{$name} {
+    0% {
+      opacity: 0;
+      transform: translateY($y);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@mixin ani-up($y, $name: $y) {
+  @keyframes ani__up-#{$name} {
+    0% {
+      transform: translateY($y);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}

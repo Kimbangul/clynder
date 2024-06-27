@@ -10,6 +10,7 @@
     <script src="js/lib/splittype.js"></script>
     <script src="js/lib/renis.min.js"></script>
     <script src="js/lib/debounce.min.js"></script>
+    <script src="js/time.js" defer></script>
     <script src="js/script.js" defer></script>
   </head>
   <body>
@@ -19,7 +20,7 @@
           <img src="assets/images/intro/logo.svg" alt="clyndr" />
         </h1>
         <p class="intro__geo">
-          <span class="intro__geo-text">(47° 45’ 00”N 126° 58’ 41”E)</span>
+          <span class="intro__geo-text">(37° 34’ 00”N 126° 58’ 41”E)</span>
           <span class="intro__geo-text">Seoul</span>
         </p>
         <p class="intro__time">
@@ -27,7 +28,9 @@
           <span class="intro__time-text"
             >©<time datetime="2024">2024</time></span
           >
-          <time datetime="21:21:45" class="intro__title-text">21:21:45</time>
+          <time data-time="1" datetime="21:21:45" class="intro__title-text"
+            >21:21:45</time
+          >
         </p>
         <div class="intro__deco">
           <p class="intro__deco-item pc-only">

@@ -51,7 +51,8 @@
   text-transform: uppercase;
   position: absolute;
   width: 100%;
-  // padding-bottom: 100vh;
+
+  @include ani-up(10rem);
 
   @include mb-lg {
     padding-top: 17rem;
@@ -61,6 +62,7 @@
   &__title {
     width: 117.9rem;
     margin: 0 auto;
+    animation: ani__up-10rem 2s;
 
     @include mb-lg {
       max-width: 55rem;
@@ -71,6 +73,7 @@
     font-size: 3.6rem;
     margin-top: 3rem;
     text-align: center;
+    animation: ani__up-10rem 2s;
 
     @include mb-lg {
       font-size: 2.6rem;
@@ -114,8 +117,18 @@
     left: 0;
     bottom: 3rem;
     position: absolute;
+    letter-spacing: -0.03em;
+    animation: ani__up-10rem 2s;
     @include mb-lg {
       font-size: 2.6rem;
+    }
+
+    &-text {
+      &:nth-child(2) {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   }
 }
@@ -154,6 +167,10 @@
       z-index: -1;
 
       &[data-open='true'] {
+        .menu-item {
+          @include ani__fade-up(30%, 10);
+          animation: ani__fade-up-10 0.5s;
+        }
       }
       &[data-open='false'] {
         display: none;

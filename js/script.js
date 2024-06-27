@@ -25,5 +25,5 @@ const setOpenMenu = () => {
 window.addEventListener('load', () => {
   console.log('load');
 
-  document.querySelector('.menu-btn').addEventListener('click', setOpenMenu);
+  mbOpenBtn.addEventListener('click', setOpenMenu);
 });

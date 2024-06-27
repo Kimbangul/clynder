@@ -393,6 +393,14 @@ button {
     padding: 0 3rem 0 3rem;
   }
 }
+@keyframes ani__up-10rem {
+  0% {
+    transform: translateY(10rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 @media (max-width: 720px) {
   .intro {
     padding-top: 17rem;
@@ -402,6 +410,7 @@ button {
 .intro__title {
   width: 117.9rem;
   margin: 0 auto;
+  animation: ani__up-10rem 2s;
 }
 @media (max-width: 720px) {
   .intro__title {
@@ -413,6 +422,7 @@ button {
   font-size: 3.6rem;
   margin-top: 3rem;
   text-align: center;
+  animation: ani__up-10rem 2s;
 }
 @media (max-width: 720px) {
   .intro__geo {
@@ -481,6 +491,8 @@ button {
   left: 0;
   bottom: 3rem;
   position: absolute;
+  letter-spacing: -0.03em;
+  animation: ani__up-10rem 2s;
 }
 @media (max-width: 720px) {
   .intro__time {
@@ -491,6 +503,11 @@ button {
   .intro__time {
     font-size: 2.6rem;
   }
+}
+.intro__time-text:nth-child(2) {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .home__icon {
@@ -534,6 +551,19 @@ button {
     top: 0;
     left: 0;
     z-index: -1;
+  }
+  .menu-wrap[data-open=true] .menu-item {
+    animation: ani__fade-up-10 0.5s;
+  }
+  @keyframes ani__fade-up-10 {
+    0% {
+      opacity: 0;
+      transform: translateY(30%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   .menu-wrap[data-open=false] {
     display: none;
