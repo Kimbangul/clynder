@@ -98,6 +98,9 @@
   font-size: 5.6rem;
   line-height: 1.1;
 }
+.text-eng .line-wrap, .job-list__item a .line-wrap, .team-list__title h4 .line-wrap {
+  overflow: hidden;
+}
 .text-eng .line-wrap:first-child, .job-list__item a .line-wrap:first-child, .team-list__title h4 .line-wrap:first-child {
   position: relative;
   margin-left: 14rem;
@@ -335,11 +338,21 @@ button {
   width: 100%;
   z-index: 999;
   bottom: 0;
+  padding-top: 2rem;
   padding-bottom: 22.5rem;
 }
 @media (max-width: 720px) {
   .header__nav {
     padding: 0 3rem 0 3rem;
+  }
+}
+@media (min-width: 721px) {
+  .header__nav.fix {
+    position: fixed;
+    bottom: unset;
+    top: 0;
+    left: 0;
+    padding-bottom: 0;
   }
 }
 @media (max-width: 720px) {

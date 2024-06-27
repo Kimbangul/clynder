@@ -18,7 +18,7 @@
 }
 
 .mb-only {
-  @media (min-width: calc($size__mb-lg + 1px)) {
+  @include pc-only {
     display: none !important;
   }
 }
@@ -55,9 +55,11 @@
     line-height: 1.1;
 
     .line-wrap {
+      overflow: hidden;
       &:first-child {
         position: relative;
         margin-left: 14rem;
+
         &::before {
           // @include util__pseudo(1.5rem, 1.5rem);
           content: '';

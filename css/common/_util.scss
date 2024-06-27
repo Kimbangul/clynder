@@ -10,6 +10,12 @@
   }
 }
 
+@mixin pc-only {
+  @media (min-width: calc($size__mb-lg + 1px)) {
+    @content;
+  }
+}
+
 @mixin util__flex($jc: flex-start, $ai: stretch, $gap: 0, $dir: row) {
   display: flex;
   justify-content: $jc;

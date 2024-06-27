@@ -9,7 +9,18 @@
     width: 100%;
     z-index: 999;
     bottom: 0;
+    padding-top: 2rem;
     padding-bottom: 22.5rem;
+
+    &.fix {
+      @include pc-only {
+        position: fixed;
+        bottom: unset;
+        top: 0;
+        left: 0;
+        padding-bottom: 0;
+      }
+    }
 
     @include mb-lg {
       position: fixed;
