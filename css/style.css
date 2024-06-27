@@ -919,10 +919,11 @@ button {
   }
 }
 .area[data-area="9"] {
-  overflow-x: scroll;
+  height: 500vh;
 }
 .area[data-area="9"] .horizontal-section {
   display: flex;
+  top: 0;
 }
 @media (max-width: 720px) {
   .area[data-area="9"] .text-rg {
@@ -1331,7 +1332,7 @@ button {
   }
 }
 .card-slider {
-  overflow-x: scroll;
+  overflow-x: hidden;
   margin-top: 51rem;
 }
 .card-slider__inner {

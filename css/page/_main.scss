@@ -532,12 +532,11 @@
   }
 
   &[data-area='9'] {
-    overflow-x: scroll;
-    // height: 500vh;
-    // height: 100vh;
+    height: 500vh;
 
     .horizontal-section {
       display: flex;
+      top: 0;
     }
 
     .text-rg {
@@ -955,7 +954,7 @@
   }
 
   &-slider {
-    overflow-x: scroll;
+    overflow-x: hidden;
     margin-top: 51rem;
     &__inner {
       @include util__flex(stretch, center, 30rem);
