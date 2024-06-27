@@ -167,7 +167,11 @@
   &-btn {
     width: 6rem;
     height: 6rem;
-    background: url('../assets/icon/menu-btn.svg#menu-btn--black');
+    background: url('../assets/icon/menu-btn.svg');
+
+    &[data-open='true'] {
+      background: url('../assets/icon/menu-close.svg');
+    }
   }
   &__copy {
     font-family: $font-Selecta;

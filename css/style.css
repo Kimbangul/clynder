@@ -545,7 +545,10 @@ button {
 .menu-btn {
   width: 6rem;
   height: 6rem;
-  background: url("../assets/icon/menu-btn.svg#menu-btn--black");
+  background: url("../assets/icon/menu-btn.svg");
+}
+.menu-btn[data-open=true] {
+  background: url("../assets/icon/menu-close.svg");
 }
 .menu__copy {
   font-family: "Selecta", sans-serif;

@@ -24,8 +24,10 @@
         </p>
         <p class="intro__time">
           <span class="intro__time-text">Worldwide</span>
-          <span class="intro__time-text">©2024</span>
-          <span class="intro__title-text">21:21:45</span>
+          <span class="intro__time-text"
+            >©<time datetime="2024">2024</time></span
+          >
+          <time datetime="21:21:45" class="intro__title-text">21:21:45</time>
         </p>
         <div class="intro__deco">
           <p class="intro__deco-item pc-only">
@@ -66,7 +68,10 @@
             (2021), all rights reserved
           </small>
         </div>
-        <button class="menu-btn mb-only" aria-label="메뉴 열기 버튼"></button>
+        <button
+          class="menu-btn mb-only"
+          aria-label="메뉴 열기/닫기 버튼"
+        ></button>
       </nav>
       <div class="header__bg">
         <video
@@ -711,15 +716,16 @@
           </div>
           <div class="text-box upper" data-text="3">
             <p class="text-head">
-              <span class="rhyme">Jun 22nd. <br class="mb-only" />2024</span
+              <time datetime="2024-06-22" class="rhyme"
+                >Jun 22nd. <br class="mb-only" />2024</time
               ><br />
-              <span class="selecta time">
+              <time class="selecta time" datetime="23:23:36">
                 <span class="time__hour">23</span>
                 <span class="time__colon">:</span>
                 <span class="time__min">23</span>
                 <span class="time__colon">:</span>
                 <span class="time__sec">36</span>
-              </span>
+              </time>
             </p>
             <p class="text-small">
               Cylndr is content production company<br />specialized in digital
