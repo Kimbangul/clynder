@@ -1377,20 +1377,64 @@ button {
 }
 .time__text, .area[data-area="7"] .horizontal-mover__line {
   position: relative;
+  left: 50%;
   z-index: 1;
   font-family: "Rhymes", sans-serif;
   font-size: 23rem;
   font-weight: 100;
   text-transform: uppercase;
+  white-space: nowrap;
+}
+.time__text__box {
+  overflow: hidden;
+}
+.time__text:nth-child(1), .area[data-area="7"] .horizontal-mover__line:nth-child(1) {
+  margin-left: -70rem;
+}
+.time__text:nth-child(2), .area[data-area="7"] .horizontal-mover__line:nth-child(2) {
+  margin-left: -34rem;
+}
+.time__text:nth-child(3), .area[data-area="7"] .horizontal-mover__line:nth-child(3) {
+  margin-left: -97rem;
+}
+.time__text:nth-child(4), .area[data-area="7"] .horizontal-mover__line:nth-child(4) {
+  margin-left: -25rem;
+}
+.time__text:nth-child(5), .area[data-area="7"] .horizontal-mover__line:nth-child(5) {
+  margin-left: -7rem;
+}
+.time__text:nth-child(6), .area[data-area="7"] .horizontal-mover__line:nth-child(6) {
+  margin-left: -98rem;
+}
+.time__text:nth-child(7), .area[data-area="7"] .horizontal-mover__line:nth-child(7) {
+  margin-left: -5rem;
 }
 @media (max-width: 720px) {
   .time__text, .area[data-area="7"] .horizontal-mover__line {
     font-size: 16rem;
     line-height: 15rem;
   }
-}
-.time__text:nth-child(1), .area[data-area="7"] .horizontal-mover__line:nth-child(1) {
-  margin-left: 70rem;
+  .time__text:nth-child(1), .area[data-area="7"] .horizontal-mover__line:nth-child(1) {
+    margin-left: -35rem;
+  }
+  .time__text:nth-child(2), .area[data-area="7"] .horizontal-mover__line:nth-child(2) {
+    margin-left: -18rem;
+  }
+  .time__text:nth-child(3), .area[data-area="7"] .horizontal-mover__line:nth-child(3) {
+    margin-left: -45rem;
+  }
+  .time__text:nth-child(4), .area[data-area="7"] .horizontal-mover__line:nth-child(4) {
+    margin-left: -30rem;
+  }
+  .time__text:nth-child(5), .area[data-area="7"] .horizontal-mover__line:nth-child(5) {
+    margin-left: -17rem;
+  }
+  .time__text:nth-child(6), .area[data-area="7"] .horizontal-mover__line:nth-child(6) {
+    margin-left: -64rem;
+  }
+  .time__text:nth-child(7), .area[data-area="7"] .horizontal-mover__line:nth-child(7) {
+    margin-left: -25rem;
+  }
 }
 .time__deco {
   font-weight: 300;

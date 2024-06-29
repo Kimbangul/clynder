@@ -985,21 +985,46 @@
 }
 .time {
   position: relative;
+
   &__text {
+    &__box {
+      overflow: hidden;
+    }
     position: relative;
+    left: 50%;
     z-index: 1;
     font-family: $font__Rhymes;
     font-size: 23rem;
     font-weight: 100;
     text-transform: uppercase;
+    white-space: nowrap;
+
+    $x: ('-70rem', '-34rem', '-97rem', '-25rem', '-7rem', '-98rem', '-5rem');
+
+    @for $i from 1 to 8 {
+      &:nth-child(#{$i}) {
+        margin-left: #{nth($x, $i)};
+      }
+    }
 
     @include mb-lg {
       font-size: 16rem;
       line-height: 15rem;
-    }
 
-    &:nth-child(1) {
-      margin-left: 70rem;
+      $x: (
+        '-35rem',
+        '-18rem',
+        '-45rem',
+        '-30rem',
+        '-17rem',
+        '-64rem',
+        '-25rem'
+      );
+      @for $i from 1 to 8 {
+        &:nth-child(#{$i}) {
+          margin-left: #{nth($x, $i)};
+        }
+      }
     }
   }
   &__deco {

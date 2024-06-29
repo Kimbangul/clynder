@@ -51,7 +51,6 @@ const setWordUpMotion = (selector) => {
   });
 
   const nextEl = document.querySelector(selector).nextElementSibling;
-  console.log(nextEl.classList);
   if (nextEl && nextEl.classList.contains('text-ko')) {
     // 다음 dom이 존재하고, 다음 dom에 text-ko 클래스가 존재하면
     tl.add(setFadeUpMotion(nextEl), '-=0.3');
@@ -69,7 +68,7 @@ const wordUpList = [
 ];
 
 // FUNCTION 카드 스크롤 애니메이션
-const onScrollCard = () => {
+const setScrollCard = () => {
   const cardList = gsap.utils.toArray('.card');
   const tl = gsap.timeline({
     scrollTrigger: {
@@ -93,30 +92,63 @@ const onScrollCard = () => {
     '.card-slider__inner',
     {
       xPercent: () => -100,
-      //  x: () => '-50vw',
       left: () => 'calc(50vw - 28rem)',
-      // x: () => '50vw',
     },
     'slide'
   );
+};
 
-  // tl.to(
-  //   '.card',
-  //   {
-  //     opacity: 1,
-  //     stagger: 0.1,
-  //   },
-  //   'slide'
-  // );
+// FUNCTION 양쪽으로 움직이는 텍스트
+const setMoveHorizontalText = (array) => {
+  // array: selector list
 
-  // cardList.forEach((el, idx) => {
-  //   tl.to(el, {
-  //     opacity: 1,
-  //     delay: 0 + 0.1 * idx,
-  //   });
+  const tl = gsap.timeline({});
+
+  array.forEach((el, idx) => {
+    tl.to(
+      el,
+      {
+        x: () => (idx % 2 === 0 ? '-10rem' : '10rem'),
+        repeatRefresh: true,
+      },
+      `text+=${idx * 0.05}`
+    );
+  });
+
+  // tl.to(array, {
+  //   x: () => idx,
+  //   repeatRefresh: true,
+  //   stagger: 0.05,
   // });
 
-  // tl.to('.card', {}, '+=0.5');
+  return tl;
+};
+
+// FUNCTION 스크롤에 따라 시계를 움직이는 애니메이션
+const setMoveClock = () => {
+  const textList = gsap.utils.toArray(".introduce [data-area='2'] .time__text");
+
+  const tl = gsap.timeline({
+    repeatRefresh: true,
+    scrollTrigger: {
+      trigger: ".introduce [data-area='2']",
+      scrub: 1,
+      markers: true,
+      invalidateOnRefresh: true,
+    },
+  });
+
+  // 시계 이동시키기
+  tl.to(
+    ".introduce [data-area='2'] .clock",
+    {
+      y: () => '-20rem',
+      stagger: 0.05,
+    },
+    'clock'
+  );
+
+  tl.add(setMoveHorizontalText(textList), 'clock');
 };
 
 // FUNCTION motion load
@@ -128,5 +160,6 @@ window.addEventListener('load', () => {
     setWordUpMotion(el);
   });
 
-  onScrollCard();
+  setScrollCard();
+  setMoveClock();
 });
