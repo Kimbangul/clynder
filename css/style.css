@@ -129,6 +129,11 @@
 }
 .text-eng + .text-ko, .job-list__item a + .text-ko, .team-list__title h4 + .text-ko {
   margin-top: 7rem;
+  opacity: 0;
+  transform: translateY(5rem);
+}
+.text-eng .word, .job-list__item a .word, .team-list__title h4 .word {
+  transform: translateY(100%);
 }
 @media (max-width: 720px) {
   .text-eng, .job-list__item a, .team-list__title h4 {
@@ -1334,6 +1339,14 @@ button {
 .card-slider {
   overflow-x: hidden;
   margin-top: 51rem;
+  padding-bottom: 81rem;
+  position: relative;
+  width: 100%;
+}
+@media (max-width: 720px) {
+  .card-slider {
+    padding-bottom: 66rem;
+  }
 }
 .card-slider__inner {
   display: flex;
@@ -1341,6 +1354,15 @@ button {
   align-items: center;
   gap: 30rem;
   flex-direction: row;
+  position: absolute;
+  top: 0;
+  left: 0%;
+  transform: translateX(36vw);
+}
+@media (max-width: 720px) {
+  .card-slider__inner {
+    transform: translateX(25vw);
+  }
 }
 
 .time {

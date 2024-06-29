@@ -37,29 +37,24 @@ const setWordUpMotion = (selector) => {
     scrollTrigger: {
       trigger: selector,
       start: () => `top center`,
-      markers: true,
       invalidateOnRefresh: true,
     },
   });
 
   const wordList = gsap.utils.toArray(`${selector} .word`);
-  tl.set(wordList, { y: () => 100 });
+
   // text-eng의 word들을 시차를 두고 fade-up
   tl.to(wordList, {
     y: () => 0,
     duration: 1,
     stagger: 0.03,
-    // onComplete: () => {
-    //   el.style.overflow = 'unset';
-    // },
   });
 
   const nextEl = document.querySelector(selector).nextElementSibling;
   console.log(nextEl.classList);
   if (nextEl && nextEl.classList.contains('text-ko')) {
     // 다음 dom이 존재하고, 다음 dom에 text-ko 클래스가 존재하면
-    tl.set(nextEl, { y: () => 100, opacity: 0 });
-    tl.add(setFadeUpMotion(nextEl));
+    tl.add(setFadeUpMotion(nextEl), '-=0.3');
   }
 };
 // PARAM setWordUpMotion을 적용할 리스트
@@ -73,6 +68,22 @@ const wordUpList = [
   `[data-area='12'] [data-text='2'] .text-eng`,
 ];
 
+// FUNCTION
+const onScrollCard = () => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.card-slider .card-slider__inner',
+      scrub: 1,
+      markers: true,
+      endTrigger: ".area[data-area='1'] .text-box[data-text='3']",
+    },
+  });
+
+  tl.to('.card-slider__inner', {
+    xPercent: () => -100,
+  });
+};
+
 // FUNCTION motion load
 window.addEventListener('load', () => {
   console.log('motion load');
@@ -81,4 +92,6 @@ window.addEventListener('load', () => {
   wordUpList.forEach((el) => {
     setWordUpMotion(el);
   });
+
+  onScrollCard();
 });

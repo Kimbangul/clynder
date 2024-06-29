@@ -956,8 +956,23 @@
   &-slider {
     overflow-x: hidden;
     margin-top: 51rem;
+    padding-bottom: 81rem;
+    position: relative;
+    width: 100%;
+    @include mb-lg {
+      padding-bottom: 66rem;
+    }
     &__inner {
       @include util__flex(stretch, center, 30rem);
+      position: absolute;
+      top: 0;
+      left: 0%;
+
+      transform: translateX(36vw);
+
+      @include mb-lg {
+        transform: translateX(25vw);
+      }
     }
   }
 }

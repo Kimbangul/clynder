@@ -89,6 +89,12 @@
 
     & + .text-ko {
       margin-top: 7rem;
+      opacity: 0;
+      transform: translateY(5rem);
+    }
+
+    .word {
+      transform: translateY(100%);
     }
 
     @include mb-lg {
