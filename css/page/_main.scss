@@ -944,6 +944,13 @@
 }
 
 .card {
+  opacity: 0.2;
+  transition: opacity 0.3s;
+
+  &.active {
+    opacity: 1;
+  }
+
   img {
     border-radius: 3rem;
     width: 56rem;
@@ -968,10 +975,10 @@
       top: 0;
       left: 0%;
 
-      transform: translateX(36vw);
+      transform: translateX(calc(50vw - 28rem));
 
       @include mb-lg {
-        transform: translateX(25vw);
+        transform: translateX(calc(50vw - 17.55rem));
       }
     }
   }

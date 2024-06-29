@@ -68,20 +68,55 @@ const wordUpList = [
   `[data-area='12'] [data-text='2'] .text-eng`,
 ];
 
-// FUNCTION
+// FUNCTION 카드 스크롤 애니메이션
 const onScrollCard = () => {
+  const cardList = gsap.utils.toArray('.card');
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: '.card-slider .card-slider__inner',
       scrub: 1,
-      markers: true,
       endTrigger: ".area[data-area='1'] .text-box[data-text='3']",
+      end: () => `top center`,
+      onUpdate: (self) => {
+        const progress = Math.round(self.progress * 100) / 25;
+        const index = Math.round(progress);
+        const otherCardList = cardList.filter((el, idx) => idx !== index);
+        otherCardList.forEach((el) => {
+          el.classList.remove('active');
+        });
+        cardList[index].classList.add('active');
+      },
     },
   });
 
-  tl.to('.card-slider__inner', {
-    xPercent: () => -100,
-  });
+  tl.to(
+    '.card-slider__inner',
+    {
+      xPercent: () => -100,
+      //  x: () => '-50vw',
+      left: () => 'calc(50vw - 28rem)',
+      // x: () => '50vw',
+    },
+    'slide'
+  );
+
+  // tl.to(
+  //   '.card',
+  //   {
+  //     opacity: 1,
+  //     stagger: 0.1,
+  //   },
+  //   'slide'
+  // );
+
+  // cardList.forEach((el, idx) => {
+  //   tl.to(el, {
+  //     opacity: 1,
+  //     delay: 0 + 0.1 * idx,
+  //   });
+  // });
+
+  // tl.to('.card', {}, '+=0.5');
 };
 
 // FUNCTION motion load

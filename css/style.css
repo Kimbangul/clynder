@@ -1327,6 +1327,13 @@ button {
   }
 }
 
+.card {
+  opacity: 0.2;
+  transition: opacity 0.3s;
+}
+.card.active {
+  opacity: 1;
+}
 .card img {
   border-radius: 3rem;
   width: 56rem;
@@ -1357,11 +1364,11 @@ button {
   position: absolute;
   top: 0;
   left: 0%;
-  transform: translateX(36vw);
+  transform: translateX(calc(50vw - 28rem));
 }
 @media (max-width: 720px) {
   .card-slider__inner {
-    transform: translateX(25vw);
+    transform: translateX(calc(50vw - 17.55rem));
   }
 }
 
