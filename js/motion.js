@@ -133,7 +133,6 @@ const setMoveClock = () => {
     scrollTrigger: {
       trigger: ".introduce [data-area='2']",
       scrub: 1,
-      markers: true,
       invalidateOnRefresh: true,
     },
   });
@@ -151,6 +150,23 @@ const setMoveClock = () => {
   tl.add(setMoveHorizontalText(textList), 'clock');
 };
 
+// FUNCTION 배경 fadein 애니메이션
+const setFadeInBg = () => {
+  const tl = gsap.timeline({
+    repeatRefresh: true,
+    scrollTrigger: {
+      trigger: '.area[data-area="3"] .img-box',
+      end: 'center top',
+      scrub: 1,
+      invalidateOnRefresh: true,
+    },
+  });
+
+  tl.to('.area[data-area="3"] .img-box', {
+    opacity: 1,
+  });
+};
+
 // FUNCTION motion load
 window.addEventListener('load', () => {
   console.log('motion load');
@@ -162,4 +178,5 @@ window.addEventListener('load', () => {
 
   setScrollCard();
   setMoveClock();
+  setFadeInBg();
 });

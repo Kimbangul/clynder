@@ -681,6 +681,7 @@ button {
 .area[data-area="3"] .img-box {
   width: 82.6rem;
   margin: 0 auto;
+  opacity: 0.1;
 }
 .area[data-area="3"] .img-box img {
   border-radius: 3rem;
