@@ -312,6 +312,66 @@ const setValueMotion = () => {
   });
 };
 
+// FUNCTION data-area7 부분 모션
+const setArea7Motion = () => {
+  const bgTarget = document.querySelectorAll(
+    "[data-area='6'] .horizontal-section, [data-area='7']"
+  );
+  const textList = gsap.utils.toArray(
+    ".introduce [data-area='7'] .horizontal-mover__line"
+  );
+
+  const tl = gsap.timeline({
+    repeatRefresh: true,
+    scrollTrigger: {
+      trigger: "[data-area='7']",
+      scrub: 1,
+      start: () => `start center`,
+      end: () => `start top`,
+
+      invalidateOnRefresh: true,
+    },
+  });
+
+  tl.to(
+    bgTarget,
+    {
+      background: `#000`,
+    },
+    'scroller'
+  );
+
+  // tl.add(setMoveHorizontalText(textList), 'scroller');
+  const tl2 = gsap.timeline({
+    repeatRefresh: true,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: "[data-area='7'] .horizontal-mover",
+      scrub: 1,
+      invalidateOnRefresh: true,
+    },
+  });
+  const scroll = [
+    '80rem',
+    '-160rem',
+    '120rem',
+    '-112rem',
+    '56rem',
+    '-72rem',
+    '96rem',
+  ];
+  textList.forEach((el, idx) => {
+    tl2.to(
+      el,
+      {
+        x: () => scroll[idx],
+        repeatRefresh: true,
+      },
+      `scroller+=${idx * 0.02}`
+    );
+  });
+};
+
 // FUNCTION motion load
 window.addEventListener('load', () => {
   console.log('motion load');
@@ -327,4 +387,5 @@ window.addEventListener('load', () => {
   setChangeBg();
   setGroupMotion();
   setValueMotion();
+  setArea7Motion();
 });
