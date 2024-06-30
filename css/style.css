@@ -1947,6 +1947,7 @@ button {
 }
 .area[data-area="12"] .img-box[data-img="1"] {
   width: 79rem;
+  top: 55rem;
   right: 50%;
   margin-right: -10rem;
   position: absolute;
@@ -1976,7 +1977,7 @@ button {
   width: 89.2rem;
   margin-left: -19.2rem;
   position: absolute;
-  top: 40rem;
+  top: 60rem;
   left: 50%;
 }
 @media (max-width: 720px) {

@@ -232,7 +232,7 @@ const setValueMotion = () => {
     section.querySelector('.horizontal-section'),
     {
       clipPath: () => `circle(max(100vw, 100vh))`,
-      duration: 1,
+      duration: 2.5,
       // ease: 'power1.inOut',
     },
     'fadein'
@@ -277,6 +277,7 @@ const setValueMotion = () => {
         {
           rotateX: 90,
           opacity: 0,
+          duration: 1,
           transformOrigin: `50% 0%`,
         },
         `from-text-${idx}`
@@ -286,6 +287,7 @@ const setValueMotion = () => {
         {
           rotateX: 90,
           opacity: 0,
+          duration: 1,
           transformOrigin: `50% 0%`,
         },
         `to-text-${idx}`
@@ -297,6 +299,7 @@ const setValueMotion = () => {
       {
         rotateX: 0,
         opacity: 1,
+        duration: 1,
       },
       `from-text-${idx}`
     );
@@ -306,10 +309,14 @@ const setValueMotion = () => {
       {
         rotateX: 0,
         opacity: 1,
+        duration: 1,
       },
       `to-text-${idx}`
     );
   });
+
+  // 애니메이션 완료 후 delay 추가
+  tl.add(() => {}, '+=0.5');
 };
 
 // FUNCTION data-area7 부분 모션
@@ -466,6 +473,37 @@ const setMethodMotion = () => {
   tl.add(() => {}, '+=1');
 };
 
+// FUNCTION creator motion
+const setCreatorMotion = () => {
+  const imgList = gsap.utils.toArray("[data-area='12'] .img-box");
+  const moveList = ['-40%', '-36%', '-64%', '-32%'];
+
+  imgList.forEach((el, idx) => {
+    gsap.to(el, {
+      y: () => moveList[idx],
+      scrollTrigger: {
+        trigger: el,
+        scrub: 1,
+        start: () => `start bottom`,
+        end: () => `bottom start`,
+        markers: true,
+        invalidateOnRefresh: true,
+      },
+    });
+  });
+  // const tl = gsap.timeline({
+  //   repeatRefresh: true,
+  //   scrollTrigger: {
+  //     trigger: "[data-area='12']",
+  //     scrub: 1,
+  //     start: () => `start start`,
+  //     end: () => `bottom bottom`,
+  //     markers: true,
+  //     invalidateOnRefresh: true,
+  //   },
+  // });
+};
+
 // FUNCTION motion load
 window.addEventListener('load', () => {
   console.log('motion load');
@@ -484,4 +522,5 @@ window.addEventListener('load', () => {
   setArea7Motion();
   setArea8Motion();
   setMethodMotion();
+  setCreatorMotion();
 });
