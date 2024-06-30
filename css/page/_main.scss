@@ -405,6 +405,15 @@
         }
       }
     }
+
+    .text-eng-rg,
+    .text-ko,
+    h4,
+    .team-list__line,
+    .team-list__main-desc {
+      opacity: 0;
+      transform: translateY(4rem);
+    }
   }
 
   &[data-area='6'] {

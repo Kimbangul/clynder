@@ -792,6 +792,14 @@ button {
     padding: 8rem 3rem 15rem 22rem;
   }
 }
+.area[data-area="5"] .text-eng-rg, .area[data-area="5"] .value__cate, .area[data-area="5"] .team-list__sub-desc:nth-child(2),
+.area[data-area="5"] .text-ko,
+.area[data-area="5"] h4,
+.area[data-area="5"] .team-list__line,
+.area[data-area="5"] .team-list__main-desc {
+  opacity: 0;
+  transform: translateY(4rem);
+}
 .area[data-area="6"] {
   margin-top: 40rem;
   height: 350vh;

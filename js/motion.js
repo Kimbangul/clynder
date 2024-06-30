@@ -161,7 +161,7 @@ const setFadeInBg = () => {
   });
 };
 
-// FUNCTION
+// FUNCTION 스크롤에 따른 이미지 변경
 const setChangeBg = () => {
   const bg = document.querySelector("[data-area='4'] .img-box img");
 
@@ -171,7 +171,6 @@ const setChangeBg = () => {
       trigger: "[data-area='4'] .img-box",
       start: () => 'center center',
       end: () => 'bottom center',
-      markers: true,
       scrub: 1,
       invalidateOnRefresh: true,
       onUpdate: (self) => {
@@ -183,6 +182,30 @@ const setChangeBg = () => {
         bg.setAttribute('src', src);
       },
     },
+  });
+};
+
+// FUNCTION group 부분 모션
+const setGroupMotion = () => {
+  const section = document.querySelector(".area[data-area='5']");
+  const targetList = section.querySelectorAll(
+    ' .text-eng-rg, .text-ko, .team-list__sub-desc,  h4, .team-list__line, .team-list__main-desc'
+  );
+
+  targetList.forEach((el) => {
+    gsap.to(el, {
+      y: () => 0,
+      opacity: 1,
+      duration: 0.3,
+      ease: 'power4.inOut',
+      scrollTrigger: {
+        trigger: el,
+        start: () => `start bottom`,
+        end: () => `end center`,
+        invalidateOnRefresh: true,
+        scrub: 1.5,
+      },
+    });
   });
 };
 
@@ -199,4 +222,5 @@ window.addEventListener('load', () => {
   setMoveClock();
   setFadeInBg();
   setChangeBg();
+  setGroupMotion();
 });
