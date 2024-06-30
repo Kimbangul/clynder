@@ -372,6 +372,61 @@ const setArea7Motion = () => {
   });
 };
 
+// FUNCTION data-area8 부분 모션
+const setArea8Motion = () => {
+  const section = document.querySelector("[data-area='8']");
+  const mm = gsap.matchMedia();
+  const tl = gsap.timeline({
+    repeatRefresh: true,
+    scrollTrigger: {
+      trigger: "[data-area='8']",
+      scrub: 1,
+      start: () => `start start`,
+      end: () => `center center`,
+      markers: true,
+      invalidateOnRefresh: true,
+    },
+  });
+
+  tl.to(
+    section.querySelector('.img-box'),
+    {
+      width: `100vw`,
+    },
+    'img'
+  );
+
+  const img = section.querySelectorAll('img');
+  mm.add('(max-width: 720px)', () => {
+    // pc화면에서만 실행
+    tl.to(
+      img,
+      {
+        width: `1600px`,
+      },
+      'img+=0.05'
+    );
+  });
+
+  tl.to(
+    img,
+    {
+      opacity: 1,
+      stagger: 0.1,
+    },
+    `img+=0.05`
+  );
+
+  tl.to(
+    section.querySelector('.horizontal-scroller'),
+    {
+      transform: `translateX(calc(-100vw - 2rem))`,
+      duration: 0.5,
+    },
+    '-=0.05'
+  );
+};
+
 // FUNCTION motion load
 window.addEventListener('load', () => {
   console.log('motion load');
@@ -388,4 +443,5 @@ window.addEventListener('load', () => {
   setGroupMotion();
   setValueMotion();
   setArea7Motion();
+  setArea8Motion();
 });

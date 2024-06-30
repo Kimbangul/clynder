@@ -1505,6 +1505,10 @@ button {
 .area[data-area="7"] {
   padding-top: 56rem;
   background: rgb(32, 32, 201);
+  margin-bottom: -20rem;
+}
+.area[data-area="7"] .horizontal-mover {
+  overflow: hidden;
 }
 .area[data-area="7"] .horizontal-mover__line {
   white-space: nowrap;
@@ -1565,21 +1569,26 @@ button {
   text-align: center;
 }
 .area[data-area="8"] {
-  height: 200vh;
+  height: 400vh;
 }
 .area[data-area="8"] .horizontal-section {
-  display: flex;
-  justify-content: stretch;
-  align-items: flex-end;
-  gap: 0;
-  flex-direction: row;
   padding: 3rem 2rem;
   top: 0;
+  overflow: hidden;
 }
 @media (max-width: 720px) {
   .area[data-area="8"] .horizontal-section {
     padding: 0;
   }
+}
+.area[data-area="8"] .horizontal-scroller {
+  display: flex;
+  justify-content: stretch;
+  align-items: flex-end;
+  gap: 0;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
 }
 .area[data-area="8"] .img-container {
   width: 100vw;
@@ -1587,7 +1596,7 @@ button {
   flex-shrink: 0;
 }
 .area[data-area="8"] .img-box {
-  width: 30vw;
+  width: 20vw;
   height: 100%;
   overflow: hidden;
   position: relative;
@@ -1604,8 +1613,14 @@ button {
   position: absolute;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: left bottom;
+     object-position: left bottom;
+  transform-origin: left bottom;
   top: 0;
   left: 0;
+}
+.area[data-area="8"] .img-box picture:not(:first-child) img {
+  opacity: 0;
 }
 .area[data-area="8"] .text-container {
   width: 100vw;
@@ -1619,9 +1634,20 @@ button {
 }
 .area[data-area="8"] .text-box {
   white-space: nowrap;
+  margin-bottom: 4%;
+}
+@media (max-width: 720px) {
+  .area[data-area="8"] .text-box {
+    margin-bottom: 40%;
+  }
+}
+.area[data-area="8"] .text-eng .word, .area[data-area="8"] .job-list__item a .word, .job-list__item .area[data-area="8"] a .word, .area[data-area="8"] .team-list__title h4 .word, .team-list__title .area[data-area="8"] h4 .word {
+  transform: none;
 }
 .area[data-area="8"] .text-ko {
   padding-left: 34.45%;
+  opacity: 1;
+  transform: none;
 }
 @media (max-width: 720px) {
   .area[data-area="8"] .text-ko {
