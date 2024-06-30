@@ -115,12 +115,6 @@ const setMoveHorizontalText = (array) => {
     );
   });
 
-  // tl.to(array, {
-  //   x: () => idx,
-  //   repeatRefresh: true,
-  //   stagger: 0.05,
-  // });
-
   return tl;
 };
 
@@ -167,6 +161,31 @@ const setFadeInBg = () => {
   });
 };
 
+// FUNCTION
+const setChangeBg = () => {
+  const bg = document.querySelector("[data-area='4'] .img-box img");
+
+  const tl = gsap.timeline({
+    repeatRefresh: true,
+    scrollTrigger: {
+      trigger: "[data-area='4'] .img-box",
+      start: () => 'center center',
+      end: () => 'bottom center',
+      markers: true,
+      scrub: 1,
+      invalidateOnRefresh: true,
+      onUpdate: (self) => {
+        const progress = Math.round(self.progress * 100) / 10 + 1;
+        const src = `assets/images/area4/bg${padToDigit(
+          Math.round(progress)
+        )}.jpg`;
+
+        bg.setAttribute('src', src);
+      },
+    },
+  });
+};
+
 // FUNCTION motion load
 window.addEventListener('load', () => {
   console.log('motion load');
@@ -179,4 +198,5 @@ window.addEventListener('load', () => {
   setScrollCard();
   setMoveClock();
   setFadeInBg();
+  setChangeBg();
 });
