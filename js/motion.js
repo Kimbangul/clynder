@@ -383,7 +383,6 @@ const setArea8Motion = () => {
       scrub: 1,
       start: () => `start start`,
       end: () => `center center`,
-      markers: true,
       invalidateOnRefresh: true,
     },
   });
@@ -427,6 +426,46 @@ const setArea8Motion = () => {
   );
 };
 
+// FUNCTION method motion
+const setMethodMotion = () => {
+  const tl = gsap.timeline({
+    repeatRefresh: true,
+    scrollTrigger: {
+      trigger: "[data-area='10']",
+      scrub: 1,
+      start: () => `start start`,
+      end: () => `bottom bottom`,
+      markers: true,
+      invalidateOnRefresh: true,
+    },
+  });
+
+  const scene = document.querySelectorAll("[data-area='10'] .method");
+
+  scene.forEach((el, idx) => {
+    if (idx !== 0) {
+      tl.to(
+        scene[idx - 1],
+        {
+          opacity: 0,
+          delay: 1,
+        },
+        `scene-change${idx}`
+      );
+      tl.to(
+        el,
+        {
+          opacity: 1,
+          // delay: idx,
+        },
+        `scene-change${idx}+=2`
+      );
+    }
+  });
+  // 애니메이션 완료 후 delay 추가
+  tl.add(() => {}, '+=1');
+};
+
 // FUNCTION motion load
 window.addEventListener('load', () => {
   console.log('motion load');
@@ -444,4 +483,5 @@ window.addEventListener('load', () => {
   setValueMotion();
   setArea7Motion();
   setArea8Motion();
+  setMethodMotion();
 });
