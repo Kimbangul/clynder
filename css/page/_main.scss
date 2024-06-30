@@ -410,16 +410,21 @@
     .text-ko,
     h4,
     .team-list__line,
-    .team-list__main-desc {
+    .team-list__main-desc,
+    .team-list__sub-desc {
       opacity: 0;
       transform: translateY(4rem);
+
+      @include mb-lg {
+        opacity: 1;
+        transform: none;
+      }
     }
   }
 
   &[data-area='6'] {
     margin-top: 40rem;
     height: 350vh;
-    background: $color__blue;
 
     .text-box {
       &[data-text='1'] {
@@ -427,6 +432,7 @@
         color: $color__black;
         text-align: center;
         bottom: 15%;
+        opacity: 0;
 
         .text-eng-rg {
           @include mb-lg {
@@ -447,10 +453,22 @@
         margin-bottom: 20vh;
       }
     }
-    .horizontal-section {
+    .horizontal-scroller {
       @include util__flex(center, center);
+      width: 100%;
+      height: 100%;
+      transform: translateX(50vw);
+
+      @include mb-lg {
+        transform: translateX(0);
+      }
+    }
+    .horizontal-section {
       top: 0;
       left: 0;
+      overflow: hidden;
+      clip-path: circle(10rem);
+      background: $color__blue;
     }
     .img-box {
       width: 174.4rem;
@@ -1288,6 +1306,7 @@
     left: 50%;
     text-align: center;
     transform: translateX(-50%) translateY(-50%);
+    opacity: 0;
 
     @include mb-lg {
       flex-direction: column;
@@ -1320,10 +1339,13 @@
     line-height: 7.2rem;
 
     p {
+      transform-origin: 50% 100%;
       &:not(:first-child) {
         transform: perspective(500px) translate3d(0px, 0px, 0px) rotateX(-90deg);
-        transform-origin: 50% 100%;
         position: absolute;
+        width: 100%;
+        top: 0;
+        opacity: 0;
       }
     }
 

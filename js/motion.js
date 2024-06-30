@@ -191,21 +191,124 @@ const setGroupMotion = () => {
   const targetList = section.querySelectorAll(
     ' .text-eng-rg, .text-ko, .team-list__sub-desc,  h4, .team-list__line, .team-list__main-desc'
   );
+  const mm = gsap.matchMedia();
 
-  targetList.forEach((el) => {
-    gsap.to(el, {
-      y: () => 0,
-      opacity: 1,
-      duration: 0.3,
-      ease: 'power4.inOut',
-      scrollTrigger: {
-        trigger: el,
-        start: () => `start bottom`,
-        end: () => `end center`,
-        invalidateOnRefresh: true,
-        scrub: 1.5,
-      },
+  mm.add('(min-width: 721px)', () => {
+    // pc화면에서만 실행
+    targetList.forEach((el) => {
+      gsap.to(el, {
+        y: () => 0,
+        opacity: 1,
+        duration: 0.3,
+        ease: 'power4.inOut',
+        scrollTrigger: {
+          trigger: el,
+          start: () => `start bottom`,
+          end: () => `end center`,
+          invalidateOnRefresh: true,
+          scrub: 1.5,
+        },
+      });
     });
+  });
+};
+
+// FUNCTION value section 모션
+const setValueMotion = () => {
+  const section = document.querySelector(".area[data-area='6']");
+  const tl = gsap.timeline({
+    repeatRefresh: true,
+    scrollTrigger: {
+      trigger: "[data-area='6']",
+      start: () => `center center`,
+      end: () => `bottom bottom`,
+      scrub: 1,
+    },
+  });
+  const mm = gsap.matchMedia();
+
+  // circle fadein motion
+  tl.to(
+    section.querySelector('.horizontal-section'),
+    {
+      clipPath: () => `circle(max(100vw, 100vh))`,
+      duration: 1,
+      // ease: 'power1.inOut',
+    },
+    'fadein'
+  );
+
+  mm.add('(min-width: 721px)', () => {
+    tl.to(
+      section.querySelector('.horizontal-scroller'),
+      {
+        x: () => 0,
+      },
+      'fadein'
+    );
+  });
+
+  // fadein other text
+  tl.to(
+    section.querySelectorAll('.text-box, .value__fromto'),
+    {
+      opacity: 1,
+    },
+    'fadetext'
+  );
+  tl.to(
+    section.querySelector('.svg-logo-dim'),
+    {
+      opacity: 0.15,
+    },
+    'fadetext'
+  );
+
+  // text rotate
+  const roller = section.querySelectorAll('.value__roller');
+  const rollerItem = [
+    roller[0].querySelector('.value__item').children,
+    roller[1].querySelector('.value__item').children,
+  ];
+  Array.from(rollerItem[0]).forEach((el, idx) => {
+    if (idx !== 0) {
+      tl.to(
+        rollerItem[0][idx - 1],
+        {
+          rotateX: 90,
+          opacity: 0,
+          transformOrigin: `50% 0%`,
+        },
+        `from-text-${idx}`
+      );
+      tl.to(
+        rollerItem[1][idx - 1],
+        {
+          rotateX: 90,
+          opacity: 0,
+          transformOrigin: `50% 0%`,
+        },
+        `to-text-${idx}`
+      );
+    }
+
+    tl.to(
+      el,
+      {
+        rotateX: 0,
+        opacity: 1,
+      },
+      `from-text-${idx}`
+    );
+
+    tl.to(
+      rollerItem[1][idx],
+      {
+        rotateX: 0,
+        opacity: 1,
+      },
+      `to-text-${idx}`
+    );
   });
 };
 
@@ -223,4 +326,5 @@ window.addEventListener('load', () => {
   setFadeInBg();
   setChangeBg();
   setGroupMotion();
+  setValueMotion();
 });

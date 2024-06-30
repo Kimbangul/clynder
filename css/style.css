@@ -792,24 +792,36 @@ button {
     padding: 8rem 3rem 15rem 22rem;
   }
 }
-.area[data-area="5"] .text-eng-rg, .area[data-area="5"] .value__cate, .area[data-area="5"] .team-list__sub-desc:nth-child(2),
+.area[data-area="5"] .text-eng-rg, .area[data-area="5"] .value__cate,
 .area[data-area="5"] .text-ko,
 .area[data-area="5"] h4,
 .area[data-area="5"] .team-list__line,
-.area[data-area="5"] .team-list__main-desc {
+.area[data-area="5"] .team-list__main-desc,
+.area[data-area="5"] .team-list__sub-desc {
   opacity: 0;
   transform: translateY(4rem);
+}
+@media (max-width: 720px) {
+  .area[data-area="5"] .text-eng-rg, .area[data-area="5"] .value__cate,
+  .area[data-area="5"] .text-ko,
+  .area[data-area="5"] h4,
+  .area[data-area="5"] .team-list__line,
+  .area[data-area="5"] .team-list__main-desc,
+  .area[data-area="5"] .team-list__sub-desc {
+    opacity: 1;
+    transform: none;
+  }
 }
 .area[data-area="6"] {
   margin-top: 40rem;
   height: 350vh;
-  background: rgb(32, 32, 201);
 }
 .area[data-area="6"] .text-box[data-text="1"] {
   position: absolute;
   color: #000;
   text-align: center;
   bottom: 15%;
+  opacity: 0;
 }
 @media (max-width: 720px) {
   .area[data-area="6"] .text-box[data-text="1"] .text-eng-rg, .area[data-area="6"] .text-box[data-text="1"] .value__cate, .area[data-area="6"] .text-box[data-text="1"] .team-list__sub-desc:nth-child(2) {
@@ -830,14 +842,28 @@ button {
     margin-bottom: 20vh;
   }
 }
-.area[data-area="6"] .horizontal-section {
+.area[data-area="6"] .horizontal-scroller {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0;
   flex-direction: row;
+  width: 100%;
+  height: 100%;
+  transform: translateX(50vw);
+}
+@media (max-width: 720px) {
+  .area[data-area="6"] .horizontal-scroller {
+    transform: translateX(0);
+  }
+}
+.area[data-area="6"] .horizontal-section {
   top: 0;
   left: 0;
+  overflow: hidden;
+  -webkit-clip-path: circle(10rem);
+          clip-path: circle(10rem);
+  background: rgb(32, 32, 201);
 }
 .area[data-area="6"] .img-box {
   width: 174.4rem;
@@ -1709,6 +1735,7 @@ button {
   left: 50%;
   text-align: center;
   transform: translateX(-50%) translateY(-50%);
+  opacity: 0;
 }
 @media (max-width: 720px) {
   .value__fromto {
@@ -1741,10 +1768,15 @@ button {
   font-weight: 100;
   line-height: 7.2rem;
 }
+.value__item p {
+  transform-origin: 50% 100%;
+}
 .value__item p:not(:first-child) {
   transform: perspective(500px) translate3d(0px, 0px, 0px) rotateX(-90deg);
-  transform-origin: 50% 100%;
   position: absolute;
+  width: 100%;
+  top: 0;
+  opacity: 0;
 }
 @media (max-width: 720px) {
   .value__item {
