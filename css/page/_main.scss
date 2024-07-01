@@ -271,7 +271,8 @@
   position: relative;
 
   &__text {
-    &__box {
+    &-box {
+      width: 100%;
       overflow: hidden;
     }
     position: relative;
@@ -773,23 +774,31 @@
     width: 100%;
     overflow: hidden;
   }
+  &__text-head {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    width: 100%;
+    overflow: hidden;
+
+    @include mb-lg {
+      bottom: 2rem;
+    }
+  }
   &__thank {
+    @include util__flex(center);
     font-family: $font__Rhymes;
     text-transform: uppercase;
     font-size: 55rem;
     font-weight: 200;
     line-height: 55rem;
     letter-spacing: -0.03em;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
 
     @include mb-lg {
       font-size: 28rem;
       line-height: 28rem;
-      bottom: 2rem;
     }
   }
   &__deco {
@@ -868,7 +877,6 @@
   &[data-area='2'] {
     padding: 25rem 0 30rem 0;
     margin-top: 12rem;
-    overflow: hidden;
   }
 
   &[data-area='3'] {
@@ -1131,6 +1139,9 @@
 
   &[data-area='8'] {
     height: 400vh;
+    position: relative;
+    background: $color__black;
+    z-index: 2;
     .horizontal-section {
       padding: 3rem 2rem;
       top: 0;
@@ -1210,7 +1221,10 @@
   }
 
   &[data-area='9'] {
-    height: 500vh;
+    height: 800vh;
+    margin-top: -100vh;
+    position: relative;
+    z-index: 1;
 
     .horizontal-section {
       display: flex;
@@ -1470,7 +1484,9 @@
 
   &[data-area='10'] {
     width: 100%;
-    height: 400vh;
+    height: 1200vh;
+    position: relative;
+    margin-top: -800vh;
   }
   &[data-area='11'] {
     padding-top: 15rem;

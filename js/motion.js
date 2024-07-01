@@ -440,15 +440,20 @@ const setArea9Motion = () => {
     scrollTrigger: {
       trigger: "[data-area='9']",
       scrub: 1,
-      start: () => `start start`,
+      start: () => `+=400vh start`,
       end: () => `bottom start`,
+      ease: 'none',
       invalidateOnRefresh: true,
     },
   });
 
   tl.to("[data-area='9'] .page-container", {
     xPercent: () => '-100',
+    x: () => `-1px`,
   });
+
+  // 애니메이션 완료 후 delay 추가
+  tl.add(() => {}, '+=0.5');
 };
 
 // FUNCTION method motion
@@ -458,7 +463,7 @@ const setMethodMotion = () => {
     scrollTrigger: {
       trigger: "[data-area='10']",
       scrub: 1,
-      start: () => `start start`,
+      start: () => `+=2800vh start`,
       end: () => `bottom bottom`,
       invalidateOnRefresh: true,
     },
