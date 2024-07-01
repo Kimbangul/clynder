@@ -433,6 +433,25 @@ const setArea8Motion = () => {
   );
 };
 
+// FUNCTION data-area9 부분 모션
+const setArea9Motion = () => {
+  const tl = gsap.timeline({
+    repeatRefresh: true,
+    scrollTrigger: {
+      trigger: "[data-area='9']",
+      scrub: 1,
+      start: () => `start start`,
+      end: () => `bottom start`,
+      markers: true,
+      invalidateOnRefresh: true,
+    },
+  });
+
+  tl.to("[data-area='9'] .page-container", {
+    xPercent: () => '-100',
+  });
+};
+
 // FUNCTION method motion
 const setMethodMotion = () => {
   const tl = gsap.timeline({
@@ -605,6 +624,7 @@ window.addEventListener('load', () => {
   setValueMotion();
   setArea7Motion();
   setArea8Motion();
+  setArea9Motion();
   setMethodMotion();
   setArea11Motion();
   setCreatorMotion();
