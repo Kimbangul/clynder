@@ -1922,6 +1922,7 @@
   height: 0.5rem;
   width: 100%;
   position: fixed;
+  z-index: 500;
   top: 0;
   left: 0;
   overflow: hidden;
@@ -1932,7 +1933,8 @@
     left: 0;
     top: 0;
     background: $color__point;
-    transform: scale(1);
+    transform: scaleX(0);
+    transform-origin: left;
   }
 }
 //// progress

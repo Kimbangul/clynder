@@ -442,7 +442,6 @@ const setArea9Motion = () => {
       scrub: 1,
       start: () => `start start`,
       end: () => `bottom start`,
-      markers: true,
       invalidateOnRefresh: true,
     },
   });
@@ -546,7 +545,6 @@ const setWorkMotion = () => {
       end: () => 'bottom bottom',
       ease: 'none',
       scrub: 1,
-      markers: true,
       invalidateOnRefresh: true,
     },
   });
@@ -592,7 +590,6 @@ const setRecruitMotion = () => {
       end: () => 'top top',
       ease: 'none',
       scrub: 1,
-      markers: true,
       invalidateOnRefresh: true,
     },
   });
@@ -603,6 +600,27 @@ const setRecruitMotion = () => {
 
   tl.to(cardWrap.querySelector('img'), {
     rotate: () => `15deg`,
+  });
+};
+
+// FUNCTION progress bar
+const setProgress = () => {
+  const tl = gsap.timeline({
+    repeatRefresh: true,
+    scrollTrigger: {
+      trigger: 'body',
+      start: () => 'top top',
+      end: () => 'bottom bottom',
+      ease: 'none',
+      scrub: 1,
+      markers: true,
+      invalidateOnRefresh: true,
+    },
+  });
+
+  tl.to('.progress__bar', {
+    // scaleX: () => 1,
+    transform: () => `scaleX(1)`,
   });
 };
 
@@ -637,4 +655,6 @@ window.addEventListener('load', () => {
   // recruit
   setRecruitMotion();
   // // recruit
+
+  setProgress();
 });

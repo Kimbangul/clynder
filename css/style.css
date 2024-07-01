@@ -2363,6 +2363,7 @@ button {
   height: 0.5rem;
   width: 100%;
   position: fixed;
+  z-index: 500;
   top: 0;
   left: 0;
   overflow: hidden;
@@ -2374,7 +2375,8 @@ button {
   left: 0;
   top: 0;
   background: #0f0;
-  transform: scale(1);
+  transform: scaleX(0);
+  transform-origin: left;
 }
 
 .footer {
