@@ -542,7 +542,7 @@ const setWorkMotion = () => {
     );
 
     tl.to(
-      el,
+      el.querySelector('a'),
       {
         borderRadius: () => `0%`,
       },
@@ -559,6 +559,32 @@ const setWorkMotion = () => {
 
   // 애니메이션 완료 후 delay 추가
   tl.add(() => {}, '+=0.1');
+};
+
+// FUNCTION recruit motion
+const setRecruitMotion = () => {
+  const cardWrap = document.querySelector('.recruit__card');
+
+  const tl = gsap.timeline({
+    repeatRefresh: true,
+    scrollTrigger: {
+      trigger: '.recruit',
+      start: () => 'top center',
+      end: () => 'top top',
+      ease: 'none',
+      scrub: 1,
+      markers: true,
+      invalidateOnRefresh: true,
+    },
+  });
+
+  tl.to(cardWrap, {
+    y: () => `0`,
+  });
+
+  tl.to(cardWrap.querySelector('img'), {
+    rotate: () => `15deg`,
+  });
 };
 
 // FUNCTION motion load
@@ -587,4 +613,8 @@ window.addEventListener('load', () => {
   // work
   setWorkMotion();
   //// work
+
+  // recruit
+  setRecruitMotion();
+  // // recruit
 });

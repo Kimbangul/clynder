@@ -1806,7 +1806,7 @@
     top: -5rem;
     left: 50%;
     transform-style: preserve-3d;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(100%);
 
     @include mb-lg {
       width: 25.9rem;
@@ -1815,7 +1815,8 @@
 
     img {
       width: 100%;
-      transform: rotate(15deg);
+      //transform: rotate(15deg);
+      transform-origin: center;
     }
   }
 
