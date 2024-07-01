@@ -1625,6 +1625,13 @@
 .work {
   height: 400vh;
   position: relative;
+
+  &__fixer {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+  }
+
   &__title {
     letter-spacing: -0.03em;
     font-family: $font-Selecta;
@@ -1636,8 +1643,6 @@
       @include util__flex(center, stretch, 0, column);
       text-align: center;
       height: 100vh;
-      position: sticky;
-      top: 0;
     }
 
     @include mb-lg {
@@ -1657,12 +1662,13 @@
     }
   }
   &__list {
+    position: relative;
   }
   &__item {
     width: 100%;
     height: 100vh;
     top: 0;
-    position: sticky;
+    position: absolute;
 
     &-title {
       font-family: $font-Selecta;
@@ -1695,22 +1701,34 @@
     a {
       @include util__flex(center, stretch, 0, column);
       height: 100%;
-      border-radius: 3rem 3rem 0 0;
+      border-radius: 10rem 10rem 0 0;
       overflow: hidden;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-    }
+      position: relative;
 
-    @for $i from 1 to 4 {
-      &:nth-child(#{$i}) a {
-        background-image: url('../assets/images/work/work#{$i}.jpg');
-
-        @include mb-lg {
-          background-image: url('../assets/images/work/work#{$i}-mo.jpg');
-        }
+      img {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
       }
     }
+
+    // @for $i from 1 to 4 {
+    //   &:nth-child(#{$i}) a {
+    //     background-image: url('../assets/images/work/work#{$i}.jpg');
+
+    //     @include mb-lg {
+    //       background-image: url('../assets/images/work/work#{$i}-mo.jpg');
+    //     }
+    //   }
+    // }
   }
 }
 // // work

@@ -2075,6 +2075,11 @@ button {
   height: 400vh;
   position: relative;
 }
+.work__fixer {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
 .work__title {
   letter-spacing: -0.03em;
   font-family: "Selecta", sans-serif;
@@ -2090,8 +2095,6 @@ button {
   flex-direction: column;
   text-align: center;
   height: 100vh;
-  position: sticky;
-  top: 0;
 }
 @media (max-width: 720px) {
   .work__title {
@@ -2110,11 +2113,14 @@ button {
     -webkit-text-stroke: 1px #fff;
   }
 }
+.work__list {
+  position: relative;
+}
 .work__item {
   width: 100%;
   height: 100vh;
   top: 0;
-  position: sticky;
+  position: absolute;
 }
 .work__item-title {
   font-family: "Selecta", sans-serif;
@@ -2150,35 +2156,24 @@ button {
   gap: 0;
   flex-direction: column;
   height: 100%;
-  border-radius: 3rem 3rem 0 0;
+  border-radius: 10rem 10rem 0 0;
   overflow: hidden;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  position: relative;
 }
-.work__item:nth-child(1) a {
-  background-image: url("../assets/images/work/work1.jpg");
-}
-@media (max-width: 720px) {
-  .work__item:nth-child(1) a {
-    background-image: url("../assets/images/work/work1-mo.jpg");
-  }
-}
-.work__item:nth-child(2) a {
-  background-image: url("../assets/images/work/work2.jpg");
-}
-@media (max-width: 720px) {
-  .work__item:nth-child(2) a {
-    background-image: url("../assets/images/work/work2-mo.jpg");
-  }
-}
-.work__item:nth-child(3) a {
-  background-image: url("../assets/images/work/work3.jpg");
-}
-@media (max-width: 720px) {
-  .work__item:nth-child(3) a {
-    background-image: url("../assets/images/work/work3-mo.jpg");
-  }
+.work__item a img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
 }
 
 .recruit {

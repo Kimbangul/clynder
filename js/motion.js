@@ -442,7 +442,6 @@ const setMethodMotion = () => {
       scrub: 1,
       start: () => `start start`,
       end: () => `bottom bottom`,
-      markers: true,
       invalidateOnRefresh: true,
     },
   });
@@ -487,7 +486,6 @@ const setArea11Motion = () => {
       end: () => 'bottom bottom',
       scrub: 0,
       invalidateOnRefresh: true,
-      markers: true,
       onUpdate: (self) => {
         const progress = Math.round(self.progress * 100) / 1.78 + 1;
         const src = `assets/images/area11/member-${Math.round(progress)}.jpg`;
@@ -511,11 +509,56 @@ const setCreatorMotion = () => {
         scrub: 1,
         start: () => `start bottom`,
         end: () => `bottom start`,
-        markers: true,
         invalidateOnRefresh: true,
       },
     });
   });
+};
+
+// FUNCTION work motion
+const setWorkMotion = () => {
+  const workItem = gsap.utils.toArray('.work__item');
+
+  const tl = gsap.timeline({
+    repeatRefresh: true,
+    scrollTrigger: {
+      trigger: '.work',
+      start: () => 'top top',
+      end: () => 'bottom bottom',
+      ease: 'none',
+      scrub: 1,
+      markers: true,
+      invalidateOnRefresh: true,
+    },
+  });
+
+  workItem.forEach((el, idx) => {
+    tl.to(
+      el,
+      {
+        y: () => `-100%`,
+      },
+      `img${idx}`
+    );
+
+    tl.to(
+      el,
+      {
+        borderRadius: () => `0%`,
+      },
+      `img${idx}+0.05`
+    );
+    tl.to(
+      el.querySelector('img'),
+      {
+        scale: () => 1.05,
+      },
+      `img${idx}+0.05`
+    );
+  });
+
+  // 애니메이션 완료 후 delay 추가
+  tl.add(() => {}, '+=0.1');
 };
 
 // FUNCTION motion load
@@ -527,6 +570,7 @@ window.addEventListener('load', () => {
     setWordUpMotion(el);
   });
 
+  // introduce
   setScrollCard();
   setMoveClock();
   setFadeInBg();
@@ -538,4 +582,9 @@ window.addEventListener('load', () => {
   setMethodMotion();
   setArea11Motion();
   setCreatorMotion();
+  // // introduce
+
+  // work
+  setWorkMotion();
+  //// work
 });
