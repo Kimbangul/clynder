@@ -162,7 +162,7 @@ const setFadeInBg = () => {
 };
 
 // FUNCTION 스크롤에 따른 이미지 변경
-const setChangeBg = () => {
+const setArea4Motion = () => {
   const bg = document.querySelector("[data-area='4'] .img-box img");
 
   const tl = gsap.timeline({
@@ -473,6 +473,31 @@ const setMethodMotion = () => {
   tl.add(() => {}, '+=1');
 };
 
+// FUNCTION data-area11 부분 모션
+const setArea11Motion = () => {
+  const bg = document.querySelector(
+    "[data-area='11'] .member__img-container img"
+  );
+
+  const tl = gsap.timeline({
+    repeatRefresh: true,
+    scrollTrigger: {
+      trigger: "[data-area='11']",
+      start: () => 'top top',
+      end: () => 'bottom bottom',
+      scrub: 0,
+      invalidateOnRefresh: true,
+      markers: true,
+      onUpdate: (self) => {
+        const progress = Math.round(self.progress * 100) / 1.78 + 1;
+        const src = `assets/images/area11/member-${Math.round(progress)}.jpg`;
+
+        bg.setAttribute('src', src);
+      },
+    },
+  });
+};
+
 // FUNCTION creator motion
 const setCreatorMotion = () => {
   const imgList = gsap.utils.toArray("[data-area='12'] .img-box");
@@ -491,17 +516,6 @@ const setCreatorMotion = () => {
       },
     });
   });
-  // const tl = gsap.timeline({
-  //   repeatRefresh: true,
-  //   scrollTrigger: {
-  //     trigger: "[data-area='12']",
-  //     scrub: 1,
-  //     start: () => `start start`,
-  //     end: () => `bottom bottom`,
-  //     markers: true,
-  //     invalidateOnRefresh: true,
-  //   },
-  // });
 };
 
 // FUNCTION motion load
@@ -516,11 +530,12 @@ window.addEventListener('load', () => {
   setScrollCard();
   setMoveClock();
   setFadeInBg();
-  setChangeBg();
+  setArea4Motion();
   setGroupMotion();
   setValueMotion();
   setArea7Motion();
   setArea8Motion();
   setMethodMotion();
+  setArea11Motion();
   setCreatorMotion();
 });
