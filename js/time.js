@@ -25,6 +25,20 @@ const padToDigit = (number) => {
   return str;
 };
 
+// PARAM Datetime 객체들
+const dateTimeList = {
+  kr: () => getTimeFromUtc(timeDiff.kr),
+};
+
+// FUNCTION DateTime을 시/분/초 단위로 나누기
+const getTime = (time) => {
+  return {
+    hour: padToDigit(time.getHours()),
+    min: padToDigit(time.getMinutes()),
+    second: padToDigit(time.getSeconds()),
+  };
+};
+
 // FUNCTION 날짜 서수 구하는 함수
 const getNth = (day) => {
   if (day > 3 && day < 21) return 'th';
@@ -40,17 +54,37 @@ const getNth = (day) => {
   }
 };
 
+// FUNCTION 시계 style(각도) 설정
+const setClockHands = (time, selector) => {
+  // time = "HH:mm:ss" 형식의 문자열
+  const [hour, minute, second] = time.split(':').map(Number);
+  const clock = document.querySelector(selector);
+
+  // 시침의 각도 설정 (시간에 따라 30도씩 회전 + 분에 따른 보정)
+  const hourAngle = (hour % 12) * 30 + minute * 0.5;
+  clock.querySelector(
+    '.clock-group-hour'
+  ).style.transform = `rotate(${hourAngle}deg)`;
+
+  // 분침의 각도 설정 (분에 따라 6도씩 회전 + 초에 따른 보정)
+  const minuteAngle = minute * 6 + second * 0.1;
+  clock.querySelector(
+    '.clock-group-min'
+  ).style.transform = `rotate(${minuteAngle}deg)`;
+
+  // 초침의 각도 설정 (초에 따라 6도씩 회전)
+  const secondAngle = second * 6;
+  clock.querySelector(
+    '.clock-group-sec'
+  ).style.transform = `rotate(${secondAngle}deg)`;
+};
+
 // FUNCTION set intro clock
 const setIntroClock = () => {
   const clock = document.querySelector(".intro [data-time='1']");
   const clock2 = document.querySelector("[data-area='3'] .time");
 
-  const korTime = getTimeFromUtc(timeDiff.kr);
-  const time = {
-    hour: padToDigit(korTime.getHours()),
-    min: padToDigit(korTime.getMinutes()),
-    second: padToDigit(korTime.getSeconds()),
-  };
+  const time = getTime(dateTimeList.kr());
 
   const result = `${time.hour}:${time.min}:${time.second}`;
 
@@ -63,16 +97,21 @@ const setIntroClock = () => {
   clock2.setAttribute('datetime', result);
 };
 
+// FUNCTION 세계시각 설정
+const setWorldClock = () => {
+  const clockList = ["[data-clock='london']"];
+};
+
 // FUNCTION set datetime
 const setDateTime = () => {
-  const korTime = getTimeFromUtc(timeDiff.kr);
   const date = document.querySelector("[data-area='3']");
-  date.querySelector('.date__year').innerText = korTime.getFullYear();
-  date.querySelector('.date__day').innerText = `${getNth(korTime.getDate())}`;
-  date.querySelector('.date__month').innerText = korTime.toLocaleString(
-    'en-us',
-    { month: 'short' }
-  );
+  date.querySelector('.date__year').innerText = dateTimeList.kr().getFullYear();
+  date.querySelector('.date__day').innerText = `${getNth(
+    dateTimeList.kr().getDate()
+  )}`;
+  date.querySelector('.date__month').innerText = dateTimeList
+    .kr()
+    .toLocaleString('en-us', { month: 'short' });
 };
 
 // FUNCTION After window load
@@ -80,5 +119,7 @@ window.addEventListener('load', () => {
   console.log('time load');
 
   const introClock = setInterval(setIntroClock, 1000);
+
   setDateTime();
+  setClockHands();
 });

@@ -1494,7 +1494,7 @@
   }
   &[data-area='12'] {
     margin-top: 30rem;
-    // margin-bottom: 27rem;
+    overflow: hidden;
 
     @include mb-lg {
       margin-top: 25rem;
