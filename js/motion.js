@@ -25,13 +25,42 @@ const setHeaderColor = () => {
     endTrigger: "[data-area='10']",
     start: () => `bottom top`,
     end: () => '+=3000vh',
-    onUpdate: (self) => {
-      if (self.progress > 0 && self.progress < 1) {
+    onToggle: (self) => {
+      if (self.isActive) {
         header.classList.add('revert');
       } else {
         header.classList.remove('revert');
       }
     },
+  });
+
+  const sectionList = ['.introduce', '.work', '.recruit'];
+  const menuItem = gsap.utils.toArray('.menu-item');
+  // 페이지 섹션에 따른 메뉴
+  sectionList.forEach((el, idx) => {
+    ScrollTrigger.create({
+      invalidateOnRefresh: true,
+      trigger: el,
+      start: () => `top top`,
+      end: () => `bottom top`,
+      onProgress: (self) => {
+        console.log(self.progress);
+      },
+      onToggle: (self) => {
+        if (self.isActive) {
+          menuItem.forEach((el) => {
+            el.classList.remove('active');
+          });
+          menuItem[idx].classList.add('active');
+          console.log(`${idx} active`);
+        } else {
+          // console.log(idx);
+          // if (idx === 0 && self.progress === 0) return;
+          // if (idx === 2 && self.progress === 1) return;
+          // menuItem[idx].classList.remove('active');
+        }
+      },
+    });
   });
 };
 

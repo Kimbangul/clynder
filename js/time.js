@@ -19,8 +19,6 @@ const getTimeFromUtc = (diff) => {
   return new Date(utcTime + diff);
 };
 
-console.log(getTimeFromUtc(new Date()));
-
 // FUNCTION 자릿수 변환 함수
 const padToDigit = (number) => {
   // number: number|string
@@ -120,9 +118,6 @@ const setWorldClock = () => {
 
   clockList.forEach((el) => {
     const cityName = el.getAttribute('data-clock');
-    console.log(cityName);
-    console.log(dateTimeList[cityName]());
-    console.log(document.querySelector(`[data-clock='${cityName}']`));
 
     setClockHands(dateTimeList[cityName](), `[data-clock='${cityName}']`);
   });
@@ -142,8 +137,6 @@ const setDateTime = () => {
 
 // FUNCTION After window load
 window.addEventListener('load', () => {
-  console.log('time load');
-
   const introClock = setInterval(setIntroClock, 1000);
 
   setDateTime();

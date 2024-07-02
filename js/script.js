@@ -1,5 +1,7 @@
 // PARAM selector
 const mbOpenBtn = document.querySelector('.menu-btn');
+const topBtn = document.querySelector('.footer__top');
+const menuItem = document.querySelectorAll('.menu-item a');
 
 // PARAM splittype 라인 옵션
 const lineUpSplitOption = {
@@ -21,9 +23,33 @@ const setOpenMenu = () => {
   mbOpenBtn.setAttribute('data-open', !isOpen);
 };
 
+// FUNCTION top 버튼 클릭 시 실행
+const onClickTopBtn = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+// FUNCTION 메뉴 아이템 클릭 시 실행
+const onClickMenu = (menu) => {
+  const top = document
+    .querySelector(menu)
+    .window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
 // FUNCTION After window load
 window.addEventListener('load', () => {
   console.log('load');
 
   mbOpenBtn.addEventListener('click', setOpenMenu);
+  topBtn.addEventListener('click', onClickTopBtn);
+  // menuItem.forEach((el) => {
+  //   el.addEventListener('click', (e) => {
+  //     e.preventDefault();
+  //     const href = e.currentTarget.getAttribute('href');
+  //     const section = document.querySelector(href);
+  //     // window.scrollTo({
+  //     //   top: section.getBoundingClientRect().top,
+  //     //   behavior: 'smooth',
+  //     // });
+  //   });
+  // });
 });
