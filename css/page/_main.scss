@@ -366,6 +366,7 @@
       transform-origin: 50%;
       transform: rotate(0);
       animation-name: ani__clock;
+      animation-iteration-count: infinite;
     }
 
     &-hour {

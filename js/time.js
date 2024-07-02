@@ -1,6 +1,13 @@
 // PARAM time diff
 const timeDiff = {
   kr: 9 * 60 * 60 * 1000,
+  london: 1 * 60 * 60 * 1000,
+  losAngeles: -7 * 60 * 60 * 1000,
+  santiago: -4 * 60 * 60 * 1000,
+  newYork: -4 * 60 * 60 * 1000,
+  dallas: -5 * 60 * 60 * 1000,
+  bucharest: 3 * 60 * 60 * 1000,
+  durham: 1 * 60 * 60 * 1000,
 };
 
 // FUNCTION utc시간과의 차이를 매개변수로 입력받아 시간을 구하는 함수
@@ -11,6 +18,8 @@ const getTimeFromUtc = (diff) => {
 
   return new Date(utcTime + diff);
 };
+
+console.log(getTimeFromUtc(new Date()));
 
 // FUNCTION 자릿수 변환 함수
 const padToDigit = (number) => {
@@ -28,6 +37,13 @@ const padToDigit = (number) => {
 // PARAM Datetime 객체들
 const dateTimeList = {
   kr: () => getTimeFromUtc(timeDiff.kr),
+  london: () => getTimeFromUtc(timeDiff.london),
+  losAngeles: () => getTimeFromUtc(timeDiff.losAngeles),
+  santiago: () => getTimeFromUtc(timeDiff.santiago),
+  newYork: () => getTimeFromUtc(timeDiff.newYork),
+  dallas: () => getTimeFromUtc(timeDiff.dallas),
+  bucharest: () => getTimeFromUtc(timeDiff.bucharest),
+  durham: () => getTimeFromUtc(timeDiff.durham),
 };
 
 // FUNCTION DateTime을 시/분/초 단위로 나누기
@@ -57,17 +73,17 @@ const getNth = (day) => {
 // FUNCTION 시계 style(각도) 설정
 const setClockHands = (time, selector) => {
   // time = "HH:mm:ss" 형식의 문자열
-  const [hour, minute, second] = time.split(':').map(Number);
+  const { hour, min, second } = getTime(time);
   const clock = document.querySelector(selector);
 
   // 시침의 각도 설정 (시간에 따라 30도씩 회전 + 분에 따른 보정)
-  const hourAngle = (hour % 12) * 30 + minute * 0.5;
+  const hourAngle = (hour % 12) * 30 + min * 0.5;
   clock.querySelector(
     '.clock-group-hour'
   ).style.transform = `rotate(${hourAngle}deg)`;
 
   // 분침의 각도 설정 (분에 따라 6도씩 회전 + 초에 따른 보정)
-  const minuteAngle = minute * 6 + second * 0.1;
+  const minuteAngle = min * 6 + second * 0.1;
   clock.querySelector(
     '.clock-group-min'
   ).style.transform = `rotate(${minuteAngle}deg)`;
@@ -99,7 +115,17 @@ const setIntroClock = () => {
 
 // FUNCTION 세계시각 설정
 const setWorldClock = () => {
-  const clockList = ["[data-clock='london']"];
+  //const clockList = ["[data-clock='london']"];
+  const clockList = document.querySelectorAll("[data-area='2'] .clock");
+
+  clockList.forEach((el) => {
+    const cityName = el.getAttribute('data-clock');
+    console.log(cityName);
+    console.log(dateTimeList[cityName]());
+    console.log(document.querySelector(`[data-clock='${cityName}']`));
+
+    setClockHands(dateTimeList[cityName](), `[data-clock='${cityName}']`);
+  });
 };
 
 // FUNCTION set datetime
@@ -121,5 +147,6 @@ window.addEventListener('load', () => {
   const introClock = setInterval(setIntroClock, 1000);
 
   setDateTime();
-  setClockHands();
+  setClockHands(dateTimeList.kr(), '.clock--big');
+  setWorldClock();
 });
