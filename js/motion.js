@@ -15,6 +15,26 @@ const setHeaderFix = () => {
   });
 };
 
+// FUNCTION 헤더 색상 변경
+const setHeaderColor = () => {
+  const header = document.querySelector('.header');
+  // 헤더 색상 반전
+  ScrollTrigger.create({
+    invalidateOnRefresh: true,
+    trigger: "[data-area='8']",
+    endTrigger: "[data-area='10']",
+    start: () => `bottom top`,
+    end: () => '+=3000vh',
+    onUpdate: (self) => {
+      if (self.progress > 0 && self.progress < 1) {
+        header.classList.add('revert');
+      } else {
+        header.classList.remove('revert');
+      }
+    },
+  });
+};
+
 // FUNCTION fade-up 되는 텍스트
 const setFadeUpMotion = (selector) => {
   const tl = gsap.timeline({
@@ -618,13 +638,11 @@ const setProgress = () => {
       end: () => 'bottom bottom',
       ease: 'none',
       scrub: 1,
-      markers: true,
       invalidateOnRefresh: true,
     },
   });
 
   tl.to('.progress__bar', {
-    // scaleX: () => 1,
     transform: () => `scaleX(1)`,
   });
 };
@@ -633,6 +651,7 @@ const setProgress = () => {
 window.addEventListener('load', () => {
   console.log('motion load');
   setHeaderFix();
+  setHeaderColor();
 
   wordUpList.forEach((el) => {
     setWordUpMotion(el);
