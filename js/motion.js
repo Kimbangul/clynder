@@ -1,16 +1,35 @@
+// PARAM 마지막 스크롤 위치
+let lastScrollTop = 0;
+const headerNav = document.querySelector('.header__nav');
+
+// FUNCTION 스크롤에 따른 header 포지션 변경
+const setHeaderPosition = throttle(() => {
+  const currentScrollTop = window.scrollY;
+  console.log(currentScrollTop, lastScrollTop);
+
+  if (currentScrollTop > lastScrollTop) {
+    // 아래로 스크롤할 때
+    console.log(headerNav);
+    headerNav.classList.remove('show');
+  } else {
+    // 위로 스크롤할 때
+    headerNav.classList.add('show');
+  }
+
+  lastScrollTop = currentScrollTop;
+}, 500);
+
 // FUNCTION pc header 고정시키기
 const setHeaderFix = () => {
-  const header = document.querySelector('.header__nav');
-
   ScrollTrigger.create({
-    trigger: header,
+    trigger: headerNav,
     invalidateOnRefresh: true,
     start: () => `-=2rem start`,
     onEnter: () => {
-      header.classList.add('fix');
+      headerNav.classList.add('fix');
     },
     onLeaveBack: () => {
-      header.classList.remove('fix');
+      headerNav.classList.remove('fix');
     },
   });
 };
@@ -512,7 +531,7 @@ const setMethodMotion = () => {
     scrollTrigger: {
       trigger: "[data-area='10']",
       scrub: 1,
-      start: () => `+=2800vh start`,
+      start: () => `+=4800vh start`,
       end: () => `bottom bottom`,
       invalidateOnRefresh: true,
     },
@@ -681,6 +700,7 @@ window.addEventListener('load', () => {
   console.log('motion load');
   setHeaderFix();
   setHeaderColor();
+  window.addEventListener('scroll', setHeaderPosition);
 
   wordUpList.forEach((el) => {
     setWordUpMotion(el);
