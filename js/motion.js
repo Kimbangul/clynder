@@ -233,9 +233,7 @@ const setArea4Motion = () => {
       invalidateOnRefresh: true,
       onUpdate: (self) => {
         const progress = Math.round(self.progress * 100) / 10 + 1;
-        const src = `assets/images/area4/bg${padToDigit(
-          Math.round(progress)
-        )}.jpg`;
+        const src = `assets/images/area4/bg${padToDigit(Math.round(progress))}.jpg`;
 
         bg.setAttribute('src', src);
       },
@@ -246,9 +244,7 @@ const setArea4Motion = () => {
 // FUNCTION group 부분 모션
 const setGroupMotion = () => {
   const section = document.querySelector(".area[data-area='5']");
-  const targetList = section.querySelectorAll(
-    ' .text-eng-rg, .text-ko, .team-list__sub-desc,  h4, .team-list__line, .team-list__main-desc'
-  );
+  const targetList = section.querySelectorAll(' .text-eng-rg, .text-ko, .team-list__sub-desc,  h4, .team-list__line, .team-list__main-desc');
   const mm = gsap.matchMedia();
 
   mm.add('(min-width: 721px)', () => {
@@ -324,10 +320,7 @@ const setValueMotion = () => {
 
   // text rotate
   const roller = section.querySelectorAll('.value__roller');
-  const rollerItem = [
-    roller[0].querySelector('.value__item').children,
-    roller[1].querySelector('.value__item').children,
-  ];
+  const rollerItem = [roller[0].querySelector('.value__item').children, roller[1].querySelector('.value__item').children];
   Array.from(rollerItem[0]).forEach((el, idx) => {
     if (idx !== 0) {
       tl.to(
@@ -379,12 +372,8 @@ const setValueMotion = () => {
 
 // FUNCTION data-area7 부분 모션
 const setArea7Motion = () => {
-  const bgTarget = document.querySelectorAll(
-    "[data-area='6'] .horizontal-section, [data-area='7']"
-  );
-  const textList = gsap.utils.toArray(
-    ".introduce [data-area='7'] .horizontal-mover__line"
-  );
+  const bgTarget = document.querySelectorAll("[data-area='6'] .horizontal-section, [data-area='7']");
+  const textList = gsap.utils.toArray(".introduce [data-area='7'] .horizontal-mover__line");
 
   const tl = gsap.timeline({
     repeatRefresh: true,
@@ -416,15 +405,7 @@ const setArea7Motion = () => {
       invalidateOnRefresh: true,
     },
   });
-  const scroll = [
-    '80rem',
-    '-160rem',
-    '120rem',
-    '-112rem',
-    '56rem',
-    '-72rem',
-    '96rem',
-  ];
+  const scroll = ['80rem', '-160rem', '120rem', '-112rem', '56rem', '-72rem', '96rem'];
   textList.forEach((el, idx) => {
     tl2.to(
       el,
@@ -555,9 +536,7 @@ const setMethodMotion = () => {
 
 // FUNCTION data-area11 부분 모션
 const setArea11Motion = () => {
-  const bg = document.querySelector(
-    "[data-area='11'] .member__img-container img"
-  );
+  const bg = document.querySelector("[data-area='11'] .member__img-container img");
 
   const tl = gsap.timeline({
     repeatRefresh: true,
@@ -663,6 +642,19 @@ const setRecruitMotion = () => {
 
   tl.to(cardWrap.querySelector('img'), {
     rotate: () => `15deg`,
+  });
+};
+
+// FUNCTION
+const setCardRotation = () => {
+  const xPos = event.clientX / $(window).width() - 0.5;
+  const yPos = event.clientY / $(window).height() - 0.5;
+  const box = element;
+
+  TweenLite.to(box, 0.6, {
+    rotationY: xPos * 100,
+    rotationX: -yPos * 100,
+    ease: Power4.easeOut,
   });
 };
 
