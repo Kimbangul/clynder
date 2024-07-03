@@ -60,18 +60,13 @@ const setHeaderColor = () => {
       trigger: el,
       start: () => `top top`,
       end: () => `bottom top`,
-      onProgress: (self) => {},
+      markers: true,
       onToggle: (self) => {
         if (self.isActive) {
           menuItem.forEach((el) => {
             el.classList.remove('active');
           });
           menuItem[idx].classList.add('active');
-        } else {
-          // console.log(idx);
-          // if (idx === 0 && self.progress === 0) return;
-          // if (idx === 2 && self.progress === 1) return;
-          // menuItem[idx].classList.remove('active');
         }
       },
     });
@@ -629,7 +624,7 @@ const setWorkMotion = () => {
     tl.to(
       el.querySelector('a'),
       {
-        borderRadius: () => `0%`,
+        borderRadius: () => `0px`,
       },
       `img${idx}+0.05`
     );
@@ -692,7 +687,6 @@ const setProgress = () => {
 
 // FUNCTION motion load
 window.addEventListener('load', () => {
-  console.log('motion load');
   setHeaderFix();
   setHeaderColor();
   window.addEventListener('scroll', setHeaderPosition);

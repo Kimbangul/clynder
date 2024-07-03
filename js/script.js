@@ -13,6 +13,11 @@ const lineUpSplitOption = {
 };
 const splitedText = [new SplitType('.text-eng', lineUpSplitOption)];
 
+// FUNCTION 요소의 절대 좌표 구하기
+const getAbsoluteTop = (element) => {
+  return window.scrollY + element.getBoundingClientRect().top;
+};
+
 // FUNCTION 모바일에서 메뉴 버튼 여닫기
 const setOpenMenu = () => {
   // isOpen: boolean
@@ -32,12 +37,11 @@ const onClickTopBtn = () => {
 // FUNCTION 메뉴 아이템 클릭 시 실행
 const onClickMenu = (menu) => {
   const section = document.querySelector(menu);
-  section.scrollIntoView();
+  window.scrollTo({ top: getAbsoluteTop(section) + 1, behavior: 'smooth' });
 
   const menuWrap = document.querySelector(".menu-wrap[data-open='true']");
 
   if (menuWrap) {
-    console.log('mobile menu open');
     setOpenMenu();
   }
 };
@@ -49,9 +53,13 @@ const setGroupBtnState = (target) => {
   const isOpen = JSON.parse(target.getAttribute('data-open'));
 
   if (isOpen) {
-    list.style.height = 'auto';
+    gsap.to(list, {
+      height: `auto`,
+    });
   } else {
-    list.style.height = `${title.offsetHeight}px`;
+    gsap.to(list, {
+      height: `${title.offsetHeight}px`,
+    });
   }
 };
 
@@ -65,19 +73,12 @@ const onClickGroupBtn = (target) => {
 
 // FUNCTION After window load
 window.addEventListener('load', () => {
-  console.log('load');
-
   mbOpenBtn.addEventListener('click', setOpenMenu);
   topBtn.addEventListener('click', onClickTopBtn);
   menuItem.forEach((el) => {
     el.addEventListener('click', (e) => {
       e.preventDefault();
       const href = e.currentTarget.getAttribute('href');
-      //const section = document.querySelector(href);
-      // // window.scrollTo({
-      // //   top: section.getBoundingClientRect().top,
-      // //   behavior: 'smooth',
-      // // });
       onClickMenu(href);
     });
   });
@@ -101,6 +102,8 @@ window.addEventListener('load', () => {
       mbGroupBtn.forEach((el, idx) => {
         setGroupBtnState(el);
       });
+
+      ScrollTrigger.refresh();
     }, 500)
   );
   resizeObserver.observe(document.querySelector('.team-list'));
