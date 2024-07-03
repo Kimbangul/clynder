@@ -11,10 +11,10 @@ const lineUpSplitOption = {
   lineClass: 'line-wrap',
   wordClass: 'word',
 };
+// FUNCTION 텍스트에 장식용 dot 추가
 const splitedText = [new SplitType('.text-eng', lineUpSplitOption)];
 splitedText[0].elements.forEach((el) => {
   const firstLine = el.querySelector('.line-wrap:first-child');
-  console.log(el.querySelector('.line-wrap:first-child'));
   const node = `<span class="word dot"></span>`;
   firstLine.insertAdjacentHTML('afterbegin', node);
 });
@@ -82,7 +82,9 @@ const onClickGroupBtn = (target) => {
 window.addEventListener('load', () => {
   mbOpenBtn.addEventListener('click', setOpenMenu);
   topBtn.addEventListener('click', onClickTopBtn);
-  document.querySelector('.home__icon').addEventListener('click', onClickTopBtn);
+  document
+    .querySelector('.home__icon')
+    .addEventListener('click', onClickTopBtn);
   menuItem.forEach((el) => {
     el.addEventListener('click', (e) => {
       e.preventDefault();
