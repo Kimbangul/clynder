@@ -15,10 +15,7 @@ const splitedText = [new SplitType('.text-eng', lineUpSplitOption)];
 splitedText[0].elements.forEach((el) => {
   const firstLine = el.querySelector('.line-wrap:first-child');
   console.log(el.querySelector('.line-wrap:first-child'));
-  //   const node = `<span aria-hidden="true" class="roller"><span class="roller-item">${word}</span><span class="roller-item">${word}</span></span>`;
-  //   el.insertAdjacentHTML('beforeend', node);
-  // });
-  const node = `<span class="word test"></span>`;
+  const node = `<span class="word dot"></span>`;
   firstLine.insertAdjacentHTML('afterbegin', node);
 });
 
@@ -39,7 +36,8 @@ const setOpenMenu = () => {
 };
 
 // FUNCTION top 버튼 클릭 시 실행
-const onClickTopBtn = () => {
+const onClickTopBtn = (e) => {
+  e.preventDefault();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
@@ -84,6 +82,7 @@ const onClickGroupBtn = (target) => {
 window.addEventListener('load', () => {
   mbOpenBtn.addEventListener('click', setOpenMenu);
   topBtn.addEventListener('click', onClickTopBtn);
+  document.querySelector('.home__icon').addEventListener('click', onClickTopBtn);
   menuItem.forEach((el) => {
     el.addEventListener('click', (e) => {
       e.preventDefault();
