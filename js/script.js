@@ -12,6 +12,15 @@ const lineUpSplitOption = {
   wordClass: 'word',
 };
 const splitedText = [new SplitType('.text-eng', lineUpSplitOption)];
+splitedText[0].elements.forEach((el) => {
+  const firstLine = el.querySelector('.line-wrap:first-child');
+  console.log(el.querySelector('.line-wrap:first-child'));
+  //   const node = `<span aria-hidden="true" class="roller"><span class="roller-item">${word}</span><span class="roller-item">${word}</span></span>`;
+  //   el.insertAdjacentHTML('beforeend', node);
+  // });
+  const node = `<span class="word test"></span>`;
+  firstLine.insertAdjacentHTML('afterbegin', node);
+});
 
 // FUNCTION 요소의 절대 좌표 구하기
 const getAbsoluteTop = (element) => {
