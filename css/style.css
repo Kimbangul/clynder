@@ -75,7 +75,6 @@
   position: absolute;
   display: block;
   z-index: -9999;
-  text-indent: 9999;
   width: 1px;
   height: 1px;
   margin: -1px;
@@ -933,6 +932,7 @@ button {
   grid-template-columns: 1fr 1fr;
   padding: 6.4rem 2rem 11rem 2rem;
   position: relative;
+  overflow: hidden;
 }
 @media (max-width: 720px) {
   .team-list__item {
@@ -1298,6 +1298,16 @@ button {
   }
 }
 
+.area[data-area="1"] .inner {
+  overflow: hidden;
+  position: relative;
+  margin-top: -22.5rem;
+}
+@media (max-width: 720px) {
+  .area[data-area="1"] .inner {
+    margin-top: 0;
+  }
+}
 .area[data-area="1"] .text-box {
   padding-left: 17.7%;
 }
@@ -1307,14 +1317,8 @@ button {
   }
 }
 .area[data-area="1"] .text-box[data-text="1"] {
-  margin-top: -22.5rem;
   position: relative;
   z-index: 5;
-}
-@media (max-width: 720px) {
-  .area[data-area="1"] .text-box[data-text="1"] {
-    margin-top: 0;
-  }
 }
 .area[data-area="1"] .text-box[data-text="2"] {
   position: relative;
@@ -1395,6 +1399,7 @@ button {
 .area[data-area="4"] {
   margin-top: 5rem;
   position: relative;
+  overflow: hidden;
 }
 @media (max-width: 720px) {
   .area[data-area="4"] {

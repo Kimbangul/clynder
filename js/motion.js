@@ -5,11 +5,9 @@ const headerNav = document.querySelector('.header__nav');
 // FUNCTION 스크롤에 따른 header 포지션 변경
 const setHeaderPosition = throttle(() => {
   const currentScrollTop = window.scrollY;
-  console.log(currentScrollTop, lastScrollTop);
 
   if (currentScrollTop > lastScrollTop) {
     // 아래로 스크롤할 때
-    console.log(headerNav);
     headerNav.classList.remove('show');
   } else {
     // 위로 스크롤할 때
@@ -62,16 +60,13 @@ const setHeaderColor = () => {
       trigger: el,
       start: () => `top top`,
       end: () => `bottom top`,
-      onProgress: (self) => {
-        console.log(self.progress);
-      },
+      onProgress: (self) => {},
       onToggle: (self) => {
         if (self.isActive) {
           menuItem.forEach((el) => {
             el.classList.remove('active');
           });
           menuItem[idx].classList.add('active');
-          console.log(`${idx} active`);
         } else {
           // console.log(idx);
           // if (idx === 0 && self.progress === 0) return;
