@@ -273,6 +273,8 @@
   img {
     border-radius: 3rem;
     width: 56rem;
+    perspective: 1000px;
+    perspective-origin: center;
 
     @include mb-lg {
       width: 35.1rem;
@@ -1829,6 +1831,8 @@
       width: 121rem;
       margin: 0 auto;
       position: relative;
+      padding-bottom: 6rem;
+      perspective: 1000px;
 
       @include mb-lg {
         width: 64rem;
@@ -1868,19 +1872,19 @@
     width: 38.8rem;
     z-index: 2;
     top: -5rem;
-    left: 50%;
+    left: calc(50% - 19.4rem);
     transform-style: preserve-3d;
-    transform: translateX(-50%) translateY(100%);
+    transform-origin: center;
 
     @include mb-lg {
       width: 25.9rem;
       margin-left: 4.5rem;
+      left: calc(50% - 12.95rem);
     }
 
     img {
       width: 100%;
       //transform: rotate(15deg);
-      transform-origin: center;
     }
   }
 

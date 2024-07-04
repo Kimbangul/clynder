@@ -105,14 +105,14 @@
   margin-left: 14rem;
 }
 .text-eng .line-wrap:first-child .dot, .job-list__item a .line-wrap:first-child .dot, .team-list__title h4 .line-wrap:first-child .dot {
-  top: 50%;
-  transform: translateY(-25%);
+  transform: translateY(200%);
   margin-right: 0.4em;
   width: 1.5rem;
   height: 1.5rem;
   display: inline-block;
   border-radius: 100%;
   background: #0f0;
+  position: relative;
 }
 @media (max-width: 720px) {
   .text-eng .line-wrap:first-child .dot, .job-list__item a .line-wrap:first-child .dot, .team-list__title h4 .line-wrap:first-child .dot {
@@ -659,6 +659,8 @@ button {
 .card img {
   border-radius: 3rem;
   width: 56rem;
+  perspective: 1000px;
+  perspective-origin: center;
 }
 @media (max-width: 720px) {
   .card img {
@@ -2268,6 +2270,8 @@ button {
   width: 121rem;
   margin: 0 auto;
   position: relative;
+  padding-bottom: 6rem;
+  perspective: 1000px;
 }
 @media (max-width: 720px) {
   .recruit__title-container {
@@ -2304,19 +2308,19 @@ button {
   width: 38.8rem;
   z-index: 2;
   top: -5rem;
-  left: 50%;
+  left: calc(50% - 19.4rem);
   transform-style: preserve-3d;
-  transform: translateX(-50%) translateY(100%);
+  transform-origin: center;
 }
 @media (max-width: 720px) {
   .recruit__card {
     width: 25.9rem;
     margin-left: 4.5rem;
+    left: calc(50% - 12.95rem);
   }
 }
 .recruit__card img {
   width: 100%;
-  transform-origin: center;
 }
 .recruit__mail {
   font-family: "Selecta", sans-serif;

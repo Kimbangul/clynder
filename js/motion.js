@@ -99,13 +99,24 @@ const setWordUpMotion = (selector) => {
   });
 
   const wordList = gsap.utils.toArray(`${selector} .word`);
-
   // text-eng의 word들을 시차를 두고 fade-up
-  tl.to(wordList, {
-    y: () => 0,
-    duration: 1,
-    stagger: 0.03,
-  });
+  tl.to(
+    `${selector} .dot`,
+    {
+      y: () => `-50%`,
+      duration: 1,
+    },
+    'start'
+  );
+  tl.to(
+    wordList,
+    {
+      y: () => 0,
+      duration: 1,
+      stagger: 0.03,
+    },
+    'start+=0.7'
+  );
 
   const nextEl = document.querySelector(selector).nextElementSibling;
   if (nextEl && nextEl.classList.contains('text-ko')) {
@@ -669,14 +680,13 @@ const setRecruitMotion = () => {
 const setCardRotation = (e) => {
   const xPos = e.clientX / window.innerWidth - 0.5;
   const yPos = e.clientY / window.innerHeight - 0.5;
-  console.log(xPos, yPos);
-  const card = document.querySelector('.recruit__card img');
+
+  const card = document.querySelector('.recruit__card');
 
   gsap.to(card, {
-    rotationY: xPos * 50,
-    rotationX: -yPos * 50,
-    // ease: Power4.easeOut,
-    ease: 'power4.inOut',
+    perspective: '1000px',
+    rotationY: xPos * 70,
+    rotationX: -yPos * 30,
   });
 };
 

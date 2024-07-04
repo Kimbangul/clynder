@@ -15,7 +15,7 @@ const lineUpSplitOption = {
 const splitedText = [new SplitType('.text-eng', lineUpSplitOption)];
 splitedText[0].elements.forEach((el) => {
   const firstLine = el.querySelector('.line-wrap:first-child');
-  const node = `<span class="word dot"></span>`;
+  const node = `<span class="dot"></span>`;
   firstLine.insertAdjacentHTML('afterbegin', node);
 });
 
