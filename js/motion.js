@@ -655,21 +655,42 @@ const setWorkMotion = () => {
 const setRecruitMotion = () => {
   const cardWrap = document.querySelector('.recruit__card');
 
+  const removeRotate = () => {
+    gsap.to(cardWrap, { rotationY: 0, rotationX: 0 });
+    document
+      .querySelector('.recruit')
+      .removeEventListener('mousemove', setCardRotation);
+  };
+
   const tl = gsap.timeline({
     repeatRefresh: true,
     scrollTrigger: {
       trigger: '.recruit',
+      endTrigger: '.recruit__title',
       start: () => 'top center',
-      end: () => 'top top',
+      end: () => 'center center',
       ease: 'none',
       scrub: 1,
       invalidateOnRefresh: true,
+      onEnter: removeRotate,
+      onEnterBack: removeRotate,
+    },
+    onComplete: () => {
+      document
+        .querySelector('.recruit')
+        .addEventListener('mousemove', setCardRotation);
     },
   });
 
-  tl.to(cardWrap, {
-    y: () => `0`,
-  });
+  tl.fromTo(
+    cardWrap.querySelector('img'),
+    {
+      y: () => `100%`,
+    },
+    {
+      y: () => `0`,
+    }
+  );
 
   tl.to(cardWrap.querySelector('img'), {
     rotate: () => `15deg`,
@@ -740,11 +761,6 @@ window.addEventListener('load', () => {
 
   // recruit
   setRecruitMotion();
-  document
-    .querySelector('.recruit')
-    .addEventListener('mousemove', setCardRotation);
-  // .addEventListener('mousemove', throttle(setCardRotation, 50));
-  // // recruit
 
   setProgress();
 });
