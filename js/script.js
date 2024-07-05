@@ -4,6 +4,17 @@ const topBtn = document.querySelector('.footer__top');
 const menuItem = document.querySelectorAll('.menu-item a');
 const mbGroupBtn = document.querySelectorAll('.team-list__btn.mb-only');
 
+/** FUNCTION Lenis Scroll */
+const lenis = new Lenis();
+
+lenis.on('scroll', ScrollTrigger.update);
+
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000);
+});
+
+gsap.ticker.lagSmoothing(0);
+
 // PARAM splittype 라인 옵션
 const lineUpSplitOption = {
   types: 'lines, words',
@@ -31,6 +42,11 @@ const setOpenMenu = () => {
   const isOpenMbMenu = menuWrap.getAttribute('data-open');
   const isOpen = JSON.parse(isOpenMbMenu);
 
+  if (!isOpen === true) {
+    document.body.style.overflowY = 'hidden';
+  } else {
+    document.body.style.overflowY = 'unset';
+  }
   menuWrap.setAttribute('data-open', !isOpen);
   mbOpenBtn.setAttribute('data-open', !isOpen);
 };
@@ -102,6 +118,7 @@ window.addEventListener('load', () => {
   const resizeObserver = new ResizeObserver(
     debounce(([entry]) => {
       if (window.innerWidth > 720) {
+        document.body.style.overflowY = 'unset';
         const list = document.querySelectorAll('.team-list__item');
 
         list.forEach((el) => {

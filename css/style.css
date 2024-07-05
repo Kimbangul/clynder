@@ -2290,6 +2290,7 @@ button {
   width: 100%;
   position: relative;
   z-index: 1;
+  opacity: 0;
 }
 .recruit__title .line:nth-of-type(2) {
   text-align: right;

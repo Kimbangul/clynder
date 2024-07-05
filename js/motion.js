@@ -675,11 +675,6 @@ const setRecruitMotion = () => {
       onEnter: removeRotate,
       onEnterBack: removeRotate,
     },
-    onComplete: () => {
-      document
-        .querySelector('.recruit')
-        .addEventListener('mousemove', setCardRotation);
-    },
   });
 
   tl.fromTo(
@@ -689,12 +684,31 @@ const setRecruitMotion = () => {
     },
     {
       y: () => `0`,
-    }
+      onComplete: () => {
+        document
+          .querySelector('.recruit')
+          .addEventListener('mousemove', setCardRotation);
+      },
+    },
+    'card-up'
   );
 
-  tl.to(cardWrap.querySelector('img'), {
-    rotate: () => `15deg`,
-  });
+  tl.to(
+    '.recruit__title .line',
+    {
+      opacity: 1,
+      stagger: 0.3,
+    },
+    'rotate'
+  );
+
+  tl.to(
+    cardWrap.querySelector('img'),
+    {
+      rotate: () => `15deg`,
+    },
+    'rotate'
+  );
 };
 
 // FUNCTION 마우스 커서 위치에 따른 카드 회전
