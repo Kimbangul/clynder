@@ -2006,16 +2006,19 @@ button {
 }
 .area[data-area="9"] .object-box[data-obj="1"] {
   width: 100rem;
+  height: 100rem;
   top: -50%;
   transform: translateX(-50rem);
 }
 @media (max-width: 720px) {
   .area[data-area="9"] .object-box[data-obj="1"] {
     width: 120rem;
+    height: 120rem;
   }
 }
 .area[data-area="9"] .object-box[data-obj="2"] {
   width: 130rem;
+  height: 130rem;
   bottom: -60%;
 }
 @media (max-width: 720px) {
@@ -2025,6 +2028,7 @@ button {
 }
 .area[data-area="9"] .object-box[data-obj="3"] {
   width: 100rem;
+  height: 100rem;
   top: -30%;
   left: 70%;
   transform: translateX(-50%);
@@ -2038,6 +2042,7 @@ button {
 }
 .area[data-area="9"] .object-box[data-obj="4"] {
   width: 85rem;
+  height: 85rem;
   top: 54%;
   left: -19%;
   transform: translateY(-50%);
@@ -2051,6 +2056,7 @@ button {
 }
 .area[data-area="9"] .object-box[data-obj="5"] {
   width: 150rem;
+  height: 150rem;
   bottom: -30%;
   left: 180rem;
 }

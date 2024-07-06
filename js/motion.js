@@ -744,6 +744,59 @@ const setProgress = () => {
   });
 };
 
+// FUNCTION set sprite animation
+const renderCanvas = (selector, frame) => {
+  const canvas = document.querySelector(selector);
+  const context = canvas.getContext('2d');
+  // 기본 컨텍스트 너비와 높이는 각각 300과 150입니다. 즉, 캔버스(아무리 크더라도)는 300 * 150 이미지이며, 이는 작은 이미지를 많이 흐리게 만듭니다.
+  context.canvas.width = innerWidth;
+  context.canvas.height = innerHeight;
+
+  context.clearRect(0, 0, canvas.width, canvas.height);
+
+  frame.onload = context.drawImage(frame, 0, 0, canvas.width, canvas.height);
+};
+
+const getObjectFrame = (objId, frameCnt) => {
+  const sprite = {
+    frame: 0,
+  };
+
+  const currentFrame = (idx) => `assets/images/area9/object${objId}/${idx}.png`;
+  const images = [];
+  for (let i = 0; i <= frameCnt; i++) {
+    const img = new Image();
+    img.src = currentFrame(i);
+    images.push(img);
+  }
+
+  return { sprite, images };
+};
+
+// FUNCTION 스크롤에 따른 스프라이트 이미지 구하기
+const setSprite = (selector, objId, frameCnt) => {
+  const { sprite, images } = getObjectFrame(objId, frameCnt);
+
+  gsap.to(sprite, {
+    frame: frameCnt,
+    snap: 'frame',
+    ease: 'none',
+    repeat: 10,
+    duration: 5,
+    scrollTrigger: {
+      trigger: "[data-area='9']",
+      scrub: 0.5,
+    },
+    onUpdate: () => {
+      renderCanvas(selector, images[sprite.frame]);
+    },
+  });
+
+  //images[0].onload = renderCanvas(selector, images[0]);
+};
+
+const setInfinitySprite = () => {};
+
 // FUNCTION motion load
 window.addEventListener('load', () => {
   setHeaderFix();
@@ -767,6 +820,12 @@ window.addEventListener('load', () => {
   setMethodMotion();
   setArea11Motion();
   setCreatorMotion();
+
+  setSprite("[data-area='9'] [data-obj='1']", 4, 100);
+  setSprite("[data-area='9'] [data-obj='2']", 1, 49);
+  setSprite(" [data-area='9'] [data-obj='3']", 2, 100);
+  setSprite(" [data-area='9'] [data-obj='4']", 3, 110);
+  setSprite(" [data-area='9'] [data-obj='5']", 4, 100);
   // // introduce
 
   // work
