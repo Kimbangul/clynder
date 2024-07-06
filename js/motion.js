@@ -161,7 +161,6 @@ const setScrollCard = () => {
     scrollTrigger: {
       trigger: '.card-slider .card-slider__inner',
       scrub: 0.5,
-      markers: true,
       invalidateOnRefresh: true,
       start: () => `top bottom`,
       end: () => `bottom top`,
