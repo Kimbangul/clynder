@@ -792,10 +792,25 @@ const setSprite = (selector, objId, frameCnt) => {
     },
   });
 
-  //images[0].onload = renderCanvas(selector, images[0]);
+  images[0].onload = renderCanvas(selector, images[0]);
 };
 
-const setInfinitySprite = () => {};
+const setInfinitySprite = (selector, objId, frameCnt) => {
+  const { sprite, images } = getObjectFrame(objId, frameCnt);
+
+  gsap.to(sprite, {
+    frame: frameCnt,
+    snap: 'frame',
+    ease: 'none',
+    repeat: -1,
+    duration: 1,
+    onUpdate: () => {
+      renderCanvas(selector, images[sprite.frame]);
+    },
+  });
+
+  images[0].onload = renderCanvas(selector, images[0]);
+};
 
 // FUNCTION motion load
 window.addEventListener('load', () => {
@@ -823,9 +838,14 @@ window.addEventListener('load', () => {
 
   setSprite("[data-area='9'] [data-obj='1']", 4, 100);
   setSprite("[data-area='9'] [data-obj='2']", 1, 49);
-  setSprite(" [data-area='9'] [data-obj='3']", 2, 100);
-  setSprite(" [data-area='9'] [data-obj='4']", 3, 110);
-  setSprite(" [data-area='9'] [data-obj='5']", 4, 100);
+  setSprite("[data-area='9'] [data-obj='3']", 2, 100);
+  setSprite("[data-area='9'] [data-obj='4']", 3, 110);
+  setSprite("[data-area='9'] [data-obj='5']", 4, 100);
+
+  setInfinitySprite("[data-area='10'] [data-obj='1']", 1, 49);
+  setInfinitySprite("[data-area='10'] [data-obj='2']", 2, 100);
+  setInfinitySprite("[data-area='10'] [data-obj='3']", 3, 110);
+  setInfinitySprite("[data-area='10'] [data-obj='4']", 5, 199);
   // // introduce
 
   // work
