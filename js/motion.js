@@ -138,21 +138,42 @@ const wordUpList = [
 // FUNCTION 카드 스크롤 애니메이션
 const setScrollCard = () => {
   const cardList = gsap.utils.toArray('.card');
+  const activeCardIdx = {
+    frame: 0,
+  };
+
   const tl = gsap.timeline({
+    repeatRefresh: true,
     scrollTrigger: {
       trigger: '.card-slider .card-slider__inner',
       scrub: 1,
       endTrigger: ".area[data-area='1'] .text-box[data-text='3']",
       end: () => `top center`,
-      onUpdate: (self) => {
-        const progress = Math.round(self.progress * 100) / 25;
-        const index = Math.round(progress);
-        const otherCardList = cardList.filter((el, idx) => idx !== index);
-        otherCardList.forEach((el) => {
-          el.classList.remove('active');
-        });
-        cardList[index].classList.add('active');
-      },
+      invalidateOnRefresh: true,
+    },
+  });
+
+  gsap.to(activeCardIdx, {
+    frame: cardList.length - 1,
+    snap: 'frame',
+    ease: 'none',
+    repeatRefresh: true,
+    scrollTrigger: {
+      trigger: '.card-slider .card-slider__inner',
+      scrub: 0.5,
+      markers: true,
+      invalidateOnRefresh: true,
+      start: () => `top bottom`,
+      end: () => `bottom top`,
+    },
+    onUpdate: () => {
+      const otherCardList = cardList.filter(
+        (el, idx) => idx !== activeCardIdx.frame
+      );
+      otherCardList.forEach((el) => {
+        el.classList.remove('active');
+      });
+      cardList[activeCardIdx.frame].classList.add('active');
     },
   });
 
@@ -785,7 +806,7 @@ const setSprite = (selector, objId, frameCnt) => {
     duration: 5,
     scrollTrigger: {
       trigger: "[data-area='9']",
-      scrub: 0.5,
+      scrub: 1,
     },
     onUpdate: () => {
       renderCanvas(selector, images[sprite.frame]);
