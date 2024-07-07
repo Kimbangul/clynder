@@ -113,7 +113,6 @@ const setIntroClock = () => {
 
 // FUNCTION 세계시각 설정
 const setWorldClock = () => {
-  //const clockList = ["[data-clock='london']"];
   const clockList = document.querySelectorAll("[data-area='2'] .clock");
 
   clockList.forEach((el) => {

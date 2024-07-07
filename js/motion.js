@@ -588,21 +588,26 @@ const setArea11Motion = () => {
   const bg = document.querySelector(
     "[data-area='11'] .member__img-container img"
   );
-
-  const tl = gsap.timeline({
+  const memberCnt = {
+    frame: 0,
+  };
+  gsap.to(memberCnt, {
+    frame: 56,
+    snap: 'frame',
+    ease: 'none',
     repeatRefresh: true,
     scrollTrigger: {
       trigger: "[data-area='11']",
       start: () => 'top top',
       end: () => 'bottom bottom',
-      scrub: 0,
+      scrub: 0.5,
       invalidateOnRefresh: true,
-      onUpdate: (self) => {
-        const progress = Math.round(self.progress * 100) / 1.78 + 1;
-        const src = `assets/images/area11/member-${Math.round(progress)}.jpg`;
-
-        bg.setAttribute('src', src);
-      },
+    },
+    onUpdate: () => {
+      const src = `assets/images/area11/member-${Math.round(
+        memberCnt.frame + 1
+      )}.jpg`;
+      bg.setAttribute('src', src);
     },
   });
 };
