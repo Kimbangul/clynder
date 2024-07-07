@@ -585,12 +585,22 @@ const setMethodMotion = () => {
 
 // FUNCTION data-area11 부분 모션
 const setArea11Motion = () => {
-  const bg = document.querySelector(
-    "[data-area='11'] .member__img-container img"
-  );
+  const bg = document.querySelector("[data-area='11'] .member__img-container");
+
   const memberCnt = {
     frame: 0,
   };
+
+  const currentFrame = (idx) =>
+    `assets/images/area11/member-${Math.round(idx + 1)}.jpg`;
+
+  const images = [];
+  for (let i = 0; i <= 56; i++) {
+    const img = new Image();
+    img.src = currentFrame(i);
+    images.push(img);
+  }
+
   gsap.to(memberCnt, {
     frame: 56,
     snap: 'frame',
@@ -604,12 +614,16 @@ const setArea11Motion = () => {
       invalidateOnRefresh: true,
     },
     onUpdate: () => {
-      const src = `assets/images/area11/member-${Math.round(
-        memberCnt.frame + 1
-      )}.jpg`;
-      bg.setAttribute('src', src);
+      renderCanvas(
+        "[data-area='11'] .member__img-container",
+        images[memberCnt.frame]
+      );
     },
   });
+  images[0].onload = renderCanvas(
+    "[data-area='11'] .member__img-container",
+    images[0]
+  );
 };
 
 // FUNCTION creator motion
