@@ -113,9 +113,9 @@ const setWordUpMotion = (selector) => {
     {
       y: () => 0,
       duration: 1,
-      stagger: 0.03,
+      stagger: 0.02,
     },
-    'start+=0.7'
+    'start+=0.05'
   );
 
   const nextEl = document.querySelector(selector).nextElementSibling;
