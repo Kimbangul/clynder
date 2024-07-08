@@ -1,4 +1,4 @@
-# Cylndr clone coding🆎
+# Cylndr clone coding🧪
 ## 🔍요약
 * 제작 기간 : 2024.07
 * 사용 기술스택 : HTML, SCSS, JavasScript(ES6+), GSAP
