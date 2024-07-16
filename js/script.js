@@ -48,7 +48,8 @@ const setOpenMenu = () => {
     document.body.style.overflowY = 'unset';
   }
   menuWrap.setAttribute('data-open', !isOpen);
-  mbOpenBtn.setAttribute('data-open', !isOpen);
+  menuWrap.setAttribute('aria-expanded', !isOpen);
+  // mbOpenBtn.setAttribute('data-open', !isOpen);
 };
 
 // FUNCTION top 버튼 클릭 시 실행
@@ -91,6 +92,7 @@ const onClickGroupBtn = (target) => {
   const isOpen = JSON.parse(target.getAttribute('data-open'));
 
   target.setAttribute('data-open', !isOpen);
+  target.setAttribute('aria-expanded', !isOpen);
   setGroupBtnState(target);
 };
 
