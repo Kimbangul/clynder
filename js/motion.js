@@ -541,7 +541,15 @@ const setArea9Motion = () => {
   });
 
   // 애니메이션 완료 후 delay 추가
-  tl.add(() => {}, '+=0.5');
+  // tl.add(() => {}, '+=0.5');
+  tl.to(
+    "[data-area='9']",
+    {
+      zIndex: () => 0,
+      // duration: 1.5,
+    },
+    '+=0.1'
+  );
 };
 
 // FUNCTION method motion
