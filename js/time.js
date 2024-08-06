@@ -56,6 +56,7 @@ const getTime = (time) => {
 // FUNCTION 날짜 서수 구하는 함수
 const getNth = (day) => {
   if (day > 3 && day < 21) return 'th';
+
   switch (day % 10) {
     case 1:
       return day + 'st';
@@ -125,10 +126,9 @@ const setWorldClock = () => {
 // FUNCTION set datetime
 const setDateTime = () => {
   const date = document.querySelector("[data-area='3']");
+  const dateDay = dateTimeList.kr().getDate();
   date.querySelector('.date__year').innerText = dateTimeList.kr().getFullYear();
-  date.querySelector('.date__day').innerText = `${getNth(
-    dateTimeList.kr().getDate()
-  )}`;
+  date.querySelector('.date__day').innerText = `${dateDay}${getNth(dateDay)}`;
   date.querySelector('.date__month').innerText = dateTimeList
     .kr()
     .toLocaleString('en-us', { month: 'short' });
