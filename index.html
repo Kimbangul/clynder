@@ -38,7 +38,7 @@
             >00:00:00</time
           >
         </div>
-        <div class="intro__deco">
+        <div class="intro__deco" aria-hidden="true">
           <p class="intro__deco-item pc-only">
             <span>Running</span> <span>on</span> <span>a</span>
             <span>full-excel</span> <span>circuit</span> <span>the</span>
@@ -66,7 +66,12 @@
         <div class="home">
           <a class="home__icon" href="/" title="홈으로"></a>
         </div>
-        <div class="menu-wrap" data-open="false" aria-expanded="false">
+        <div
+          class="menu-wrap"
+          data-open="false"
+          aria-expanded="false"
+          role="menubar"
+        >
           <ul class="menu upper selecta" role="menu">
             <li class="menu-item active" role="menuitem">
               <a href="#about-us">About us</a>
@@ -148,12 +153,10 @@
                     <source
                       media="(min-width: 721px)"
                       srcset="assets/images/card/card01.jpg"
-                  
                     />
                     <source
                       media="(max-width: 720px)"
                       srcset="assets/images/card/card01-mo.jpg"
-                    
                     />
                     <img src="assets/images/card/card01.jpg" alt />
                   </picture>
@@ -163,12 +166,10 @@
                     <source
                       media="(min-width: 721px)"
                       srcset="assets/images/card/card02.jpg"
-                     
                     />
                     <source
                       media="(max-width: 720px)"
                       srcset="assets/images/card/card02-mo.jpg"
-                  
                     />
                     <img src="assets/images/card/card02.jpg" alt />
                   </picture>
@@ -178,12 +179,10 @@
                     <source
                       media="(min-width: 721px)"
                       srcset="assets/images/card/card03.jpg"
-                     
                     />
                     <source
                       media="(max-width: 720px)"
                       srcset="assets/images/card/card03-mo.jpg"
-                      
                     />
                     <img src="assets/images/card/card03.jpg" alt />
                   </picture>
@@ -193,12 +192,10 @@
                     <source
                       media="(min-width: 721px)"
                       srcset="assets/images/card/card04.jpg"
-                      
                     />
                     <source
                       media="(max-width: 720px)"
                       srcset="assets/images/card/card04-mo.jpg"
-                    
                     />
                     <img src="assets/images/card/card04.jpg" alt />
                   </picture>
@@ -208,12 +205,10 @@
                     <source
                       media="(min-width: 721px)"
                       srcset="assets/images/card/card05.jpg"
-                    
                     />
                     <source
                       media="(max-width: 720px)"
                       srcset="assets/images/card/card05-mo.jpg"
-                     
                     />
                     <img src="assets/images/card/card05.jpg" alt />
                   </picture>
@@ -754,7 +749,7 @@
         </div>
         <div class="area" data-area="4">
           <div class="text-box" data-text="1">
-            <p class="text-small">Breathtaking</p>
+            <span aria-hidden="true" class="text-small">Breathtaking</span>
           </div>
           <div class="img-box">
             <img src="assets/images/area4/bg01.jpg" alt />
@@ -783,7 +778,7 @@
             </p>
           </div>
           <div class="text-box" data-text="3">
-            <p class="text-small">experiences</p>
+            <span aria-hidden="true" class="text-small">experiences</span>
           </div>
         </div>
         <div class="area" data-area="5">
@@ -1104,7 +1099,7 @@
                   <strong class="text-head-md upper"
                     >Method&<br />Identity</strong
                   >
-                  <div class="img-box">
+                  <figure class="img-box">
                     <picture>
                       <source
                         media="(min-width: 721px)"
@@ -1119,8 +1114,8 @@
                         alt="오피스 이미지"
                       />
                     </picture>
-                    <p class="text-xs upper">Our office</p>
-                  </div>
+                    <figcaption class="text-xs upper">Our office</figcaption>
+                  </figure>
                   <canvas class="object-box" data-obj="2"> </canvas>
                 </div>
               </div>
@@ -1158,7 +1153,7 @@
                     >
                   </strong>
                 </div>
-                <div class="img-box">
+                <figure class="img-box">
                   <picture>
                     <source
                       media="(min-width: 721px)"
@@ -1173,8 +1168,10 @@
                       alt="오피스 이미지"
                     />
                   </picture>
-                  <p class="text-xs upper">Relaxed Environment</p>
-                </div>
+                  <figcaption class="text-xs upper">
+                    Relaxed Environment
+                  </figcaption>
+                </figure>
                 <canvas class="object-box" data-obj="3"> </canvas>
               </div>
               <div class="page" data-page="3">
@@ -1200,7 +1197,7 @@
                     도움을 주는 것을 목표로 합니다.
                   </p>
                 </div>
-                <div class="img-box" data-img="1">
+                <figure class="img-box" data-img="1">
                   <picture>
                     <source
                       media="(min-width: 721px)"
@@ -1215,9 +1212,9 @@
                       alt="아이데이션 이미지"
                     />
                   </picture>
-                  <p class="text-xs upper">Ideation</p>
-                </div>
-                <div class="img-box" data-img="2">
+                  <figcaption class="text-xs upper">Ideation</figcaption>
+                </figure>
+                <figure class="img-box" data-img="2">
                   <picture>
                     <source
                       media="(min-width: 721px)"
@@ -1233,8 +1230,8 @@
                     />
                   </picture>
 
-                  <p class="text-xs upper">Inspiration</p>
-                </div>
+                  <figcaption class="text-xs upper">Inspiration</figcaption>
+                </figure>
                 <canvas class="object-box" data-obj="4"> </canvas>
                 <canvas class="object-box" data-obj="5"> </canvas>
               </div>
@@ -1408,7 +1405,7 @@
             <div class="member__text-head">
               <p class="member__thank">Thanks</p>
             </div>
-            <div class="member__deco">
+            <div class="member__deco" aria-hidden="true">
               <p class="member__deco-item">
                 <span>Creative</span> <span>Meaningful</span>
                 <span>Consistent</span>
@@ -1460,7 +1457,7 @@
               creators.
             </p>
             <div class="img-container">
-              <div class="img-box" data-img="1">
+              <figure class="img-box" data-img="1">
                 <picture>
                   <source
                     media="(min-width: 721px)"
@@ -1472,9 +1469,9 @@
                   />
                   <img src="assets/images/area12/img01.jpg" alt />
                 </picture>
-                <p class="text-xs upper">Play with Cylindr</p>
-              </div>
-              <div class="img-box" data-img="2">
+                <figcaption class="text-xs upper">Play with Cylindr</figcaption>
+              </figure>
+              <figure class="img-box" data-img="2">
                 <picture>
                   <source
                     media="(min-width: 721px)"
@@ -1486,8 +1483,8 @@
                   />
                   <img src="assets/images/area12/img02.jpg" alt />
                 </picture>
-                <p class="text-xs upper">Pause space</p>
-              </div>
+                <figcaption class="text-xs upper">Pause space</figcaption>
+              </figure>
             </div>
             <p class="text-eng-rg">
               Our essence does not change <br class="mb-only" />
@@ -1507,7 +1504,7 @@
               intuitive.
             </p>
             <div class="img-container">
-              <div class="img-box" data-img="3">
+              <figure class="img-box" data-img="3">
                 <picture>
                   <source
                     media="(min-width: 721px)"
@@ -1519,10 +1516,10 @@
                   />
                   <img src="assets/images/area12/img03.jpg" alt />
                 </picture>
-                <p class="text-xs upper">Challanges</p>
-              </div>
+                <figcaption class="text-xs upper">Challanges</figcaption>
+              </figure>
 
-              <div class="img-box" data-img="4">
+              <figure class="img-box" data-img="4">
                 <picture>
                   <source
                     media="(min-width: 721px)"
@@ -1534,8 +1531,8 @@
                   />
                   <img src="assets/images/area12/img04.jpg" alt />
                 </picture>
-                <p class="text-xs upper">Attempts</p>
-              </div>
+                <figcaption class="text-xs upper">Attempts</figcaption>
+              </figure>
             </div>
             <div class="text-box" data-text="2">
               <p class="text-eng">
